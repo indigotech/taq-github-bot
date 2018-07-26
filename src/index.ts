@@ -1,12 +1,11 @@
-import { Application } from 'probot'
+import { Application, Context } from "probot";
+import { GithubEvents } from "data/mappers/github-events";
 
 export = (app: Application) => {
   // Your code here
-  app.log('Yay, the app was loaded!')
+  app.log('Yay, the app was loaded!');
 
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+  app.on(GithubEvents.Issues.Opened, async (context: Context) => {
+    app.log('Issue opened!!! :)');
+  });
 }
