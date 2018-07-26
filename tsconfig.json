@@ -11,11 +11,12 @@
     "pretty": true,
     "strict": true,
     "sourceMap": true,
+    "baseUrl": "./src",
     "outDir": "./lib",
     "skipLibCheck": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
   },
   "include": [
     "src/**/*"
