@@ -1,5 +1,5 @@
 import { Application, Context } from "probot";
-import { GithubEvents } from "data/mappers/github-events";
+import { GithubEvents } from "./data/mappers/github-events";
 
 export = (app: Application) => {
   // Your code here
