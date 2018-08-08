@@ -1,19 +1,11 @@
-import { TrackMapper } from "./mappers/track.mapper";
-import { Track } from "domain/entities/track.model";
+import { Track } from 'domain/entities/track.model';
+import { TrackMapper } from './mappers/track.mapper';
 
 export class TrackDataSource {
   private readonly tracks: Track[];
 
   constructor(private trackMapper: TrackMapper) {
     this.tracks = this.createTracksFromFolder();
-  }
-
-  private createTracksFromFolder(): Track[] {
-    const trackFolders = [
-      'track-1',
-    ];
-
-    return trackFolders.map(trackFolder => this.trackMapper.fromFolder(trackFolder));
   }
 
   getTrack(trackIndex: number): Track {
@@ -26,5 +18,11 @@ export class TrackDataSource {
 
   getAll() {
     return this.tracks;
+  }
+
+  private createTracksFromFolder(): Track[] {
+    const trackFolders = ['track-1'];
+
+    return trackFolders.map(trackFolder => this.trackMapper.fromFolder(trackFolder));
   }
 }

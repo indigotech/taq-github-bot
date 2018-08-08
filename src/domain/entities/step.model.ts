@@ -4,4 +4,3 @@ export interface Step {
 
 export type OpenStepType = 'issue'
 | 'pull-request';
-  

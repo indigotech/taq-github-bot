@@ -14,9 +14,11 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "nodemon --exec \"npm start\"",
-    "start": "probot run ./lib/index.js",
-    "lint": "standard --fix",
+    "clean-dist": "rimraf ./dist",
+    "start": "yarn lint && yarn build && probot run ./dist/index.js",
+    "lint": "tslint 'src/**/*.ts' --project ./tsconfig.json",
+    "postinstall": "yarn run clean-dist && tsc && yarn run copy-resources && yarn migrate",
+    "reinstall": "rimraf ./node_modules || true && yarn cache clean && yarn",
     "test": "jest && standard",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
@@ -29,16 +31,17 @@
   "devDependencies": {
     "@types/node": "10.5.3",
     "@types/lodash": "4.14.113",
-    "@types/ioredis": "3.2.13",
+    "@types/ioredis": "3.2.14",
     "jest": "^22.4.3",
     "nodemon": "^1.17.2",
     "smee-client": "^1.0.2",
     "standard": "^10.0.3",
-    "typescript": "^2.9.2",
+    "typescript": "3.0.1",
     "copyfiles": "^2.0.0",
     "rimraf": "^2.6.2",
     "ts-node": "^6.0.2",
-    "tsconfig-paths": "^3.3.1"
+    "tsconfig-paths": "^3.3.1",
+    "tslint": "5.11.0"
   },
   "engines": {
     "node": "10.7.0"

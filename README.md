@@ -6,10 +6,10 @@
 
 ```sh
 # Install dependencies
-npm install
+yarn install
 
 # Run typescript
-npm run build
+yarn build
 
 # Run the bot
 npm start

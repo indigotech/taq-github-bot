@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 
 export function read(basePath: string, file: string): string {
