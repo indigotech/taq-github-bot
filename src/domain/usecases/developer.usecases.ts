@@ -1,14 +1,14 @@
-import { OnboardDataSource } from "data/onboard.datasource";
-import { Track } from "domain/entities/track.entity";
-import { Developer } from "domain/entities/developer.entity";
+import { TrackDataSource } from "data/track.datasource";
+import { Track } from "domain/entities/track.model";
+import { Developer } from "domain/entities/developer.model";
 
 export class DeveloperUseCases {
 
   constructor(
-    private onboardDataSource: OnboardDataSource,
+    private trackDataSource: TrackDataSource,
   ) { }
 
   getNextTrack(developer: Developer): Track {
-    return this.onboardDataSource.getTrack(developer.currentTrack);
+    return this.trackDataSource.getTrack(developer.currentTrack);
   }
 }

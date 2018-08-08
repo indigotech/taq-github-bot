@@ -8,3 +8,8 @@ export function read(basePath: string, file: string): string {
 export function readAllFromFolder(folderPath: string): string[] {
   return readdirSync(resolve(folderPath)).map(filename => read(folderPath, filename));
 }
+
+export function readJson<T>(basePath: string, file: string): T {
+  const fileContent = read(basePath, file);
+  return JSON.parse(fileContent) as T;
+}

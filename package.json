@@ -24,7 +24,7 @@
     "dotenv": "6.0.0",
     "ioredis": "3.2.2",
     "lodash": "4.17.10",
-    "probot": "^7.0.1"
+    "probot": "7.0.1"
   },
   "devDependencies": {
     "@types/node": "10.5.3",
