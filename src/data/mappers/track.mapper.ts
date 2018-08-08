@@ -1,23 +1,26 @@
-import { Step, Track } from "domain/entities/track.entity";
-import { read } from "domain/utils/file";
+import { Track } from "domain/entities/track.model";
+import { read, readAllFromFolder, readJson } from "domain/utils/file";
+import { Step } from "domain/entities/step.model";
+import { TrackInfo } from "../entities/track-info.model";
 
 const TRACK_FOLDER_PATH = '../github/tracks/';
-// const STEPS_FOLDER_NAME = 'steps';
+const STEPS_FOLDER_NAME = 'steps';
 
 export class TrackMapper {
-  fromFolder(trackFolderName: string, trackTitle: string): Track {
+  fromFolder(trackFolderName: string): Track {
     const trackFolderPath = TRACK_FOLDER_PATH.concat(trackFolderName);
-    // const stepsFolderPath = trackFolderPath.concat(STEPS_FOLDER_NAME);
+    const stepsFolderPath = trackFolderPath.concat(STEPS_FOLDER_NAME);
 
-    const trackContent = read(trackFolderPath, trackFolderName.concat(".md"));
-    // const steps: Step[] = readAllFromFolder(stepsFolderPath).map(stepBody => ({ body: stepBody }));
-    const steps: Step[] = [];
+    const trackInfo = readJson<TrackInfo>(trackFolderPath, trackFolderName.concat(".json"));
+    const trackBody = read(trackFolderPath, trackInfo.bodyPath.concat('.md'));
+    const steps: Step[] = readAllFromFolder(stepsFolderPath).map(stepBody => ({ body: stepBody }));
 
     return {
-      title: trackTitle,
-      description: trackContent,
-      steps: steps
+      title: trackInfo.title,
+      body: trackBody,
+      steps: steps,
+      openStrategy: trackInfo.openStrategy,
+      openStepStrategy: trackInfo.openStepStrategy
     };
   }
-
 }

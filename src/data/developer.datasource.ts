@@ -1,5 +1,5 @@
 import { redisClient } from './redis-client'
-import { Developer } from 'domain/entities/developer.entity';
+import { Developer } from 'domain/entities/developer.model';
 
 export class DeveloperDataSource {
 

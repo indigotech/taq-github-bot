@@ -1,0 +1,6 @@
+{
+    "title": "Track 1",
+    "bodyPath": "track-1.md",
+    "openStrategy": "issue",
+    "openStepStrategy": "issue"
+}
