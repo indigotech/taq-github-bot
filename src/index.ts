@@ -1,5 +1,5 @@
-import { Application, Context } from "probot";
-import { GithubEvents } from "./data/mappers/github-events";
+import { Application, Context } from 'probot';
+import { GithubEvents } from './data/mappers/github-events';
 
 export = (app: Application) => {
   // Your code here
@@ -8,4 +8,4 @@ export = (app: Application) => {
   app.on(GithubEvents.Issues.Opened, async (context: Context) => {
     app.log('Issue opened!!! :)');
   });
-}
+};

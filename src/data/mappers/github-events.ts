@@ -4,7 +4,7 @@
  */
 export const GithubEvents = {
   Installation: {
-    Created: 'installation.created'
+    Created: 'installation.created',
   },
 
   Issues: {
@@ -20,7 +20,7 @@ export const GithubEvents = {
 
   PullRequest: {
     Opened: 'pull_request.opened',
-  }
+  },
 
-  //Add more Github events if needed
-}
+  // Add more Github events if needed
+};

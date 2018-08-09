@@ -1,6 +1,6 @@
-import { TrackDataSource } from "data/track.datasource";
-import { Track } from "domain/entities/track.model";
-import { Developer } from "domain/entities/developer.model";
+import { TrackDataSource } from '@data/track.datasource';
+import { Developer } from '@domain/entities/developer.model';
+import { Track } from '@domain/entities/track.model';
 
 export class DeveloperUseCases {
 

@@ -2,7 +2,8 @@
 // import { get } from 'lodash';
 
 // export function mapIssue(probotContext): GithubIssue {
-//   return Object.assign({}, get(probotContext, 'payload.issue')) // It makes a shallow copy of JSON values. For deep copy, use JSON.parse(JSON.stringify(user))
+//    // It makes a shallow copy of JSON values. For deep copy, use JSON.parse(JSON.stringify(user))
+//   return Object.assign({}, get(probotContext, 'payload.issue'))
 // }
 
 // export function mapIssueComment(probotContext): GitHubIssueComment {

@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "allowJs": false,
+    "noLib": false,
     "lib": ["es2015", "es2017"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "es6",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
@@ -12,14 +13,30 @@
     "strict": true,
     "sourceMap": true,
     "baseUrl": "./src",
-    "outDir": "./lib",
+    "outDir": "./dist",
     "skipLibCheck": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "noImplicitUseStrict": false,
     "declaration": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@data": ["./data"],
+      "@data/*": ["./data/*"],
+      "@domain": ["./domain/"],
+      "@domain/*": ["./domain/*"],
+      "@presentation": ["./presentation"],
+      "@presentation/*": ["./presentation/*"]
+    },
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tsconfig-paths-dist.js"
   ],
   "compileOnSave": false
 }

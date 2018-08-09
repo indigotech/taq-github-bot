@@ -32,7 +32,7 @@ export interface GithubUser {
   site_admin: boolean;
 }
 
-export type UserType = 'User'; //TODO: Add GitHub user types
+export type UserType = 'User'; // TODO: Add GitHub user types
 
 export interface GitHubIssueComment {
   id: number;

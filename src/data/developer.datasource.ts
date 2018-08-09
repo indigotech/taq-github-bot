@@ -1,4 +1,4 @@
-import { redisClient } from './redis-client'
+import { redisClient } from './redis-client';
 import { Developer } from 'domain/entities/developer.model';
 
 export class DeveloperDataSource {
@@ -7,4 +7,5 @@ export class DeveloperDataSource {
     // const devString = JSON.stringify(developer);
     redisClient.set(developer.githubId.toString(), developer);
   }
+
 }
