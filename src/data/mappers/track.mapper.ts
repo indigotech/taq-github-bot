@@ -1,6 +1,6 @@
-import { Step } from 'domain/entities/step.model';
-import { Track } from 'domain/entities/track.model';
-import { read, readAllFromFolder, readJson } from 'domain/utils/file';
+import { Step } from '@domain/entities/step.model';
+import { Track } from '@domain/entities/track.model';
+import { read, readAllFromFolder, readJson } from '@domain/utils/file';
 import { TrackInfo } from '@data/entities/track-info.model';
 
 const TRACK_FOLDER_PATH = '../github/tracks/';

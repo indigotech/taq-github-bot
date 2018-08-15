@@ -28,7 +28,7 @@
       "@domain/*": ["./domain/*"],
       "@presentation": ["./presentation"],
       "@presentation/*": ["./presentation/*"]
-    },
+    }
   },
   "include": [
     "src/**/*"
