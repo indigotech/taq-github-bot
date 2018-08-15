@@ -7,3 +7,6 @@ coverage
 lib
 dist/
 .vscode/
+
+# Yarn
+yarn-error.log

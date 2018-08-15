@@ -12,7 +12,7 @@ yarn install
 yarn build
 
 # Run the bot
-npm start
+yarn start
 ```
 
 ## Contributing

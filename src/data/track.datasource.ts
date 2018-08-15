@@ -1,5 +1,5 @@
-import { Track } from 'domain/entities/track.model';
-import { TrackMapper } from './mappers/track.mapper';
+import { Track } from '@domain/entities/track.model';
+import { TrackMapper } from '@data/mappers/track.mapper';
 
 export class TrackDataSource {
   private readonly tracks: Track[];

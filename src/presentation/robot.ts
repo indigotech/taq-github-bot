@@ -1,45 +1,16 @@
-// import { Application } from "probot";
+import { Application, Context } from 'probot';
+import { GithubEvents } from '@data/mappers/github-events';
 
-// export = (app: Application) => {
-//   // Your code here
-//   app.log('Yay, the app was loaded!')
+export const robot = (app: Application) => {
+  app.log('Yay, the app was loaded!');
 
-//   // For more information on building apps:
-//   // https://probot.github.io/docs/
+  app.on(GithubEvents.Issues.Opened, async (context: Context) => {
+    app.log('Issue opened!');
+  });
 
-//   // To get your app running against GitHub, see:
-//   // https://probot.github.io/docs/development/
-// }
-
-// export robot => {
-//   robot.on(GithubEvents.Installation.Created, async context => {
-//     robot.log(context);
-//     return undefined;
-//   })
-
-//   robot.on(GithubEvents.IssueComment.Created, async context => {
-//     const comment = mapIssueComment(context)
-//     robot.log(`Issue comment is ${comment.body}`);
-//     return undefined;
-//   })
-
-//   robot.on(GithubEvents.Issues.Opened, async context => {
-//     robot.log(`Issue title is ${mapIssue(context).title}`);
-//     return undefined;
-//   })
-
-//   robot.on(GithubEvents.PullRequest.Opened, async context => {
-//     const pr = mapPullRequest(context);
-
-//     robot.log(`Pull Request title is ${pr.title}`);
-//     if (pr.labels.length > 0) {
-//       robot.log(`Pull Request labels are ${pr.labels.map(l => l.name).join(', ')}`);
-//     }
-//     else {
-//       robot.log(`There are no labels in pull request ${pr.title}`);
-//     }
-
-//     return undefined;
-//   })
-
-// }
+  app.on(GithubEvents.IssueComment.Created, async (context: Context) => {
+    if (context.payload.comment.body === 'terminei') {
+      context.payload.issue.createComment(context.issue({ body: 'WOW, funcionou!' }));
+    }
+  });
+};
