@@ -3,8 +3,8 @@ import { Track } from '@domain/entities/track.model';
 import { read, readAllFromFolder, readJson } from '@domain/utils/file';
 import { TrackInfo } from '@data/entities/track-info.model';
 
-const TRACK_FOLDER_PATH = '../github/tracks/';
-const STEPS_FOLDER_NAME = 'steps';
+const TRACK_FOLDER_PATH = '../taq-github-bot/src/data/github/tracks/';
+const STEPS_FOLDER_NAME = '/steps';
 
 export class TrackMapper {
   fromFolder(trackFolderName: string): Track {
@@ -12,7 +12,7 @@ export class TrackMapper {
     const stepsFolderPath = trackFolderPath.concat(STEPS_FOLDER_NAME);
 
     const trackInfo = readJson<TrackInfo>(trackFolderPath, trackFolderName.concat('.json'));
-    const trackBody = read(trackFolderPath, trackInfo.bodyPath.concat('.md'));
+    const trackBody = read(trackFolderPath, trackInfo.bodyPath);
     const steps: Step[] = readAllFromFolder(stepsFolderPath).map(stepBody => ({ body: stepBody }));
 
     return {
