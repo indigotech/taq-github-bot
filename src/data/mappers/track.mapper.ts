@@ -2,10 +2,12 @@ import { Step } from '@domain/entities/step.model';
 import { Track } from '@domain/entities/track.model';
 import { read, readAllFromFolder, readJson } from '@domain/utils/file';
 import { TrackInfo } from '@data/entities/track-info.model';
+import { Service } from 'typedi';
 
 const TRACK_FOLDER_PATH = '../taq-github-bot/src/data/github/tracks/';
 const STEPS_FOLDER_NAME = '/steps';
 
+@Service()
 export class TrackMapper {
   fromFolder(trackFolderName: string): Track {
     const trackFolderPath = TRACK_FOLDER_PATH.concat(trackFolderName);
