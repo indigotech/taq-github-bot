@@ -18,7 +18,7 @@ export const robot = (app: Application) => {
 
       await developerUseCase.saveAsync(developer);
 
-      // context.payload.issue.createComment(context.issue({ body: 'WOW, funcionou!' }));
+      // context.payload.issue.createComment(context.issue({ body: 'WOW, funcionou!' })); Não está funcionando :(
     }
   });
 };

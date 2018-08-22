@@ -16,7 +16,7 @@ export class DeveloperUseCase {
     await this.developerDataSource.createAsync(developer);
   }
 
-  async getByGithubIdAsync(githubId: number): Promise<string> {
+  async getByGithubIdAsync(githubId: number): Promise<Developer> {
     return await this.developerDataSource.getByGithubId(githubId);
   }
 
