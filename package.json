@@ -29,7 +29,8 @@
     "ioredis": "3.2.2",
     "lodash": "4.17.10",
     "probot": "7.0.1",
-    "typedi": "0.8.0"
+    "typedi": "0.8.0",
+    "reflect-metadata": "0.1.12"
   },
   "devDependencies": {
     "@types/node": "10.5.3",

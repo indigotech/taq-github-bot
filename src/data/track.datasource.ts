@@ -1,6 +1,8 @@
 import { Track } from '@domain/entities/track.model';
 import { TrackMapper } from '@data/mappers/track.mapper';
+import { Service } from 'typedi';
 
+@Service()
 export class TrackDataSource {
   private readonly tracks: Track[];
 
