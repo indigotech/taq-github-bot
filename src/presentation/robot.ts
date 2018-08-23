@@ -14,10 +14,6 @@ export const robot = (app: Application) => {
 
   app.on(GithubEvents.IssueComment.Created, async (context: Context) => {
     if (context.payload.comment.body === 'terminei') {
-      const developer = payloadMapper.mapUser(context.payload);
-
-      await developerUseCase.saveAsync(developer);
-
       // context.payload.issue.createComment(context.issue({ body: 'WOW, funcionou!' })); Não está funcionando :(
     }
   });

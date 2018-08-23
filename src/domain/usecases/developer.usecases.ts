@@ -16,8 +16,14 @@ export class DeveloperUseCase {
     await this.developerDataSource.createAsync(developer);
   }
 
+  async updateAsync(developer: Developer): Promise<void> {
+    const currentData = await this.getByGithubIdAsync(developer.githubId);
+    const updatedDeveloper = {...currentData, ...developer};
+    return await this.developerDataSource.updateAsync(updatedDeveloper);
+  }
+
   async getByGithubIdAsync(githubId: number): Promise<Developer> {
-    return await this.developerDataSource.getByGithubId(githubId);
+    return await this.developerDataSource.getByGithubIdAsync(githubId);
   }
 
   getNextTrack(developer: Developer): Track {

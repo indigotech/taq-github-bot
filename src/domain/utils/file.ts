@@ -1,16 +1,11 @@
 import { readdirSync, readFileSync } from 'fs';
 import { resolve } from 'path';
-import { fromJson } from '@domain/utils/json';
 
-export function read(basePath: string, file: string): string {
-  return readFileSync(resolve(basePath, file), 'utf8');
+export function read<T = string>(basePath: string, file: string): T {
+  const fileContent = readFileSync(resolve(basePath, file), 'utf8');
+  return JSON.parse(fileContent) as T;
 }
 
-export function readAllFromFolder(folderPath: string): string[] {
-  return readdirSync(resolve(folderPath)).map(filename => read(folderPath, filename));
-}
-
-export function readJson<T>(basePath: string, file: string): T {
-  const fileContent = read(basePath, file);
-  return fromJson<T>(fileContent);
+export function readAllFromFolder<T>(folderPath: string): T[] {
+  return readdirSync(resolve(folderPath)).map(filename => read<T>(folderPath, filename));
 }
