@@ -1,7 +1,6 @@
 import { redisClient } from './redis-client';
 import { Developer } from '@domain/entities/developer.model';
 import { Service } from 'typedi';
-import { fromJson } from '@domain/utils/json';
 
 @Service()
 export class DeveloperDataSource {
@@ -11,8 +10,12 @@ export class DeveloperDataSource {
     await redisClient.set(developer.githubId.toString(), developer);
   }
 
-  async getByGithubId(githubId: number): Promise<Developer> {
+  async updateAsync(developer: Developer): Promise<void> {
+    await redisClient.set(developer.githubId.toString(), developer);
+  }
+
+  async getByGithubIdAsync(githubId: number): Promise<Developer> {
     const devData = await redisClient.get(githubId.toString());
-    return fromJson<Developer>(devData);
+    return JSON.parse(devData);
   }
 }
