@@ -10,7 +10,7 @@ export class TrackDataSource {
     this.tracks = this.createTracksFromFolder();
   }
 
-  getTrack(trackIndex: number): Track {
+  getTrackByIndex(trackIndex: number): Track {
     try {
       return this.tracks[trackIndex];
     } catch (error) {
