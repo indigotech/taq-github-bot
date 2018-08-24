@@ -5,7 +5,7 @@ import { DeveloperUseCase } from '@domain/usecases/developer.usecases';
 import { GithubPayloadMapper } from '@presentation/mappers/github-payload.mapper';
 
 export const robot = (app: Application) => {
-  const developerUseCase = Container.get(DeveloperUseCase);
+  const developerUseCase: DeveloperUseCase = Container.get(DeveloperUseCase);
   const payloadMapper = Container.get(GithubPayloadMapper);
 
   app.on(GithubEvents.Issues.Opened, async (context: Context) => {
