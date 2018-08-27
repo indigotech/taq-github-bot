@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
-import { createTracksFromFolder } from '@data/track.utils';
 import { Track } from '@domain/entities/track.model';
+import { createTracksFromFolder } from '@data/github/track-reader';
 
 @Service()
 export class TrackDataSource {

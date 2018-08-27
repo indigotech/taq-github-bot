@@ -1,11 +1,19 @@
-import { readdirSync, readFileSync } from 'fs';
+import { readdirSync, readFileSync, statSync } from 'fs';
 import { resolve } from 'path';
 
-export function read<T = string>(basePath: string, file: string): T {
-  const fileContent = readFileSync(resolve(basePath, file), 'utf8');
-  return JSON.parse(fileContent) as T;
+export function readFile(basePath: string, file: string): string {
+  const filePath = resolve(basePath, file);
+  if (statSync(filePath).isDirectory()) {
+    throw Error(filePath + ' is a directory!');
+  }
+  const fileContent = readFileSync(filePath, 'utf8');
+  return fileContent;
 }
 
-export function readAllFromFolder<T>(folderPath: string): T[] {
-  return readdirSync(resolve(folderPath)).map(filename => read<T>(folderPath, filename));
+export function readAllFiles(folderPath: string): string[] {
+  return readdirSync(resolve(folderPath)).map(filename => readFile(folderPath, filename));
+}
+
+export function readFolder(folderPath: string) {
+  return readdirSync(resolve(folderPath));
 }
