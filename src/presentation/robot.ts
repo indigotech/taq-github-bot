@@ -8,6 +8,7 @@ import { Track } from '@domain/entities/track.model';
 const trackUseCase = Container.get(TrackUseCase);
 
 export const robot = (app: Application) => {
+  const developerUseCase: DeveloperUseCase = Container.get(DeveloperUseCase);
   const payloadMapper = Container.get(GithubPayloadMapper);
 
   app.on(GithubEvents.Issues.Opened, async (context: Context) => {

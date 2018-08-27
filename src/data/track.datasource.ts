@@ -1,13 +1,13 @@
-import { Track } from '@domain/entities/track.model';
-import { TrackMapper } from '@data/mappers/track.mapper';
 import { Service } from 'typedi';
+import { createTracksFromFolder } from '@data/track.utils';
+import { Track } from '@domain/entities/track.model';
 
 @Service()
 export class TrackDataSource {
   private readonly tracks: Track[];
 
-  constructor(private trackMapper: TrackMapper) {
-    this.tracks = this.createTracksFromFolder();
+  constructor() {
+    this.tracks = createTracksFromFolder();
   }
 
   getTrackByIndex(trackIndex: number): Track {
@@ -20,11 +20,5 @@ export class TrackDataSource {
 
   getAll() {
     return this.tracks;
-  }
-
-  private createTracksFromFolder(): Track[] {
-    const trackFolders = ['track-1'];
-
-    return trackFolders.map(trackFolder => this.trackMapper.fromFolder(trackFolder));
   }
 }
