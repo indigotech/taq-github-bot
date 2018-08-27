@@ -1,14 +1,22 @@
-// You can import your modules
-import { createTracksFromFolder } from '../src/data/mappers/track-reader';
-// test('that we can run tests', () => {
-//   // your real tests go here
-//   expect(1 + 2 + 3).toBe(6)
-// })
+import { createTracksFromFolder } from '@data/github/track-reader';
 
-test('Read tracks from .md files', () => {
+describe('Reading tracks', () => {
   const tracks = createTracksFromFolder();
-  expect(tracks.length).toBe(10);
-});
 
-// For more information about testing with Jest see:
-// https://facebook.github.io/jest/
+  test('Read all tracks from local folder', () => {
+    expect(tracks.length).toBe(10);
+  });
+
+  test('Read the correct number of steps for each track', () => {
+    expect(tracks[0].steps.length).toBe(3);
+    expect(tracks[1].steps.length).toBe(3);
+    expect(tracks[2].steps.length).toBe(3);
+    expect(tracks[3].steps.length).toBe(3);
+    expect(tracks[4].steps.length).toBe(2);
+    expect(tracks[5].steps.length).toBe(3);
+    expect(tracks[6].steps.length).toBe(3);
+    expect(tracks[7].steps.length).toBe(3);
+    expect(tracks[8].steps.length).toBe(2);
+    expect(tracks[9].steps.length).toBe(2);
+  });
+});
