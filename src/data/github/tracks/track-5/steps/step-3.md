@@ -1,4 +1,4 @@
-# Thinking outside the box Task
+# Bonus: Thinking outside the box
 
 We Taqtilers love UX and more precisely, UX based on researches and references. Here is a  list of posts debating the use of infinite scroll X pagination:
 

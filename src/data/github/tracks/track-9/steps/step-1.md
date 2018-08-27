@@ -1,6 +1,6 @@
 Now that you have your form, it's time to send data to the server. Your task now is to **integrate your app with the server**.
 
-# Task 1 - Integrate the app with the server
+# Step 1 - Integrate the app with the server
 
 We are going to integrate the app with the server by sending the data you've collected in the form and checking the response.
 

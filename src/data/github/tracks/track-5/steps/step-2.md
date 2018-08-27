@@ -1,4 +1,4 @@
-# Challenge Task - Add pagination to the list
+# Challenge: Add pagination to the list
 
 Generally, lists with a minimum amount items are paginated. We currently use 3 types of pagination:
 

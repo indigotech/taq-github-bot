@@ -2,7 +2,7 @@ It's time to learn more about forms.
 
 Your task now is to create a screen with a form to create a new user.
 
-# Task 1 - Create a form for a new user
+# Step 1 - Create a form for a new user
 
 This form should contain:
 

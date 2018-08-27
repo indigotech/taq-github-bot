@@ -1,4 +1,4 @@
-# Task 1 - Integrate the app with the server
+# Step 1 - Integrate the app with the server
 
 Your task is to get all data from the inputs in the screen and send it to the server with an HTTP request.
 

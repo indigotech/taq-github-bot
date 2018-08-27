@@ -1,6 +1,6 @@
 Your tasks now are to **create a branch** called "develop" and **set it as default branch**.
 
-# Pre-task - Mastering the basics
+# Warming up - Mastering the basics
 
 Before continuing, it's important to be familiar with our branch model and a few more git tricks.
 

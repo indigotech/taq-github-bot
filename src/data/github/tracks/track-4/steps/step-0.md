@@ -1,5 +1,5 @@
 Now that you have a login UI, it's time to make it work with real data.
 
-# Pre-task - Understanding HTTP requests
+# Warming up - Understanding HTTP requests
 
 Before continuing this task, be sure you have some knowledge of **HTTP Protocol** and how to make HTTP requests in your working technology.

@@ -2,7 +2,7 @@ With everything set up, it's coding time! (finally)
 
 Your task now is to create a **Login Screen**.
 
-# Task 1 - Login screen
+# Step 1 - Login screen
 
 Your screen should have a form containing:
 

@@ -1,6 +1,6 @@
 Login is done. Now, let's make the user list UI.
 
-# Task 1 - Create List Users
+# Step 1 - Create List Users
 
 This screen will list all registered users. Each cell should contain:
   - username

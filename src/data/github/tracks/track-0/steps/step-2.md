@@ -1,4 +1,4 @@
-# Task 2 - Update README.md
+# Step 2 - Update README.md
 
 This one is easy. All you have to do is add the following topics to README.md file. Just remember that these modifications must be done in **local README** file you just cloned. With that in mind, add these topics in README.md:
 

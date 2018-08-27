@@ -1,4 +1,4 @@
-# Challenge Task - edit a user
+# Challenge: edit a user
 
 Add an edit screen to your application. The challenge here is to re-use code as much as possible while keeping things simple.
 

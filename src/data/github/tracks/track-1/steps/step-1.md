@@ -1,4 +1,4 @@
-# Task 1 - Create a new Branch
+# Step 1 - Create a new Branch
 
 To create a branch, go to Terminal in your Project's folder and type this command:
 
