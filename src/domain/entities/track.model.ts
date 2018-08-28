@@ -1,11 +1,9 @@
-import { OpenStepType, Step } from './step.model';
-
 export interface Track {
+  number: number;
   title: string;
   steps: Step[];
-  openStrategy: OpenTrackType;
-  openStepStrategy: OpenStepType;
 }
 
-export type OpenTrackType = 'issue'
-| 'pull-request';
+export interface Step {
+  body: string;
+}
