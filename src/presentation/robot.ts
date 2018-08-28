@@ -11,6 +11,8 @@ export const robot = (app: Application) => {
   });
 
   app.on(GithubEvents.IssueComment.Created, async context => {
-    await events.onCommentCreated(context);
+    const event = await events.onCommentCreated(context);
+    console.log(event);
+    // TODO: Criar comentário ou criar issue baseado nesse evento acima!
   });
 };
