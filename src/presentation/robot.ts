@@ -1,27 +1,18 @@
 import { Application, Context } from 'probot';
-import { GithubEvents } from '@data/mappers/github-events';
 import { Container } from 'typedi';
-import { GithubPayloadMapper } from '@presentation/mappers/github-payload.mapper';
-import { TrackUseCase } from '@domain/usecases/track.usecases';
+import { GithubEvents } from '@data/mappers/github-events';
+import { Events } from './events';
 
 export const robot = (app: Application) => {
-  const trackUseCase = Container.get(TrackUseCase);
-  const payloadMapper = Container.get(GithubPayloadMapper);
+  const events: Events = Container.get(Events);
 
   app.on(GithubEvents.Issues.Opened, async (context: Context) => {
     app.log('Issue opened!');
   });
 
-  app.on(GithubEvents.IssueComment.Created, async (context: Context) => {
-    if (context.payload.comment.body === 'terminei') {
-      const dev = payloadMapper.mapUser(context.payload);
-      // const nextTrack = await trackUseCase.getNextTrack(dev);
-      createComment(context, 'teste');
-      trackUseCase.onNextTrackOpened(dev);
-    }
+  app.on(GithubEvents.IssueComment.Created, async context => {
+    const event = await events.onCommentCreated(context);
+    console.log(event);
+    // TODO: Criar comentário ou criar issue baseado nesse evento acima!
   });
-};
-
-const createComment = (context: Context, text: string) => {
-  context.payload.issues.createComment(context.issue({ body: text })); // It's not working... :(
 };

@@ -12,7 +12,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "pretty": true,
-    "strict": true,
     "sourceMap": true,
     "baseUrl": "./src",
     "outDir": "./dist",
