@@ -37,6 +37,7 @@
     "@types/lodash": "4.14.113",
     "@types/ioredis": "3.2.14",
     "@types/jest": "23.3.1",
+    "@octokit/webhooks": "5.0.0",
     "@taqtile/gulp-module-resolver": "0.2.2",
     "ts-jest": "23.1.4",
     "gulp": "3.9.1",
