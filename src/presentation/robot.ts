@@ -18,6 +18,7 @@ export const robot = (app: Application) => {
     if (context.isBot) {
       return;
     }
+
     const event = await events.onCommentCreated(context);
     githubEvents.openEvent(context, event);
   });

@@ -2,7 +2,7 @@ import { Track } from '@domain/entities';
 import { Event, EventType } from '@presentation/models';
 
 export function mapTrackToEvent(currentTrack: Track): Event {
-  if (currentTrack || currentTrack.steps.length === 0) {
+  if (!currentTrack || currentTrack.steps.length === 0) {
     return null;
   }
 
