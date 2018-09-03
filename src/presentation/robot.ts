@@ -11,7 +11,7 @@ export const robot = (app: Application) => {
 
   app.on(GithubEvents.Installation.Created, async (context: Context) => {
     app.log('Taqbot was installed!');
-    app.log(context);
+    createIssue(context);
   });
 
   app.on(GithubEvents.IssueComment.Created, async context => {
@@ -19,7 +19,23 @@ export const robot = (app: Application) => {
       return;
     }
     const event = await events.onCommentCreated(context);
-    console.log(event);
     githubEvents.openEvent(context, event);
   });
+
+  // Remover!
+  async function createIssue(context: Context) {
+    try {
+      const repo = context.payload.repositories[0];
+      const owner = repo.full_name.split('/')[0];
+
+      context.github.issues.create({
+        owner,
+        repo: repo.name,
+        title: 'Parabéns!',
+      });
+    } catch (error) {
+      return;
+    }
+  }
+
 };

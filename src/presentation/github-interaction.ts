@@ -36,6 +36,6 @@ export class GithubEventSender {
   }
 
   private getNextIssueText(link: string) {
-    return `[Clique neste link](${link}) para ir para a próxima tarefa`;
+    return `[Click here](${link}) to your next track`;
   }
 }
