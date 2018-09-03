@@ -11,3 +11,6 @@ We use [git](https://git-scm.com/)... a lot. If you don't feel confident in your
 - https://learngitbranching.js.org/
 
 BTW, we highly encourage training using the terminal.
+
+On the end of every task of this onboard, comment the word `Finish` on the issue to receive your next task (you can try reloading the page if it's taking too long).
+You can also comment the word `next`, in case you had to skip the current task.

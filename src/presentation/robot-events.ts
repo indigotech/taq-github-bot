@@ -10,6 +10,13 @@ const acceptedComments = ['finish', 'finished', 'next'];
 export class RobotEvents {
   constructor(private readonly useCase: NextStepUseCase) {}
 
+  async onAppInstalled(context): Promise<Event> {
+    const dev: DeveloperInput = mapFromWebhookToDeveloper(context.payload);
+    const track: Track = await this.useCase.execute(dev);
+
+    return mapTrackToEvent(track);
+  }
+
   async onCommentCreated(context): Promise<Event> {
     const isFinishComment: boolean = acceptedComments.some(it => it === context.payload.comment.body.toLowerCase());
 

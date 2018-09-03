@@ -1,6 +1,7 @@
 export enum EventType {
   CreateComment,
   CreateIssue,
+  CreateFirstIssue,
 }
 
 export interface EventData {
