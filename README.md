@@ -8,9 +8,6 @@
 # Install dependencies
 yarn install
 
-# Run typescript
-yarn build
-
 # Run the bot
 yarn start
 ```
