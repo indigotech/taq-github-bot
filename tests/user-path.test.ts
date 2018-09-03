@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { Container } from 'typedi';
 import { redisClient } from '@data/db/redis-client';
-import { Events } from '@presentation/events';
+import { RobotEvents } from '@presentation/robot-events';
 import { Event, EventType } from '@presentation/models';
 
 describe('Finish comment event', () => {
-  const events: Events = Container.get(Events);
+  const events: RobotEvents = Container.get(RobotEvents);
   const testUser = '6992731';
   const simulatedContext = { payload: require('./webhook-simulations/comment-finish.payload.json') };
 

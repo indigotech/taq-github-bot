@@ -1,18 +1,25 @@
 import { Application, Context } from 'probot';
 import { Container } from 'typedi';
 import { GithubEvents } from '@data/mappers/github-events';
-import { Events } from './events';
+import { RobotEvents } from '@presentation/robot-events';
+import { GithubEventSender } from '@presentation/github-interaction';
+
+const events: RobotEvents = Container.get(RobotEvents);
+const githubEvents: GithubEventSender = Container.get(GithubEventSender);
 
 export const robot = (app: Application) => {
-  const events: Events = Container.get(Events);
 
-  app.on(GithubEvents.Issues.Opened, async (context: Context) => {
-    app.log('Issue opened!');
+  app.on(GithubEvents.Installation.Created, async (context: Context) => {
+    app.log('Taqbot was installed!');
+    app.log(context);
   });
 
   app.on(GithubEvents.IssueComment.Created, async context => {
+    if (context.isBot) {
+      return;
+    }
     const event = await events.onCommentCreated(context);
     console.log(event);
-    // TODO: Criar comentário ou criar issue baseado nesse evento acima!
+    githubEvents.openEvent(context, event);
   });
 };

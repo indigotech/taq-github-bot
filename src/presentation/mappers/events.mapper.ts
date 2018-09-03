@@ -9,12 +9,12 @@ export function mapTrackToEvent(currentTrack: Track): Event {
   if (currentTrack.steps.length === 1) {
     return {
       type: EventType.CreateIssue,
-      issue: { title: currentTrack.title, body: currentTrack.steps[0].body},
+      data: { title: currentTrack.title, body: currentTrack.steps[0].body},
     };
   } else {
     return {
       type: EventType.CreateComment,
-      body: currentTrack.steps[currentTrack.steps.length - 1].body,
+      data: { body: currentTrack.steps[currentTrack.steps.length - 1].body },
     };
   }
 }
