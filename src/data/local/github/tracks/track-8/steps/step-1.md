@@ -16,4 +16,4 @@ This form should contain:
 All fields are required and should be validated:
 - name - should have only letters
 - email - valid email format
-- password - minimum of 4 characters
+- password - minimum of 7 characters, with at least one digit and one alphanumeric

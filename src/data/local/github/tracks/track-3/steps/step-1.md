@@ -11,7 +11,7 @@ Your screen should have a form containing:
   - [ ] is required
 
 - [ ] **a password input** that:
-  - [ ] must have at least 4 characters 
+  - [ ] password - minimum of 7 characters, with at least one digit and one alphanumeric
   - [ ] is required
 
 - [ ] **a submit button**
