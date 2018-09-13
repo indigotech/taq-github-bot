@@ -1,52 +1,48 @@
 import { Service } from 'typedi';
-import { Event, EventType } from '@presentation/models';
+import { Track } from '@domain/entities';
+
+const NextIssueText = link => `[Click here](${link}) for your next track`;
 
 @Service()
 export class GithubEventSender {
-  public openEvent(context, event: Event) {
-    if (!event) {
-      return;
+  private context;
+
+  async openEvent(context, track: Track) {
+    this.context = context;
+
+    const isFirstTrackAndStep = track.number === 0 && track.steps.length === 1;
+    if (isFirstTrackAndStep) {
+      await this.createFirstIssue(track.title, track.steps[0].body);
     }
 
-    switch (event.type) {
-      case EventType.CreateComment:
-        this.createComment(context, event.data.body);
-        break;
+    const isNewTrack = track.steps.length === 1;
+    if (isNewTrack) {
+      const createdIssue = await this.createIssue(track.title, track.steps[0].body);
+      this.createComment(NextIssueText(createdIssue.data.html_url));
+    }
 
-      case EventType.CreateIssue:
-        this.createIssue(context, event.data.title, event.data.body);
-        break;
-
-      case EventType.CreateFirstIssue:
-        this.createFirstIssue(context, event.data.title, event.data.body);
-        break;
-
-      default:
-        break;
+    const isNewStep = track.steps.length > 1;
+    if (isNewStep) {
+      this.createComment(track.steps[track.steps.length - 1].body);
     }
   }
 
-  private async createIssue(context, title: string, body: string) {
-    const params = context.issue(Object.assign(context.event, { title: title || 'Issue', body }));
+  private createIssue(title: string, body: string) {
+    const params = this.context.issue(Object.assign(this.context.event, { title: title || 'Issue', body }));
 
-    const createdIssue = await context.github.issues.create(params);
-    this.createComment(context, this.getNextIssueText(createdIssue.data.html_url));
+    return this.context.github.issues.create(params);
   }
 
-  private createComment(context, body: string) {
-    const params = context.issue(Object.assign(context.event, { body }));
+  private createComment(body: string) {
+    const params = this.context.issue(Object.assign(this.context.event, { body }));
 
-    context.github.issues.createComment(params);
+    this.context.github.issues.createComment(params);
   }
 
-  private async createFirstIssue(context, title: string, body: string) {
-    const fullNameSplit = context.payload.repositories[0].full_name.split('/');
+  private createFirstIssue(title: string, body: string) {
+    const fullNameSplit = this.context.payload.repositories[0].full_name.split('/');
     const params = { owner: fullNameSplit[0], repo: fullNameSplit[1], title, body };
 
-    await context.github.issues.create(params);
-  }
-
-  private getNextIssueText(link: string) {
-    return `[Click here](${link}) for your next track`;
+    return this.context.github.issues.create(params);
   }
 }
