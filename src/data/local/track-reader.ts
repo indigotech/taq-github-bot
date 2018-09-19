@@ -1,5 +1,5 @@
-import { Step, Track } from '@domain/entities';
-import { readAllFiles, readFile, readFolder } from '@domain/utils/file';
+import { Step, Track } from '@domain';
+import { readAllFiles, readFile, readFolder } from './file.utils';
 
 const TRACKS_FOLDER_PATH = (trackname?: string) => `src/data/local/github/tracks/${trackname || ''}`;
 const STEPS_FOLDER_NAME = '/steps';

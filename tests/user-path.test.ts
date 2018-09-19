@@ -1,10 +1,9 @@
 import 'reflect-metadata';
-import { redisClient } from '@data/db/redis-client';
+import * as Redis from 'ioredis';
 
 describe('Finish comment event', () => {
   const testUser = '6992731';
-  const simulatedFinishComment = { payload: require('./webhook-simulations/comment-finish.payload.json') };
-  const simulatedinstallation = { payload: require('./webhook-simulations/installation.json') };
+  const redisClient = new Redis(process.env.REDIS_URL);
 
   beforeAll(async () => {
     await redisClient.del(testUser);

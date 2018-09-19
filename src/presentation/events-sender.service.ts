@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { Track } from '@domain/entities';
+import { Track } from '@domain';
 
 const NextIssueText = link => `[Click here](${link}) for your next track`;
 
@@ -9,6 +9,7 @@ export class GithubEventSender {
 
   async openEvent(context, track: Track) {
     this.context = context;
+    console.log(this.context);
 
     const isFirstTrackAndStep = track.number === 0 && track.steps.length === 1;
     if (isFirstTrackAndStep) {

@@ -1,4 +1,4 @@
-import { DeveloperInput } from '@domain/entities';
+import { DeveloperInput } from '@domain';
 
 export const PayloadMapper = {
   mapToDeveloper(payload): DeveloperInput {
