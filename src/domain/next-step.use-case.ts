@@ -1,7 +1,8 @@
 import { Service } from 'typedi';
 import { DeveloperDataSource } from '@data/db';
 import { TrackDataSource } from '@data/local';
-import { Developer, DeveloperInput, getDeveloper, Track } from '@domain/entities';
+import { Developer, DeveloperInput, getDeveloper } from './developer.model';
+import { Track } from './track.model';
 
 @Service()
 export class NextStepUseCase {

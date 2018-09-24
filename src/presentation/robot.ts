@@ -1,17 +1,20 @@
-import { Application, Context } from 'probot';
+import { Application } from 'probot';
 import { Container } from 'typedi';
-import { GithubEvents } from '@data/mappers/github-events';
-import { GithubEventSender } from '@presentation/github-interaction';
-import { RobotEvents } from '@presentation/robot-events';
-
-const events: RobotEvents = Container.get(RobotEvents);
-const githubEvents: GithubEventSender = Container.get(GithubEventSender);
+import { DeveloperInput, NextStepUseCase, Track } from '@domain';
+import { GithubEventSender } from './events-sender.service';
+import { GithubEvents } from './github-events.constants';
+import { PayloadMapper } from './payload.mapper';
 
 export const robot = (app: Application) => {
+  const eventsSender: GithubEventSender = Container.get(GithubEventSender);
+  const useCase: NextStepUseCase = Container.get(NextStepUseCase);
 
-  app.on(GithubEvents.Installation.Created, async (context: Context) => {
-    const event = await events.onAppInstalled(context);
-    githubEvents.openEvent(context, event);
+  app.on(GithubEvents.Installation.Created, async context => {
+
+    const dev: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
+    const track: Track = await useCase.execute(dev);
+
+    eventsSender.openEvent(context, track);
   });
 
   app.on(GithubEvents.IssueComment.Created, async context => {
@@ -19,7 +22,14 @@ export const robot = (app: Application) => {
       return;
     }
 
-    const event = await events.onCommentCreated(context);
-    githubEvents.openEvent(context, event);
+    const comment = context.payload.comment;
+    const isFinishComment: boolean = comment && comment.body.match(/finish|next*/i);
+
+    if (isFinishComment) {
+      const dev: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
+      const track: Track = await useCase.execute(dev);
+
+      eventsSender.openEvent(context, track);
+    }
   });
 };

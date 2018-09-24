@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import { copyDeep } from '@data/local/track.utils';
-import { Track } from '@domain/entities';
-import { createTracksFromFolder } from './github';
+import { Track } from '@domain';
+import { createTracksFromFolder } from './track-reader';
 
 @Service()
 export class TrackDataSource {
