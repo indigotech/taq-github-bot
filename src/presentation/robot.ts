@@ -12,9 +12,7 @@ export const robot = (app: Application) => {
   app.on(GithubEvents.Installation.Created, async context => {
 
     const dev: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
-    console.log('Dev', dev);
     const track: Track = await useCase.execute(dev);
-    console.log('Track', track);
 
     eventsSender.openEvent(context, track);
   });

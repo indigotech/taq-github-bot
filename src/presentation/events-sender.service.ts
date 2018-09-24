@@ -1,15 +1,15 @@
 import { Service } from 'typedi';
 import { Track } from '@domain';
+import { Context } from 'probot';
 
 const NextIssueText = link => `[Click here](${link}) for your next track`;
 
 @Service()
 export class GithubEventSender {
-  private context;
+  private context: Context;
 
-  async openEvent(context, track: Track) {
+  async openEvent(context: Context, track: Track) {
     this.context = context;
-    console.log(this.context);
 
     const isFirstTrackAndStep = track.number === 0 && track.steps.length === 1;
     if (isFirstTrackAndStep) {

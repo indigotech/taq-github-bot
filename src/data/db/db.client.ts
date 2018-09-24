@@ -11,7 +11,7 @@ export class DBClient {
       await this.redisClient.set(key, JSON.stringify(obj));
       return true;
     } catch (e) {
-      console.log(e);
+      console.error(e);
       return false;
     }
   }

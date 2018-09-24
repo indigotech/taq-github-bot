@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import * as Redis from 'ioredis';
+import Redis from 'ioredis';
 import Container from 'typedi';
 import { REDIS } from '@data/db';
 import { robot } from '@presentation/robot';
