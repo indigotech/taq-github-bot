@@ -1,9 +1,13 @@
-export interface Track {
+export interface Step {
+  body: string;
+}
+
+export class Track {
   number: number;
   title: string;
   steps: Step[];
-}
 
-export interface Step {
-  body: string;
+  increment(): Track {
+    return null;
+  }
 }
