@@ -1,13 +1,14 @@
 export interface DeveloperInput {
   name: string;
-  githubId: number;
+  developerId: number;
+}
+
+export interface DeveloperProgress {
+  track: number;
+  step: number;
+  completed: number; // [0,1]
 }
 
 export interface Developer extends DeveloperInput {
-  currentTrack: number;
-  currentStep: number;
-}
-
-export function getDeveloper(input: DeveloperInput, track?: number, step?: number): Developer {
-  return { ...input, currentTrack: track || 0, currentStep: step || 0 };
+  progress: DeveloperProgress;
 }

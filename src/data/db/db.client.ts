@@ -1,10 +1,11 @@
+import IORedis from 'ioredis';
 import { Inject, Service } from 'typedi';
 
 export const REDIS = 'REDIS';
 
 @Service()
 export class DBClient {
-  constructor(@Inject(REDIS) private readonly redisClient) {}
+  constructor(@Inject(REDIS) private readonly redisClient: IORedis.Redis) {}
 
   async setObject(key: string, obj: any): Promise<boolean> {
     try {
