@@ -1,5 +1,6 @@
 import { Service } from 'typedi';
 import { RobotError } from '@core';
+import { MathUtils } from '@core/math.utils';
 import { TrackDataSource } from '@data/local';
 import { DeveloperProgress } from './developer.model';
 
@@ -22,7 +23,7 @@ export class NextProgressUseCase {
       throw new RobotError(500, 'Error getting next progress.');
     }
 
-    progress.completed = progress.completed + this.trackDataSource.incrementProgressStep;
+    progress.completed = MathUtils.round(progress.completed + this.trackDataSource.incrementProgressStep, 4);
 
     return Promise.resolve(progress);
   }

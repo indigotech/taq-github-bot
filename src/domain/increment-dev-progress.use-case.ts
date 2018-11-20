@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { RobotError } from '@core';
+import { MathUtils, RobotError } from '@core';
 import { DeveloperDataSource } from '@data/db';
 import { TrackDataSource } from '@data/local';
 import { Developer, DeveloperProgress } from '@domain';
@@ -36,7 +36,7 @@ export class IncrementDevProgressUseCase {
     return {
       track: 0,
       step: 0,
-      completed: this.trackDataSource.incrementProgressStep,
+      completed: MathUtils.round(this.trackDataSource.incrementProgressStep, 4),
     };
   }
 }

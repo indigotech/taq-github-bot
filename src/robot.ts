@@ -1,7 +1,7 @@
 import { Application } from 'probot';
 import { Service } from 'typedi';
-import { CommentReceiver, InstallationReceiver } from '@presentation';
 import { GithubEvents } from './github-events.constants';
+import { CommentReceiver, InstallationReceiver } from './presentation';
 
 @Service()
 export class Robot {

@@ -1,6 +1,6 @@
-import { Service } from 'typedi';
+import { Inject, Service } from 'typedi';
 import { Track } from '@domain';
-import { createTracksFromFolder } from './track-reader';
+import { TRACKS } from './track.configure';
 
 @Service()
 export class TrackDataSource {
@@ -8,8 +8,8 @@ export class TrackDataSource {
   readonly totalSteps: number;
   readonly incrementProgressStep: number;
 
-  constructor() {
-    this.tracks = Object.freeze(createTracksFromFolder());
+  constructor(@Inject(TRACKS) tracks: Track[]) {
+    this.tracks = Object.freeze(tracks);
     this.totalSteps = this.calculateTotalSteps();
     this.incrementProgressStep = Math.round(1 / this.totalSteps * 10000) / 10000;
   }

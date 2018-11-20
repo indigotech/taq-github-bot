@@ -1,10 +1,9 @@
 import 'reflect-metadata';
-import IORedis from 'ioredis';
 import Container from 'typedi';
-import { REDIS } from '@data/db';
 import { Robot } from './robot';
+import { configureRobot } from './robot.configure';
 
-Container.set(REDIS, new IORedis(process.env.REDIS_DB_PARAM));
+configureRobot();
 const robot = Container.get(Robot);
 
 export = robot.webhookReceiver;

@@ -1,10 +1,17 @@
+import { Container } from 'typedi';
 import { Step, Track } from '@domain';
 import { readAllFiles, readFile, readFolder } from './file.utils';
+
+export const TRACKS = 'TRACKS';
+
+export function configureTracks() {
+  Container.set(TRACKS, createTracksFromFolder());
+}
 
 const TRACKS_FOLDER_PATH = (trackname?: string) => `src/data/local/github/tracks/${trackname || ''}`;
 const STEPS_FOLDER_NAME = '/steps';
 
-export function createTracksFromFolder(): Track[] {
+function createTracksFromFolder(): Track[] {
   try {
     const trackNames = readFolder(TRACKS_FOLDER_PATH())
       .filter(dirname => dirname.startsWith('track-'));

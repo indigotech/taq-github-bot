@@ -5,4 +5,8 @@ export const REDIS_CLIENT_TEST = 'REDIS_CLIENT_TEST';
 
 export class DbSeed {
   readonly redisClient: IORedis.Redis = Container.get(REDIS_CLIENT_TEST);
+
+  disconnect() {
+    this.redisClient.disconnect();
+  }
 }
