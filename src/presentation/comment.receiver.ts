@@ -1,6 +1,8 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
-import { DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase } from '@domain';
+import {
+  DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase,
+} from '@domain';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
 
@@ -9,6 +11,7 @@ export class CommentReceiver extends Receiver {
   constructor(
     private readonly hasFinishedUseCase: HasFinishedUseCase,
     private readonly incrementProgressUseCase: IncrementDeveloperProgressUseCase,
+    private readonly shouldIncrementDevProgressUseCase: ShouldIncrementDevProgressUseCase,
   ) {
     super();
   }
@@ -18,15 +21,6 @@ export class CommentReceiver extends Receiver {
       return;
     }
 
-    const comment = context.payload.comment;
-    const isFinishComment: boolean = comment && comment.body.match(/finish|next*/i);
-
-    if (isFinishComment) {
-      this.incrementProgress(context);
-    }
-  }
-
-  private async incrementProgress(context: Context) {
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
     const hasAlreadyFinished = await this.hasFinishedUseCase.execute(devInput.developerId);
 
@@ -35,10 +29,20 @@ export class CommentReceiver extends Receiver {
       return;
     }
 
-    const developer = await this.incrementProgressUseCase.execute(devInput.developerId, context.payload.issue.id);
+    const comment = context.payload.comment;
 
-    if (developer) { // will be null if wrong issue
-      this.eventsSender.openEvent(context, developer);
+    const shouldIncrementProgress =
+      await this.shouldIncrementDevProgressUseCase
+        .execute(devInput.developerId, context.payload.issue.id, comment.body);
+
+    if (shouldIncrementProgress) {
+      this.incrementProgress(context, devInput);
     }
+  }
+
+  private async incrementProgress(context, devInput: DeveloperInput) {
+    const developer = await this.incrementProgressUseCase.execute(devInput.developerId);
+
+    this.eventsSender.openEvent(context, developer);
   }
 }
