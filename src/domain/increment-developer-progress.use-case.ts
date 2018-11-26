@@ -13,23 +13,27 @@ export class IncrementDeveloperProgressUseCase {
     private readonly nextProgressUseCase: IncrementProgressUseCase,
   ) { }
 
-  async execute(developerId: number): Promise<Developer> {
+  async execute(developerId: number, lastIssueId: number): Promise<Developer> {
     const developer: Developer = await this.developerDataSource.get(developerId);
 
     if (!developer) {
       throw new RobotError(404, 'Developer not found');
     }
 
-    const isFirstProgress: boolean = !developer.progress;
-    if (isFirstProgress) {
-      developer.progress = this.createFirstProgress();
+    if (lastIssueId === developer.lastIssueId) {
+      const isFirstProgress: boolean = !developer.progress;
+      if (isFirstProgress) {
+        developer.progress = this.createFirstProgress();
+      } else {
+        developer.progress = await this.nextProgressUseCase.execute(developer.progress);
+      }
+
+      await this.developerDataSource.createOrUpdate(developer);
+      return developer;
     } else {
-      developer.progress = await this.nextProgressUseCase.execute(developer.progress);
+      // wrong issue
+      return null;
     }
-
-    await this.developerDataSource.createOrUpdate(developer);
-
-    return developer;
   }
 
   private createFirstProgress(): DeveloperProgress {

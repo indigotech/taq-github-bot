@@ -35,8 +35,10 @@ export class CommentReceiver extends Receiver {
       return;
     }
 
-    const developer = await this.incrementProgressUseCase.execute(devInput.developerId);
+    const developer = await this.incrementProgressUseCase.execute(devInput.developerId, context.payload.issue.id);
 
-    this.eventsSender.openEvent(context, developer);
+    if (developer) { // will be null if wrong issue
+      this.eventsSender.openEvent(context, developer);
+    }
   }
 }

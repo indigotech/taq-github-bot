@@ -2,13 +2,20 @@ import { Context } from 'probot';
 import { Service } from 'typedi';
 import { Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track } from '@domain';
 import { RobotStrings } from './robot.strings';
+import { DeveloperDataSource } from '@data/db';
 
 @Service()
 export class GithubEventSender {
   constructor(
+    private readonly developerDataSource: DeveloperDataSource,
     private readonly getTracksUseCase: GetTracksUseCase,
+<<<<<<< HEAD
     private readonly nextProgressUseCase: IncrementProgressUseCase,
   ) {}
+=======
+    private readonly nextProgressUseCase: NextProgressUseCase,
+  ) { }
+>>>>>>> Check if the commented issue was the correct one; lastIssueId in model
 
   async openEvent(context: Context, developer: Developer) {
     const tracks = await this.getTracksUseCase.exec();
@@ -19,7 +26,9 @@ export class GithubEventSender {
     if (isNewUser) {
       context.log(`Creating first track for ${developer.name}...`);
       trackToSend = tracks[0];
-      await this.createFirstIssue(context, trackToSend.title, trackToSend.steps[0].body);
+      const createdIssue = await this.createFirstIssue(context, trackToSend.title, trackToSend.steps[0].body);
+      developer.lastIssueId = createdIssue.data.id;
+      this.developerDataSource.createOrUpdate(developer);
       return;
     }
 
@@ -37,6 +46,8 @@ export class GithubEventSender {
       context.log(`Creating new track for ${developer.name}...`);
       trackToSend = tracks[nextProgress.track];
       const createdIssue = await this.createIssue(context, trackToSend.title, trackToSend.steps[0].body);
+      developer.lastIssueId = createdIssue.data.id;
+      this.developerDataSource.createOrUpdate(developer);
       this.createComment(context, RobotStrings.NextTrack(createdIssue.data.html_url));
       return;
     }
