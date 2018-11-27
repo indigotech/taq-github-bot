@@ -24,6 +24,8 @@
       "node_modules/@types"
     ],
     "paths": {
+      "@core": ["./core"],
+      "@core/*": ["./core/*"],
       "@data": ["./data"],
       "@data/*": ["./data/*"],
       "@domain": ["./domain/"],

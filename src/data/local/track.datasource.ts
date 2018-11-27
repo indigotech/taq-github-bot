@@ -1,27 +1,21 @@
-import { Service } from 'typedi';
-import { copyDeep } from '@data/local/track.utils';
+import { Inject, Service } from 'typedi';
 import { Track } from '@domain';
-import { createTracksFromFolder } from './track-reader';
+import { TRACKS } from './track.configure';
 
 @Service()
 export class TrackDataSource {
-  private readonly tracks: Track[];
+  readonly tracks: ReadonlyArray<Track>;
+  readonly totalSteps: number;
+  readonly incrementProgressStep: number;
 
-  constructor() {
-    this.tracks = createTracksFromFolder();
+  constructor(@Inject(TRACKS) tracks: Track[]) {
+    this.tracks = Object.freeze(tracks);
+    this.totalSteps = this.calculateTotalSteps();
+    this.incrementProgressStep = Math.round(1 / this.totalSteps * 10000) / 10000;
   }
 
-  getFirstTrack(): Track {
-    return this.initiateTrack(0);
-  }
-
-  initiateTrack(index: number): Track {
-    const track = copyDeep<Track>(this.tracks[index]);
-    track.steps = track.steps.slice(0, 1);
-    return track;
-  }
-
-  getAllTracks(): Track[] {
-    return copyDeep<Track[]>(this.tracks);
+  private calculateTotalSteps(): number {
+    const sumSteps = (totalStepsAcc: number, currentTrack: Track) => totalStepsAcc + currentTrack.steps.length;
+    return this.tracks.reduce<number>(sumSteps, 0);
   }
 }

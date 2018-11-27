@@ -1,9 +1,9 @@
 import 'reflect-metadata';
-import Redis from 'ioredis';
 import Container from 'typedi';
-import { REDIS } from '@data/db';
-import { robot } from '@presentation/robot';
+import { Robot } from './robot';
+import { configureRobot } from './robot.configure';
 
-Container.set(REDIS, new Redis(process.env.REDIS_URL));
+configureRobot();
+const robot = Container.get(Robot);
 
-export = robot;
+export = robot.webhookReceiver;
