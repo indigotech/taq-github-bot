@@ -9,6 +9,6 @@ export function configureRobot() {
 }
 
 function configureDB() {
-  Container.set(REDIS, new IORedis(process.env.REDIS_DB_PARAM));
+  Container.set(REDIS, new IORedis(process.env.REDIS_URL));
   console.info('Connected to Database...');
 }
