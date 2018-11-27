@@ -5,7 +5,7 @@ import { TrackDataSource } from '@data/local';
 import { DeveloperProgress } from './developer.model';
 
 @Service()
-export class NextProgressUseCase {
+export class IncrementProgressUseCase {
   constructor(private readonly trackDataSource: TrackDataSource) {}
 
   execute(progress: DeveloperProgress): Promise<DeveloperProgress> {

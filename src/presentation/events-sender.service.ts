@@ -1,13 +1,13 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
-import { Developer, DeveloperProgress, GetTracksUseCase, NextProgressUseCase, Track } from '@domain';
+import { Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track } from '@domain';
 import { RobotStrings } from './robot.strings';
 
 @Service()
 export class GithubEventSender {
   constructor(
     private readonly getTracksUseCase: GetTracksUseCase,
-    private readonly nextProgressUseCase: NextProgressUseCase,
+    private readonly nextProgressUseCase: IncrementProgressUseCase,
   ) {}
 
   async openEvent(context: Context, developer: Developer) {

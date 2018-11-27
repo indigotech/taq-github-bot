@@ -6538,10 +6538,15 @@ ts-jest@23.10.4:
     semver "^5.5"
     yargs-parser "10.x"
 
-tsconfig-paths@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.5.0.tgz#a447c7721e49281af97343d9a850864e949a0b51"
-  integrity sha512-JYbN2zK2mxsv+bDVJCvSTxmdrD4R1qkG908SsqqD8TWjPNbSOtko1mnpQFFJo5Rbbc2/oJgDU9Cpkg/ZD7wNYg==
+tsconfig-paths-jest@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths-jest/-/tsconfig-paths-jest-0.0.1.tgz#a977a5648c434037b69884e644ce1b82bf025b68"
+  integrity sha1-qXelZIxDQDe2mITmRM4bgr8CW2g=
+
+tsconfig-paths@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.7.0.tgz#02ae978db447b22e09dafcd4198be95c4885ceb2"
+  integrity sha512-7iE+Q/2E1lgvxD+c0Ot+GFFmgmfIjt/zCayyruXkXQ84BLT85gHXy0WSoQSiuFX9+d+keE/jiON7notV74ZY+A==
   dependencies:
     "@types/json5" "^0.0.29"
     deepmerge "^2.0.1"

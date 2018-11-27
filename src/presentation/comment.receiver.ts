@@ -1,6 +1,6 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
-import { DeveloperInput, HasFinishedUseCase, IncrementDevProgressUseCase } from '@domain';
+import { DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase } from '@domain';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
 
@@ -8,7 +8,7 @@ import { Receiver } from './receiver';
 export class CommentReceiver extends Receiver {
   constructor(
     private readonly hasFinishedUseCase: HasFinishedUseCase,
-    private readonly incrementProgressUseCase: IncrementDevProgressUseCase,
+    private readonly incrementProgressUseCase: IncrementDeveloperProgressUseCase,
   ) {
     super();
   }

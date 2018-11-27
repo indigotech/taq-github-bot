@@ -3,14 +3,14 @@ import { MathUtils, RobotError } from '@core';
 import { DeveloperDataSource } from '@data/db';
 import { TrackDataSource } from '@data/local';
 import { Developer, DeveloperProgress } from '@domain';
-import { NextProgressUseCase } from './next-progress.use-case';
+import { IncrementProgressUseCase } from './increment-progress.use-case';
 
 @Service()
-export class IncrementDevProgressUseCase {
+export class IncrementDeveloperProgressUseCase {
   constructor(
     private readonly developerDataSource: DeveloperDataSource,
     private readonly trackDataSource: TrackDataSource,
-    private readonly nextProgressUseCase: NextProgressUseCase,
+    private readonly nextProgressUseCase: IncrementProgressUseCase,
   ) { }
 
   async execute(developerId: number): Promise<Developer> {

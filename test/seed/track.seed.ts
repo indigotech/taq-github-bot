@@ -10,7 +10,7 @@ export class TrackSeed {
 }
 
 function createTrack(n: number, stepsNumber: number = 3) {
-  const stepPrefix = 'Step ' + n + '-';
+  const stepPrefix = `Step ${n} - `;
   const steps: Step[] = new Array(stepsNumber).fill(null).map((_, i: number) => ({
     body: stepPrefix + i,
   }));
