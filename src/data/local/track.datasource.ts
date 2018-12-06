@@ -1,4 +1,5 @@
 import { Inject, Service } from 'typedi';
+import { MathUtils } from '@core';
 import { Track } from '@domain';
 import { TRACKS } from './track.configure';
 
@@ -11,7 +12,7 @@ export class TrackDataSource {
   constructor(@Inject(TRACKS) tracks: Track[]) {
     this.tracks = Object.freeze(tracks);
     this.totalSteps = this.calculateTotalSteps();
-    this.incrementProgressStep = Math.round(1 / this.totalSteps * 10000) / 10000;
+    this.incrementProgressStep = MathUtils.round(1 / this.totalSteps, 4);
   }
 
   private calculateTotalSteps(): number {

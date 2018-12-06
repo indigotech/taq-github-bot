@@ -21,15 +21,13 @@ export class IncrementDeveloperProgressUseCase {
     }
 
     const isFirstProgress: boolean = !developer.progress;
-    if (isFirstProgress) {
-      developer.progress = this.createFirstProgress();
-    } else {
-      developer.progress = await this.nextProgressUseCase.execute(developer.progress);
-    }
 
-    await this.developerDataSource.createOrUpdate(developer);
+    const progress = isFirstProgress ?
+      this.createFirstProgress() :
+      await this.nextProgressUseCase.execute(developer.progress);
 
-    return developer;
+    await this.developerDataSource.update(developerId, { progress });
+    return { ...developer, progress };
   }
 
   private createFirstProgress(): DeveloperProgress {

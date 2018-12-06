@@ -1,6 +1,8 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
-import { Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track } from '@domain';
+import {
+  Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track, UpdateDeveloperIssueUseCase,
+} from '@domain';
 import { RobotStrings } from './robot.strings';
 
 @Service()
@@ -8,7 +10,8 @@ export class GithubEventSender {
   constructor(
     private readonly getTracksUseCase: GetTracksUseCase,
     private readonly nextProgressUseCase: IncrementProgressUseCase,
-  ) {}
+    private readonly updateDeveloperIssue: UpdateDeveloperIssueUseCase,
+  ) { }
 
   async openEvent(context: Context, developer: Developer) {
     const tracks = await this.getTracksUseCase.exec();
@@ -19,7 +22,8 @@ export class GithubEventSender {
     if (isNewUser) {
       context.log(`Creating first track for ${developer.name}...`);
       trackToSend = tracks[0];
-      await this.createFirstIssue(context, trackToSend.title, trackToSend.steps[0].body);
+      const createdIssue = await this.createFirstIssue(context, trackToSend.title, trackToSend.steps[0].body);
+      this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
       return;
     }
 
@@ -37,6 +41,7 @@ export class GithubEventSender {
       context.log(`Creating new track for ${developer.name}...`);
       trackToSend = tracks[nextProgress.track];
       const createdIssue = await this.createIssue(context, trackToSend.title, trackToSend.steps[0].body);
+      this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
       this.createComment(context, RobotStrings.NextTrack(createdIssue.data.html_url));
       return;
     }

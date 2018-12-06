@@ -11,4 +11,5 @@ export interface DeveloperProgress {
 
 export interface Developer extends DeveloperInput {
   progress: DeveloperProgress;
+  issueId: number;
 }
