@@ -31,9 +31,9 @@ export class CommentReceiver extends Receiver {
 
     const comment = context.payload.comment;
 
-    const shouldIncrementProgress =
-      await this.shouldIncrementDevProgressUseCase
-        .execute(devInput.developerId, context.payload.issue.id, comment.body);
+    const commentInfo = { developerId: devInput.developerId, issueId: context.payload.issue.id, comment: comment.body };
+
+    const shouldIncrementProgress = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
 
     if (shouldIncrementProgress) {
       this.incrementProgress(context, devInput);
