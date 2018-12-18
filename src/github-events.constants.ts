@@ -22,5 +22,7 @@ export const GithubEvents = {
     Opened: 'pull_request.opened',
   },
 
+  Push: 'push',
+
   // Add more Github events if needed
 };
