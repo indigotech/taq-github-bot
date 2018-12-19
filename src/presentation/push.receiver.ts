@@ -9,7 +9,7 @@ export class PushReceiver extends Receiver {
     const ref = context.payload.ref;
     const added = context.payload.head_commit.added;
     const modified = context.payload.head_commit.modified;
-    const removed = context.payload.removed;
+    const removed = context.payload.head_commit.removed;
     console.log(ref, added, modified, removed);
   }
 }
