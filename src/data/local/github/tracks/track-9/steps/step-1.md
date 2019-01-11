@@ -1,47 +1,13 @@
-Now that you have your form, it's time to send data to the server. Your task now is to **integrate your app with the server**.
+# Step 2 - Challenge: edit a user
 
-# Step 1 - Integrate the app with the server
+Add an edit screen to your application. The challenge here is to re-use code as much as possible while keeping things simple.
 
-We are going to integrate the app with the server by sending the data you've collected in the form and checking the response.
+Remember, it's preferable to unify a code than to copy/paste multiple times, but it's better to duplicate a code than to make it much more complex.
 
 ## Endpoint
 
-The endpoint you'll consume is this one:
+The endpoint is the same, but using a `PUT` instead. Additionally, the body sent should contain the user's id.
 
-```bash
-POST https://tq-template-server-sample.herokuapp.com/users
-```
+## Behavior
 
-And the body sent should be as follow:
-
-```ts
-{
-  name: string;
-  password: string;
-  email: string;
-  role: string;
-}
-```
-
-**Important**
-The role should have one of the following values: `admin`, `user`.
-
-## Behaviour
-
-Your app should behave as follow:
-
-### Before submitting
-
-Your form should not allow the user to submit the creation request if there is an invalid/missing piece of data (i.e missing name, invalid email format, etc).
-
-Following good UX practices, each wrong form should be highlighted and a message should appear below the corresponding form.
-
-### While submitting
-
-In order to avoid submitting more than once, your app should block the submit button and it should show a loading. It can be a full page loading or a button loading.
-
-### After submitting
-
-If the user was successfully created, your app should navigate back to the list and show a success message.
-
-Otherwise, it should remain on the form page and display the message received from the server.
+It's very similar to the creation behavior, except that instead of returning to the user list, it should go back to the user detail.

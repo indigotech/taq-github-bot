@@ -1,3 +1,3 @@
-# Step 2 - Pull Request
+# Step 3 - Challenge: Loading
 
-Once you've done, open a PR.
+Add an activity indicator inside the button, to indicate to the user that the login is in progress. This can be used later.

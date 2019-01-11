@@ -1,8 +1,6 @@
-## Step 2 - Authenticate web requests
+## Step 3 - Challenge!!!
 
-In order to consume this endpoint, you have to add an authentication data in your request.
+For security reasons, we generate authentication tokens (in server-side) with a small window of validation (i.e the token is valid for 30min). In order to keep the user logged in, we must renew the token if it's no longer valid.
 
-For our endpoints, we are using the `Authorization` header with the token you've received from login request. (You can check a little bit more about it [here](https://www.tutorialspoint.com/http/http_header_fields.htm)).
-
-### Response format
-In order to get the response format, we suggest using [Postman](https://www.getpostman.com/). Although, you **don't need to use Postman!** There are a lot of tools out there which can show you the response of a web service - even **Chrome** can do that! So choose your favorite one 👍 
+That said, your bonus task is to implement a general mechanism (which will be used every time you made a request) that is able to **renew your token** when it's necessary.
+**Tip**: Search for `web interceptors` in language/technology you are using. 👍 

@@ -1,11 +1,7 @@
-Login is done. Now, let's make the user list UI.
+# Step 2 - Challenge: Add pagination to the list
 
-# Step 1 - Create List Users
+Generally, lists with a minimum amount items are paginated. We currently use 3 types of pagination:
 
-This screen will list all registered users. Each cell should contain:
-  - username
-  - user role
-
-You can use your imagination to create a beautiful list! Just try to follow the same visual guide you used to create `login screen`.
-
-**Tip**: For this task, you don't need to consume any service. For now, you can just mock the users and the real data will come in next task  😉.
+- classical - displaying page numbers, eventually a next and previous button ([reference](https://dribbble.com/shots/4144198-Daily-UI-085-Pagination))
+- infinite list with next button - at the end of the list, a button with "load more" ([reference](https://dribbble.com/shots/9331-Load-More-Channels))
+- infinite scroll - the app automatically loads the next page of the user is near the end of the list ([reference](https://dribbble.com/shots/3567980-Infinite-Feed))

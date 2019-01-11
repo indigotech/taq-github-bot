@@ -1,18 +1,8 @@
-Now that you have the UI ready, let's populate with real data from the server. 
-In this track, you will **consume a web service** and **authenticate your web requests**
+## Step 2 - Authenticate web requests
 
-## Step 1 - Consume web service
+In order to consume this endpoint, you have to add an authentication data in your request.
 
-So, the endpoint to be consumed is this one:
+For our endpoints, we are using the `Authorization` header with the token you've received from login request. (You can check a little bit more about it [here](https://www.tutorialspoint.com/http/http_header_fields.htm)).
 
-```
-GET https://tq-template-server-sample.herokuapp.com/users
-```
-
-In this endpoint, you can pass a query param to specify the pagination, like this:
-
-```
-https://tq-template-server-sample.herokuapp.com/users?pagination={"page": 0 , "window": 10}
-```
-
-Notice that you probably **won't need to construct the endpoint with query params manually**. Generally, you use a **library or native resource** that abstracts these manipulations for you.
+### Response format
+In order to get the response format, we suggest using [Postman](https://www.getpostman.com/). Although, you **don't need to use Postman!** There are a lot of tools out there which can show you the response of a web service - even **Chrome** can do that! So choose your favorite one 👍 

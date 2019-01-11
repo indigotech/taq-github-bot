@@ -1,3 +1,5 @@
-# Step 2 - Create a simple Hello World
+# Step 3 - Create a Pull Request
 
-- [ ] Follow a tutorial of your choice to create a minimal "Hello World" project
+- [ ] Open a Pull Request with your modifications
+
+If you don't remember how to open a Pull Request, check out the references in the previous issues.

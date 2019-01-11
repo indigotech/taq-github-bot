@@ -1,9 +1,5 @@
-# Step 2 - Create a new Branch
+# Step 3 - Set default branch
 
-To create a branch, go to Terminal in your Project's folder and type this command:
+Set the default branch of your repository to the `develop` branch.
 
-```batch
-git checkout -b "name_of_your_branch"
-```
-
-With this, you'll create a new branch and change the current working branch to this new one. Your new branch should be named `develop`
+The Github has a really [easy guide](https://help.github.com/articles/setting-the-default-branch/) for doing this. Thank's Github ❤️ 

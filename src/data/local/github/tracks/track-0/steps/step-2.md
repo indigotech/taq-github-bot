@@ -1,14 +1,12 @@
-# Step 2 - Clone this repository
+# Step 3 - Update README.md
 
-You can follow these steps in order to clone this repository:
+This one is easy. All you have to do is add the following topics to README.md file. Just remember that these modifications must be done in **local README** file you just cloned. With that in mind, add these topics in README.md:
 
-- Login to GitHub (if you don't have an account, create one [here](https://github.com/join)
-- Go to this repository root page
-- Click on **clone or download** green button
-- Copy the URL and type the following command in **Terminal**:
+  - Change project's name (pick one kk)
+  - Environment and tools need to develop
+  - Configurations
+  - Steps to run and debug
+  - Build process
+  - Gotcha's
 
-```bash
-$ git clone repository_link
-```
-
-When you're done, the git will download (clone) the entire project into the folder you're running the terminal.
+Since you don't know what are the specifications of your project, you won't be able to fill in all data, but you will have a basic structure to fill in later.
