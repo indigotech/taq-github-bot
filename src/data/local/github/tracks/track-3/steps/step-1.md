@@ -2,6 +2,8 @@ With everything set up, it's coding time! (finally)
 
 Your task now is to create a **Login Screen**.
 
+**(Re-)Note:** because this is a new task, don't forget to open a new branch to do it.
+
 # Step 1 - Login screen
 
 Your screen should have a form containing:
