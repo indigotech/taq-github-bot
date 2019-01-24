@@ -1,6 +1,6 @@
 # Step 4 - Update README.md
 
-Do you remmember we created the README.md of this project before? Now that you have a project created on your technology stack, you can update it with some information.
+Do you remember we created the README.md of this project before? Now that you have a project created on your technology stack, you can update it with some information.
 
 We are considering this is a new task, so it's better not to do it on the same branch of the previous one (`feature/setup`), because that branch has a pull request being reviewed.
 
@@ -10,4 +10,4 @@ We are considering this is a new task, so it's better not to do it on the same b
 - Update the `Steps to run and debug` section with information on how to run your project (what commands should the developer use?)
 - Open other pull request with these changes on README.md
 
-This is good practice on projects to help other developers contribute with the project.
+This is good practice on projects to help other developers contribute with it.
