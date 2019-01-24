@@ -6,7 +6,7 @@ Since the `feature/setup` is (probably) still being reviewed, we need to create 
 
 - Go to develop branch: `git checkout develop`
 - Open a new branch called `docs/update-readme`
-- Update the `Environment and tools` section with some data about... well... your machine environment and the tools you're using. Things like the Node version you're using, the Android Studio version, the language you're developing with and any other relevant data for a developer to getting started in your project.
+- Update the `Environment and tools` section with some data about... well... your machine environment and the tools you're using. Things like the Node version, the Android Studio version, the programming language any other relevant data for a developer to getting started in your project.
 - The `Steps to run and debug` section is usually filled with information about how to run your project, such as what commands should the developer use or which configurations should he/she turn on/off before executing your project.
 
 After that, open a pull request with these README.md changes.
