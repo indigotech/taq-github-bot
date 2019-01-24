@@ -1,13 +1,12 @@
 # Step 4 - Update README.md
 
-Do you remember we created the README.md of this project before? Now that you have a project created on your technology stack, you can update it with some information.
+Do you remember we created the README.md of this project before? Now that you have a project created on your technology stack, it's time to update it with some piece of information.
 
-We are considering this is a new task, so it's better not to do it on the same branch of the previous one (`feature/setup`), because that branch has a pull request being reviewed.
+Since the `feature/setup` is (probably) still being reviewed, we need to create a new branch for this current step's task. Let's call this new branch `docs/update-readme`. Here's what you'll need to do:
 
 - Go to develop branch: `git checkout develop`
 - Open a new branch called `docs/update-readme`
-- Update the `Environment and tools` section with some info about the developer machine environment, like node version for React, android studio version for Android, xcode version for iOS, and other relevant info for a developer to be able to run your project
-- Update the `Steps to run and debug` section with information on how to run your project (what commands should the developer use?)
-- Open other pull request with these changes on README.md
+- Update the `Environment and tools` section with some data about... well... your machine environment and the tools you're using. Things like the Node version you're using, the Android Studio version, the language you're developing with and any other relevant data for a developer to getting started in your project.
+- The `Steps to run and debug` section is usually filled with information about how to run your project, such as what commands should the developer use or which configurations should he/she turn on/off before executing your project.
 
-This is good practice on projects to help other developers contribute with it.
+After that, open a pull request with these README.md changes.
