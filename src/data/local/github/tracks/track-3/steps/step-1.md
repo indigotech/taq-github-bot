@@ -1,29 +1,19 @@
 With everything set up, it's coding time! (finally)
 
-Your task now is to create a **Login Screen**.
+**(Re-)Note:** because this is a new step, don't forget to open a new branch!
 
-**(Re-)Note:** because this is a new task, don't forget to open a new branch!
+# Step 1 - Login screen Frontend
+#### Estimated time: 2 hours
 
-# Step 1 - Login screen
+Your task now is to create the Login Screen frontend. That means laying out the view components (inputs, buttons, images...) in the screen. In the frontend steps, you **don't need to** make web requests, save data locally and etc. Your job here is **only** layout properly all the view components you'll need in your screen.
 
-Your screen should have a form containing:
+Talking about view components, your screen should have a form containing:
 
-- **an email input** that:
-  - validates email format
-  - is required
-
-- **a password input** that:
-  - validates password: minimum of 7 characters, with at least one digit and one alphanumeric
-  - is required
-
+- **an email input**
+- **a password input**
 - **a submit button**
 
-All the input validations should be triggered when the user taps the submit button, showing message errors accordingly.
-
 You can use the following images as inspiration:
-
-![image](https://user-images.githubusercontent.com/8324586/39584528-0baa631c-4ec9-11e8-8439-ec55b2df3027.png)
+> TODO: Trocar as imagens
 
 Once you've done, open a PR.
-
-**Note:** These images are just inspiration! Don't worry too much about the design, just make things working for now.

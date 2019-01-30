@@ -16,10 +16,8 @@ And the body sent should be a JSON object with the following structure:
 {
   password: string;
   email: string;
-  rememberMe: boolean;
 }
 ```
-- `rememberMe` can be false
 
 ## Handling the response
 
@@ -48,7 +46,10 @@ The successful response structure is like this:
 
 After receiving the response from the server, you should save locally the `token` and the `name`. Use the easiest way to save these data but remember it should persist even if the user quits the application.
 
-Here are a few common options: local database, local preferences, local storage.
+Here are a few common options to store these data locally: 
+- local database
+- local preferences
+- local storage.
 
 ### Error
 
