@@ -28,7 +28,7 @@
       "@core/*": ["./core/*"],
       "@data": ["./data"],
       "@data/*": ["./data/*"],
-      "@domain": ["./domain/"],
+      "@domain": ["./domain"],
       "@domain/*": ["./domain/*"],
       "@presentation": ["./presentation"],
       "@presentation/*": ["./presentation/*"]

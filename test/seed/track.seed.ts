@@ -15,9 +15,10 @@ function createTrack(n: number, stepsNumber: number = 3) {
     body: stepPrefix + i,
   }));
 
-  return {
-    title: 'Title ' + n,
-    number: n,
-    steps,
-  };
+  const track = new Track();
+  track.title = 'Title ' + n;
+  track.number = n;
+  track.steps = steps;
+
+  return track;
 }
