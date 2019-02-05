@@ -2,12 +2,8 @@ export interface Step {
   body: string;
 }
 
-export class Track {
+export interface Track {
   number: number;
   title: string;
   steps: Step[];
-
-  increment(): Track {
-    return null;
-  }
 }

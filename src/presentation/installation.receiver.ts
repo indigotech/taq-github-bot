@@ -13,7 +13,6 @@ export class InstallationReceiver extends Receiver {
   }
 
   onReceive = async (context: Context) => {
-    console.log('Recebeu');
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
 
     const user = await this.initiateUseCase.execute(devInput);

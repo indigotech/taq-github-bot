@@ -1,7 +1,7 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
 import {
-  DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase,
+  DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase
 } from '@domain';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
