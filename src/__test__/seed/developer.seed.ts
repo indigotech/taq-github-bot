@@ -1,12 +1,11 @@
 import * as Faker from 'faker';
 import IORedis from 'ioredis';
-import { Inject, Service } from 'typedi';
+import Container from 'typedi';
 import { REDIS } from '@data/db';
 import { Developer } from '@domain';
 
-@Service()
 export class DeveloperSeed {
-  constructor(@Inject(REDIS) readonly redisClient: IORedis.Redis) {}
+  private readonly redisClient: IORedis.Redis = Container.get(REDIS);
 
   async reset(): Promise<number> {
     const keys = await this.redisClient.keys('*');

@@ -3,7 +3,7 @@
     "tslint:recommended"
   ],
   "rules": {
-    "no-var-require": false,
+    "no-var-requires": false,
     "no-debugger": false,
     "no-console": [
       false,
