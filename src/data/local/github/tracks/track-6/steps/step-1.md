@@ -15,4 +15,4 @@ In this endpoint, you can pass a query param to specify the pagination, like thi
 https://tq-template-server-sample.herokuapp.com/users?pagination={"page": 0 , "window": 10}
 ```
 
-Notice that you probably **won't need to construct the endpoint with query params manually**. Generally, you use a **library or native resource** that abstracts these manipulations for you.
+Notice that you probably **won't need to construct the endpoint with query params manually**. Generally, you use a **library or native resource** that abstracts those things for you.

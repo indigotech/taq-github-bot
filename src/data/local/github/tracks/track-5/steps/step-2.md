@@ -1,7 +1,9 @@
-# Step 2 - Challenge: Add pagination to the list
+# Step 2 - Users List Integration
 
-Generally, lists with a minimum amount items are paginated. We currently use 3 types of pagination:
+#### Estimated time: TODO: add estimated time
 
-- classical - displaying page numbers, eventually a next and previous button ([reference](https://dribbble.com/shots/4144198-Daily-UI-085-Pagination))
-- infinite list with next button - at the end of the list, a button with "load more" ([reference](https://dribbble.com/shots/9331-Load-More-Channels))
-- infinite scroll - the app automatically loads the next page of the user is near the end of the list ([reference](https://dribbble.com/shots/3567980-Infinite-Feed))
+Let's get some real data. 
+
+Your task here is to get the real users list from the server.
+
+// TODO: Rest or GraphQL?
