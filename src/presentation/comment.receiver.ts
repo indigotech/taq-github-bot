@@ -17,8 +17,6 @@ export class CommentReceiver extends Receiver {
   }
 
   onReceive = async (context: Context) => {
-    console.log('AAAAA');
-
     if (context.isBot) {
       return;
     }
@@ -36,9 +34,8 @@ export class CommentReceiver extends Receiver {
     const commentInfo: CommentInfo = { developerId: devInput.developerId, issueId: payload.issue.id, comment };
     const shouldIncrementProgress: boolean = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
 
-    console.log('Should increment', shouldIncrementProgress);
     if (shouldIncrementProgress) {
-      this.incrementProgress(context, devInput);
+      await this.incrementProgress(context, devInput);
     }
   }
 

@@ -23,7 +23,7 @@ export class GithubEventSender {
       context.log(`Creating first track for ${developer.name}...`);
       trackToSend = tracks[0];
       const createdIssue = await this.createFirstIssue(context, trackToSend.title, trackToSend.steps[0].body);
-      this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
+      await this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
       return;
     }
 
@@ -41,8 +41,8 @@ export class GithubEventSender {
       context.log(`Creating new track for ${developer.name}...`);
       trackToSend = tracks[nextProgress.track];
       const createdIssue = await this.createIssue(context, trackToSend.title, trackToSend.steps[0].body);
-      this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
-      this.createComment(context, RobotStrings.NextTrack(createdIssue.data.html_url));
+      await this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
+      await this.createComment(context, RobotStrings.NextTrack(createdIssue.data.html_url));
       return;
     }
 
@@ -50,7 +50,7 @@ export class GithubEventSender {
     if (isNewStep) {
       context.log(`Incrementing step for ${developer.name}...`);
       trackToSend = tracks[nextProgress.track];
-      this.createComment(context, trackToSend.steps[nextProgress.step].body);
+      await this.createComment(context, trackToSend.steps[nextProgress.step].body);
     }
   }
 

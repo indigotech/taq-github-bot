@@ -12,7 +12,7 @@ export class InstallationReceiver extends Receiver {
     super();
   }
 
-  onReceive = async (context: Context) => {
+  onReceive = async (context: Context): Promise<void> => {
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
 
     const user = await this.initiateUseCase.execute(devInput);
@@ -20,7 +20,7 @@ export class InstallationReceiver extends Receiver {
     if (user.alreadyExists) {
       context.log(`Developer "${user.developer.name}" is already registered, nothing to do...`);
     } else {
-      this.eventsSender.openEvent(context, user.developer);
+      await this.eventsSender.openEvent(context, user.developer);
     }
   }
 }
