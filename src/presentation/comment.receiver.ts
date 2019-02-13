@@ -41,7 +41,6 @@ export class CommentReceiver extends Receiver {
 
   private async incrementProgress(context, devInput: DeveloperInput) {
     const developer = await this.incrementProgressUseCase.execute(devInput.developerId);
-
-    this.eventsSender.openEvent(context, developer);
+    return this.eventsSender.openEvent(context, developer);
   }
 }

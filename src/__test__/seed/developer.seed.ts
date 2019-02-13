@@ -13,10 +13,10 @@ export class DeveloperSeed {
     return keys.length;
   }
 
-  createNewUser(id: number): Promise<string> {
+  createNewUser(id: number, issueId?: number): Promise<string> {
     const newDeveloper: Developer = {
       developerId: id,
-      issueId: +Faker.helpers.replaceSymbolWithNumber('####'),
+      issueId,
       name: Faker.name.findName(),
       progress: null,
     };
