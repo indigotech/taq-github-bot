@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import { DeveloperDataSource } from '@data/db';
 
-interface CommentInfo {
+export interface CommentInfo {
   developerId: number;
   issueId: number;
   comment: string;

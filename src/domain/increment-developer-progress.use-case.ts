@@ -27,6 +27,7 @@ export class IncrementDeveloperProgressUseCase {
       await this.nextProgressUseCase.execute(developer.progress);
 
     await this.developerDataSource.update(developerId, { progress });
+
     return { ...developer, progress };
   }
 

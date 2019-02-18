@@ -5,6 +5,7 @@ import { readAllFiles, readFile, readFolder } from './file.utils';
 export const TRACKS = 'TRACKS';
 
 export function configureTracks() {
+  console.info('Creating tracks...');
   Container.set(TRACKS, createTracksFromFolder());
 }
 

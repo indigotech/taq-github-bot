@@ -1,7 +1,7 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
 import {
-  DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase,
+  CommentInfo, DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase
 } from '@domain';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
@@ -21,7 +21,8 @@ export class CommentReceiver extends Receiver {
       return;
     }
 
-    const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
+    const payload = context.payload;
+    const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(payload);
     const hasAlreadyFinished = await this.hasFinishedUseCase.execute(devInput.developerId);
 
     if (hasAlreadyFinished) {
@@ -29,20 +30,17 @@ export class CommentReceiver extends Receiver {
       return;
     }
 
-    const comment = context.payload.comment;
-
-    const commentInfo = { developerId: devInput.developerId, issueId: context.payload.issue.id, comment: comment.body };
-
-    const shouldIncrementProgress = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
+    const comment: string = payload.comment && payload.comment.body;
+    const commentInfo: CommentInfo = { developerId: devInput.developerId, issueId: payload.issue.id, comment };
+    const shouldIncrementProgress: boolean = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
 
     if (shouldIncrementProgress) {
-      this.incrementProgress(context, devInput);
+      await this.incrementProgress(context, devInput);
     }
   }
 
   private async incrementProgress(context, devInput: DeveloperInput) {
     const developer = await this.incrementProgressUseCase.execute(devInput.developerId);
-
-    this.eventsSender.openEvent(context, developer);
+    return this.eventsSender.openEvent(context, developer);
   }
 }
