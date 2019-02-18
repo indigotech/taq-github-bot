@@ -21,7 +21,11 @@ export class DeveloperSeed {
       progress: null,
     };
 
-    return this.redisClient.set(newDeveloper.developerId.toString(), JSON.stringify(newDeveloper));
+    return this.createUser(newDeveloper);
+  }
+
+  createUser(developer: Developer): Promise<string> {
+    return this.redisClient.set(developer.developerId.toString(), JSON.stringify(developer));
   }
 
   getAllUsers(): Promise<string[]> {

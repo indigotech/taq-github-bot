@@ -1,12 +1,12 @@
-import 'reflect-metadata';
-import IORedis from 'ioredis';
-import nock from 'nock';
-import { Application, Probot } from 'probot';
-import Container from 'typedi';
 import { DBClient, REDIS } from '@data/db';
 import { TrackDataSource } from '@data/local';
 import { TRACKS } from '@data/local/track.configure';
 import { Developer, Track } from '@domain';
+import IORedis from 'ioredis';
+import nock from 'nock';
+import { Application, Probot } from 'probot';
+import 'reflect-metadata';
+import Container from 'typedi';
 import myProbotApp from '../';
 import { GithubEvents } from '../github-events.constants';
 import { DeveloperSeed } from './seed';
@@ -106,7 +106,34 @@ describe('Webhooks', () => {
       nock('https://api.github.com').post('/app/installations/645396/access_tokens').reply(200, { token: 'test' });
     });
 
-    it('should create a progress for developer on first task completed', async () => {
+    describe('First task completed', () => {
+
+      it('should create a progress for developer', async () => {
+        const issueId = commentFinishPayload.issue.id;
+        await developerSeed.createNewUser(defaultUserId, issueId);
+        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+
+        const devDb: string = await db.get(defaultUserId.toString());
+        const developer: Developer = JSON.parse(devDb);
+        const trackDataSource: TrackDataSource = Container.get(TrackDataSource);
+
+        expect(developer.developerId).toBe(defaultUserId);
+        expect(developer.issueId).not.toBeNull();
+        expect(developer.progress).toMatchObject({ track: 0, step: 0, completed: trackDataSource.incrementProgressStep });
+      });
+
+      it('should post comment with next step', async () => {
+        const issueId = commentFinishPayload.issue.id;
+        await developerSeed.createNewUser(defaultUserId, issueId);
+        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+
+        expect(developer.developerId).toBe(defaultUserId);
+        expect(developer.issueId).not.toBeNull();
+        expect(developer.progress).toMatchObject({ track: 0, step: 0, completed: trackDataSource.incrementProgressStep });
+      });
+    });
+
+    it('should increment only step', async () => {
       const issueId = commentFinishPayload.issue.id;
       await developerSeed.createNewUser(defaultUserId, issueId);
       await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
