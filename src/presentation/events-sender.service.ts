@@ -1,7 +1,7 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
 import {
-  Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track, UpdateDeveloperIssueUseCase
+  Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track, UpdateDeveloperIssueUseCase,
 } from '@domain';
 import { RobotStrings } from './robot.strings';
 
@@ -27,8 +27,8 @@ export class GithubEventSender {
       return;
     }
 
-    const finished: boolean = progress.completed === 1;
-    if (finished) {
+    const justFinished: boolean = progress.completed === 1;
+    if (justFinished) {
       context.log(`Congratulating ${developer.name} for finishing tutorial...`);
       await this.createComment(context, RobotStrings.FinishOnboard);
       return;
@@ -63,7 +63,7 @@ export class GithubEventSender {
   private createComment(context: Context, body: string) {
     const params = context.issue(Object.assign(context.event, { body }));
 
-    context.github.issues.createComment(params);
+    return context.github.issues.createComment(params);
   }
 
   private createFirstIssue(context: Context, title: string, body: string) {

@@ -1,11 +1,9 @@
 import * as Faker from 'faker';
 import IORedis from 'ioredis';
-import Container from 'typedi';
-import { REDIS } from '@data/db';
 import { Developer } from '@domain';
 
 export class DeveloperSeed {
-  private readonly redisClient: IORedis.Redis = Container.get(REDIS);
+  constructor(private readonly redisClient: IORedis.Redis) {}
 
   async reset(): Promise<number> {
     const keys = await this.redisClient.keys('*');
@@ -24,15 +22,12 @@ export class DeveloperSeed {
     return this.createUser(newDeveloper);
   }
 
-  createUser(developer: Developer): Promise<string> {
+  createUser(developer: Partial<Developer>): Promise<string> {
+    developer.name = Faker.name.findName();
     return this.redisClient.set(developer.developerId.toString(), JSON.stringify(developer));
   }
 
   getAllUsers(): Promise<string[]> {
     return this.redisClient.keys('*');
-  }
-
-  disconnect() {
-    this.redisClient.disconnect();
   }
 }
