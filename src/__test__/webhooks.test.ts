@@ -322,7 +322,7 @@ describe('Webhooks', () => {
         const devDbAfter = await db.get(defaultUserId.toString());
 
         expect(devDbBefore).toBe(devDbAfter);
-      })
+      });
     });
   });
 });
