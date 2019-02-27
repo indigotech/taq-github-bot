@@ -1,18 +1,14 @@
-Now that you have the UI ready, let's populate with real data from the server. 
-In this track, you will **consume a web service** and **authenticate your web requests**
+# Step 1 - Add User Screen Frontend
+#### Estimated time: TODO: add estimated time
 
-## Step 1 - Consume web service
+Now, we need an Add User Screen so we can... well... add new user users into our app. 😑
 
-So, the endpoint to be consumed is this one:
+Our screen should has:
+- A field for all the properties listed in `UserType` GraphQL type, **except for**:
+  - avatarUrl
+  - answers
+- An 'add user' button
+- Fields validation, according to `UserType` GraphQL type.
 
-```
-GET https://tq-template-server-sample.herokuapp.com/users
-```
 
-In this endpoint, you can pass a query param to specify the pagination, like this:
-
-```
-https://tq-template-server-sample.herokuapp.com/users?pagination={"page": 0 , "window": 10}
-```
-
-Notice that you probably **won't need to construct the endpoint with query params manually**. Generally, you use a **library or native resource** that abstracts those things for you.
+**Note:** Later on, we'll create an User Detail Screen and it's a common practice to reuse some UI components of Detail screen in Create screen. So think if is possible, in your app, to create the same UI for both detail and create user screen.

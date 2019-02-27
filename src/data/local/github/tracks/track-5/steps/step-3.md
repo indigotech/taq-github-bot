@@ -1,9 +1,8 @@
-# Step 3 - Challenge: Add pagination to the list
-
+# Challenge: Add pagination to the list
 #### Estimated time: TODO: add estimated time
 
 Generally, lists with a minimum amount items are paginated. We currently use 3 types of pagination:
 
-- classical - displaying page numbers, eventually a next and previous button ([reference](https://dribbble.com/shots/4144198-Daily-UI-085-Pagination))
-- infinite list with next button - at the end of the list, a button with "load more" ([reference](https://dribbble.com/shots/9331-Load-More-Channels))
-- infinite scroll - the app automatically loads the next page of the user is near the end of the list ([reference](https://dribbble.com/shots/3567980-Infinite-Feed))
+- [Classical](https://dribbble.com/shots/4144198-Daily-UI-085-Pagination) - displaying page numbers, eventually a next and previous button
+- [Infinite list with next button](https://dribbble.com/shots/9331-Load-More-Channels) - at the end of the list, a button with "load more"
+- [Infinite scroll](https://dribbble.com/shots/3567980-Infinite-Feed) - the app automatically loads the next page of the user is near the end of the list

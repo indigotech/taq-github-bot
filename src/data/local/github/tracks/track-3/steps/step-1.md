@@ -17,3 +17,5 @@ You can use the following images as inspiration:
 > TODO: Trocar as imagens
 
 Once you've done, open a PR.
+
+**Note**: Bear in mind that this task is only the login screen **frontend**, which means that, for now, you don't have to communicate with server to check the user credentials for example. All you have to do here is to layout properly all the view components you'll need in your screen.

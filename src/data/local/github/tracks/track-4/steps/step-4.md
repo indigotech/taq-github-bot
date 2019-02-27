@@ -1,7 +1,12 @@
 # Challenge: Loading indicator
+#### Estimated time: TODO: add estimated time
 
-In order to give some feedback of what's goind on inside your app, your task now is to show a **loading indicator**, inside the login page, while the GraphQL request is being processed.
+
+In order to give some feedback of what's going on inside your app, the challenge is to show a **loading indicator**, inside the login page, while the GraphQL request is being processed.
 
 Here are some SUGGESTIONS (don't mind about styling for now) of loading indicator
 
 // TODO Add loading indicator images
+- Loading na página
+- Mudar o texto do botão
+- Loading e mudar o texto no botão

@@ -1,8 +1,10 @@
-## Step 2 - Authenticate web requests
+## Step 2 - Add User Screen Integration
+#### Estimated time: TODO: add estimated time
 
-In order to consume this endpoint, you have to add an authentication data in your request.
+After you create the frontend, it's time to send this data to the server for creating the user. 
 
-For our endpoints, we are using the `Authorization` header with the token you've received from login request. (You can check a little bit more about it [here](https://www.tutorialspoint.com/http/http_header_fields.htm)).
+The mutation used to create an user is the `UserCreate` mutation. Docs in Documentation Explorer.
 
-### Response format
-In order to get the response format, we suggest using [Postman](https://www.getpostman.com/). Although, you **don't need to use Postman!** There are a lot of tools out there which can show you the response of a web service - even **Chrome** can do that! So choose your favorite one 👍 
+When this integration is done, your screen should:
+- Navigates to the User List page if the user create **request is succeded**
+- Shows the incoming server error message on screen if the **request fails**
