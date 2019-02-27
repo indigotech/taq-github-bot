@@ -1,10 +1,18 @@
 # Step 3 - Integrate the app with the server
-// TODO: Estimated time
+
+In the previous step you made a GraphQL query using the GraphiQL tool, right? For this step, we'll make the same query in your project (code time 🎉).
+
+In order to make GraphQL requests, we suggest the // TODO suggest a library, but you can use any library you want.
+
+Once the library is installed, your job is to do the **login query** when the user presses the login button (which makes sense 🤔).
+
+If everything goes well with the login query, you should **store the received token**, which will be used in your latter GraphQL requests.
+
+If you get an error, just **show the error message you'll receive from server**.
 
 
 
-- Sugerir client de graphQL
-- Fazer a request que vc fez no step2 no código (com a biblioteca que vc escolheu)
+
 
 After receiving the response from the server, you should save locally the `token` and the `name`. Use the easiest way to save these data but remember it should persist even if the user quits the application.
 
