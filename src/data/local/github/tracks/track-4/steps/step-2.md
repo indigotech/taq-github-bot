@@ -1,8 +1,8 @@
 # Step 2 - GraphQL
-#### Estimated time: TODO: add estimated time
+#### Estimated time: 2 hours
 
 ## Getting started
-As we got out feet wet with REST, let's get started with GraphQL.
+As we got our feet wet with REST, let's get started with GraphQL.
 
 A little bit of context: [GraphQL](https://graphql.org/) is a framework created by Facebook 🙀 that makes easier for create flexible and extensible server aplications. 
 

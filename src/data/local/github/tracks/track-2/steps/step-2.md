@@ -11,5 +11,5 @@ Examples of how getting started a new project with:
 
 
 **Note:** For now on, some steps will have an **estimated time** to help you organising your time better. 
-If you not finish the step in the estimated time **don't worry**! It's just an average time based on previous onboards.
+If you do not finish the step in the estimated time **don't worry**! It's just an average time based on previous onboards
 By the way, remember that if you're struggling with any topic, feel free asking any Taqtiler ;)

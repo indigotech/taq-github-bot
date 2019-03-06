@@ -1,6 +1,5 @@
 # Challenge: Loading indicator
-#### Estimated time: TODO: add estimated time
-
+#### Estimated time: 2 hours
 
 In order to give some feedback of what's going on inside your app, the challenge is to show a **loading indicator**, inside the login page, while the GraphQL request is being processed.
 

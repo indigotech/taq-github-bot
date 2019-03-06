@@ -1,5 +1,5 @@
 # Step 2 - Users List Integration
-#### Estimated time: TODO: add estimated time
+#### Estimated time: 4 hours
 
 Let's get some real data. 
 

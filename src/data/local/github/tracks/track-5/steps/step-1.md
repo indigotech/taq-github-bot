@@ -1,7 +1,7 @@
 Login is done. Now, let's make the user list UI.
 
 # Step 1 - Users List Frontend
-#### Estimated time: TODO: add estimated time
+#### Estimated time: 3 hours
 
 This screen will list all registered users. Each list cell (or list row) should contain:
   - user name

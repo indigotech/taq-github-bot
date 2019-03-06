@@ -1,5 +1,5 @@
 ## Challenge - Interceptors
-#### Estimated time: TODO: add estimated time
+#### Estimated time: 6 hours
 
 At this point, you made some network request right? Do you realize that, for every request we make, we must add the `Authorization Header`?
 

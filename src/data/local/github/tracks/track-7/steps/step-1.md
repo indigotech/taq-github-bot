@@ -1,4 +1,5 @@
 # Step 1 - User Details Screen
+#### Estimated time: 6 hours
 
 The last (but not least) screen is the User Details screen. This screen will shows up when the user clicks in a list item from the User List Screen. 
 
