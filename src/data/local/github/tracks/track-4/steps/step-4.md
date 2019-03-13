@@ -1,11 +1,9 @@
-# Challenge: Loading indicator
-#### Estimated time: 2 hours
+# Step 4 - Authentication Token
 
-In order to give some feedback of what's going on inside your app, the challenge is to show a **loading indicator**, inside the login page, while the GraphQL request is being processed.
+Did you notice there was a `token` value inside the login mutation response?
+ 
+This value is the server's **Authentication Token**. Our server uses it (spoiler alert) in most of it's requests to verify if you are logged in or not.
 
-Here are some SUGGESTIONS (don't mind about styling for now) of loading indicator
+In order to pass this value with the request, it's a common practice to add it inside the **request header**.
 
-// TODO Add loading indicator images
-- Loading na página
-- Mudar o texto do botão
-- Loading e mudar o texto no botão
+As you will use the authentication token for all your request from now, your task is to **set the authentication token**. If you are using the Apollo Client, they have an [example](https://www.apollographql.com/docs/react/recipes/authentication.html#Header) of how setting the request header with the authentication token.

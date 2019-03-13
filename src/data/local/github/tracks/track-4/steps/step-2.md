@@ -8,7 +8,7 @@ A little bit of context: [GraphQL](https://graphql.org/) is a framework created 
 
 GraphQL can be a little scary at the first sight, but don't worry, you'll get used to it. Here are some tutorials to help you to get started with GraphQL:
 - [GraphQL official page](https://graphql.org/learn)
-- [How to GraphQL](https://www.howtographql.com/). We recommend, for now, watch only the first 4 videos of this tutorial.
+- [How to GraphQL](https://www.howtographql.com/). We recommend, for now, to watch only the first 4 videos of this tutorial.
 
 
 ## Practice

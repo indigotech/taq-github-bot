@@ -1,10 +1,12 @@
-## Challenge - Interceptors
-#### Estimated time: 6 hours
+## Challenge - Renew the Authentication Token
+#### Estimated time: TODO add estimated time
 
-At this point, you made some network request right? Do you realize that, for every request we make, we must add the `Authorization Header`?
+Do you remember about the Authentication Token? Until now, we have used the Authentication Token for authenticate the `user listing`, `user creation` and the `user details` GraphQL requests.
 
-Some fields, as the Authorization Header, must be filled with the authentication token in all our request for so on. So, is there a way to assign the Authorization Header only once in our code, so we don't need to set it explicitly in every request?
+For safety reasons, these tokens have an `expiration time`. It means that your token is valid for some period (defined by the server) and after it, you have to 'login' again in order to get a new token.
 
-A common approach for this problem is to use an **interceptor**, which is a method that is executed before every GraphQL request you make in your app. The Apollo Client, for example, [has support for interceptors](https://www.apollographql.com/docs/react/recipes/authentication.html#Header).
+That said, your challenge is to **renew the authentication token** when it's expired. Here are some things to consider for this challenge:
 
-Your task now is to use an interceptor in the library you choose to **set the authentication token only once** in your entire code.
+- You can't redirect the user to the login screen when the token expires. Instead, you can save the user credentials locally when the user logged in successfully, in the same way you store the authentication token.
+- When the authentication token is expired, our server will return the following error:
+> TODO: Add the auth token expiration error

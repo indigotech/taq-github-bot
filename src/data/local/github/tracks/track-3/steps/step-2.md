@@ -3,7 +3,7 @@
 
 **(Re-Re-)Note:** Don't forget to open a new branch!
 
-When filling up a form, users (us) can mispell something or forget to fill all the inputs in a form. So in this step you'll create some form validations.
+When filling up a form, users (we) can mispell something or forget to fill all the inputs in a form. So in this step you'll create some form validations.
 
 Your login screen should have the following validations:
 
