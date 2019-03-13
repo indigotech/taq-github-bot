@@ -12,7 +12,7 @@ GraphQL can be a little scary at the first sight, but don't worry, you'll get us
 
 
 ## Practice
-As we do with REST, let's make a GraphQL request using a tool called **GraphiQL** (no code yet, hang in there). You don't need to download it, just access https://tq-template-server-sample.herokuapp.com/graphiql and you're good to go.
+As we do with REST, let's make a GraphQL request using another tool called [GraphiQL](https://electronjs.org/apps/graphiql) (no code yet, hang in there).
 
 In GraphiQL, you'll have to make the **login mutation**. Fortunally, the GraphiQL contains the **documentation explorer** which shows how the queries and mutations should be used. 
 
