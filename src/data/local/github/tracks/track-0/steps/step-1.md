@@ -1,4 +1,4 @@
-Ok! Your very first tasks are to **clone this repository** into your own account and **update the README.md** file.
+Ok! Your very first tasks are to **clone this repository** into your own account and to **update the README.md** file.
 
 But before moving on, let's be sure you know all the basics we use daily here.
 

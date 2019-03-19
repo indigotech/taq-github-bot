@@ -12,7 +12,7 @@ URL: // TODO <br/>
 Method: POST <br/>
 Body: // TODO
 
-**Note 1:** There's no code in this step! It's just a warming up for you to have some knowledge of what's going on inside the GraphQL. Be patient, young padawan. The code will come (in the next steps btw).
+**Note 1:** There's no code in this step! It's just a warming up for you to have some knowledge of what's going on inside the GraphQL. Be patient, young padawan. The code will come.
 
 **Note 2:** The **Postman** is just a suggestion. Feel free to use any other tool to make a REST request.<br/>
 
