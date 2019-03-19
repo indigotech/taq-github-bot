@@ -16,7 +16,7 @@ When you finish this step, your login screen should have the following behaviour
 - In order to avoid submitting more than once, your app should block the submit button.
 
 ### On Login Success
-If everything goes well with the login mutation, you should navigate to the User List page. It can be a blank page, since we don't implements it yet.
+If everything goes well with the login mutation, you should navigate to the User List page. It can be a blank page, since we didn't implement it yet.
 
 ### On Login Error
 If you get an error with the login mutation, just **show the error message you'll receive from server**.

@@ -1,4 +1,5 @@
 # Step 4 - Authentication Token
+#### Estimated time: TODO
 
 Did you notice there was a `token` value inside the login mutation response?
  
