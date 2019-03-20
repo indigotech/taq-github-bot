@@ -1,5 +1,5 @@
 # Step 1 - Network Communication
-#### Estimated time: TODO: add estimated time
+#### Estimated time: 1 hour
 
 ## REST
 Network communication is a crucial part of any system nowadays. Here in Taqtile we use a framework called GraphQL, which you'll use thoughout this onboard.

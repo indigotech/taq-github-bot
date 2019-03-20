@@ -1,7 +1,7 @@
 ## Challenge - Renew the Authentication Token
-#### Estimated time: TODO add estimated time
+#### Estimated time: 8 hours
 
-Do you remember about the Authentication Token? Until now, we have used the Authentication Token for authenticate the `user listing`, `user creation` and the `user details` GraphQL requests.
+Do you remember about the Authentication Token? We've being using it for all our web requests so far (except the login).
 
 For safety reasons, these tokens have an `expiration time`. It means that your token is valid for some period (defined by the server) and after it, you have to 'login' again in order to get a new token.
 

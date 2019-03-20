@@ -1,10 +1,16 @@
-# Step 4 - Authentication Token
-#### Estimated time: TODO
+# Step 4 - Local Storage
+#### Estimated time: 1 hour
 
 Did you notice there was a `token` value inside the login mutation response?
  
 This value is the server's **Authentication Token**. Our server uses it (spoiler alert) in most of it's requests to verify if you are logged in or not.
 
-In order to pass this value with the request, it's a common practice to add it inside the **request header**.
+Your task now is to **store** the authentication token **locally** that is inside your app or the web browser. 
 
-As you will use the authentication token for all your request from now, your task is to **set the authentication token**. If you are using the Apollo Client, they have an [example](https://www.apollographql.com/docs/react/recipes/authentication.html#Header) of how setting the request header with the authentication token.
+We have a few options to store some data locally:
+- [Local Storage or Session Storage](https://www.robinwieruch.de/local-storage-react/)
+- [AsyncStorage](https://facebook.github.io/react-native/docs/asyncstorage)
+- [Android SharedPreferences](https://developer.android.com/training/data-storage/shared-preferences)
+- [iOS NsUserDefaults](https://www.hackingwithswift.com/example-code/system/how-to-save-user-settings-using-userdefaults)
+
+These options differ depending on the platform (iOS, Android, Web), the framework used and (for some cases) how long does the data keep stored. Choose which one you think will fit best for storing the authentication token.
