@@ -13,7 +13,7 @@ describe('Comment received', () => {
     developerId = 123;
     issueId = 456;
     const developer: Developer = { developerId, issueId, name: null, progress: null };
-    DeveloperDataSource.prototype.get = jest.fn<Developer>(() => developer);
+    DeveloperDataSource.prototype.get = jest.fn<Promise<Developer>, any>(() => Promise.resolve(developer));
   });
 
   it('should validate "finish" anywhere on sentence, and its variations', async () => {
