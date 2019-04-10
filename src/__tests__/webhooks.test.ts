@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import IORedis from 'ioredis';
 import nock from 'nock';
-import { Application, Probot } from 'probot';
+import { Probot } from 'probot';
 import Container from 'typedi';
 import { REDIS } from '@data/db';
 import { TRACKS } from '@data/local/track.configure';
@@ -25,7 +25,6 @@ describe('Webhooks', () => {
   let developerSeed: DeveloperSeed;
   let trackSeed: TrackSeed;
   let probot: Probot;
-  let app: Application;
   let taqBot: Robot;
 
   let defaultUserId: number;
@@ -54,7 +53,7 @@ describe('Webhooks', () => {
 
     probot = new Probot({});
     probot.logger.level('fatal');
-    app = probot.load(taqBot.webhookReceiver);
+    const app = probot.load(taqBot.webhookReceiver);
     app.app = () => 'test';
   });
 
@@ -77,7 +76,7 @@ describe('Webhooks', () => {
         const mockResponse = require('./mocks/CreateIssueMockResponse.json');
         nock('https://api.github.com').post('/repos/alanraso/teste-probot-2/issues', _ => true).reply(201, mockResponse);
 
-        await probot.receive({ name: GithubEvents.Installation.Created, payload: installationPayload });
+        await probot.receive({ id: '1', name: GithubEvents.Installation.Created, payload: installationPayload });
         const devDb = await db.get(defaultUserId.toString());
         const developer = JSON.parse(devDb);
 
@@ -95,11 +94,11 @@ describe('Webhooks', () => {
           return true;
         }).reply(201);
 
-        await probot.receive({ name: GithubEvents.Installation.Created, payload: installationPayload });
+        await probot.receive({ id: '1', name: GithubEvents.Installation.Created, payload: installationPayload });
       });
 
       it('should do nothing if developer is already created', async () => {
-        const context = { name: GithubEvents.Installation.Created, payload: installationPayload };
+        const context = { id: '1', name: GithubEvents.Installation.Created, payload: installationPayload };
 
         await developerSeed.createNewUser(defaultUserId);
 
@@ -130,7 +129,7 @@ describe('Webhooks', () => {
 
         nock('https://api.github.com').post('/repos/alanraso/teste-probot/issues/24/comments').reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
         const devDb: string = await db.get(defaultUserId.toString());
         const developer: Developer = JSON.parse(devDb);
@@ -149,7 +148,7 @@ describe('Webhooks', () => {
           return true;
         }).reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
       });
 
       it('should do nothing if commented on a different issue', async () => {
@@ -157,7 +156,7 @@ describe('Webhooks', () => {
         commentFinishPayload.issue.id = '12345';
 
         await developerSeed.createNewUser(defaultUserId, lastId);
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
         commentFinishPayload.issue.id = lastId;
       });
     });
@@ -180,7 +179,7 @@ describe('Webhooks', () => {
       it('should increment only step', async () => {
         nock('https://api.github.com').post('/repos/alanraso/teste-probot/issues/24/comments').reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
         const devDb: string = await db.get(defaultUserId.toString());
         const developer: Developer = JSON.parse(devDb);
@@ -196,14 +195,14 @@ describe('Webhooks', () => {
           return true;
         }).reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
       });
 
       it('should do nothing if commented on a different issue', async () => {
         const lastId = commentFinishPayload.issue.id;
         commentFinishPayload.issue.id = '12345';
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
         commentFinishPayload.issue.id = lastId;
       });
     });
@@ -227,7 +226,7 @@ describe('Webhooks', () => {
         nock('https://api.github.com').post('/repos/alanraso/teste-probot/issues/24/comments').reply(201);
         nock('https://api.github.com').post('/repos/alanraso/teste-probot/issues').reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
         const devDb: string = await db.get(defaultUserId.toString());
         const developer: Developer = JSON.parse(devDb);
@@ -251,14 +250,14 @@ describe('Webhooks', () => {
           return true;
         }).reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
       });
 
       it('should do nothing if commented on a different issue', async () => {
         const lastId = commentFinishPayload.issue.id;
         commentFinishPayload.issue.id = '12345';
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
         commentFinishPayload.issue.id = lastId;
       });
     });
@@ -281,7 +280,7 @@ describe('Webhooks', () => {
       it('should increment developer and have 100% progress', async () => {
         nock('https://api.github.com').post('/repos/alanraso/teste-probot/issues/24/comments').reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
         const devDb: string = await db.get(defaultUserId.toString());
         const developer: Developer = JSON.parse(devDb);
@@ -297,14 +296,14 @@ describe('Webhooks', () => {
           return true;
         }).reply(201);
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
       });
 
       it('should do nothing if commented on a different issue', async () => {
         const lastId = commentFinishPayload.issue.id;
         commentFinishPayload.issue.id = '12345';
 
-        await probot.receive({ name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
+        await probot.receive({ id: '1', name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
         commentFinishPayload.issue.id = lastId;
       });
     });
@@ -318,7 +317,7 @@ describe('Webhooks', () => {
         });
 
         const devDbBefore = await db.get(defaultUserId.toString());
-        await probot.receive({ name: GithubEvents.Installation.Created, payload: installationPayload });
+        await probot.receive({ id: '1', name: GithubEvents.Installation.Created, payload: installationPayload });
         const devDbAfter = await db.get(defaultUserId.toString());
 
         expect(devDbBefore).toBe(devDbAfter);
