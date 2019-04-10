@@ -60,7 +60,7 @@
     ],
     "trailing-comma": [true, {
       "multiline": {
-        "imports": "always",
+        "imports": "never",
         "objects": "always",
         "arrays": "always",
         "functions": "always",

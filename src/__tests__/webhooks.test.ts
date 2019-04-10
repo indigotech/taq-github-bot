@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import IORedis from 'ioredis';
 import nock from 'nock';
-import { Application, Probot } from 'probot';
+import { Probot } from 'probot';
 import Container from 'typedi';
 import { REDIS } from '@data/db';
 import { TRACKS } from '@data/local/track.configure';
@@ -25,7 +25,6 @@ describe('Webhooks', () => {
   let developerSeed: DeveloperSeed;
   let trackSeed: TrackSeed;
   let probot: Probot;
-  let app: Application;
   let taqBot: Robot;
 
   let defaultUserId: number;
@@ -54,7 +53,7 @@ describe('Webhooks', () => {
 
     probot = new Probot({});
     probot.logger.level('fatal');
-    app = probot.load(taqBot.webhookReceiver);
+    const app = probot.load(taqBot.webhookReceiver);
     app.app = () => 'test';
   });
 
@@ -322,7 +321,7 @@ describe('Webhooks', () => {
         const devDbAfter = await db.get(defaultUserId.toString());
 
         expect(devDbBefore).toBe(devDbAfter);
-      })
+      });
     });
   });
 });

@@ -1,7 +1,7 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
 import {
-  Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track, UpdateDeveloperIssueUseCase,
+  Developer, DeveloperProgress, GetTracksUseCase, IncrementProgressUseCase, Track, UpdateDeveloperIssueUseCase
 } from '@domain';
 import { RobotStrings } from './robot.strings';
 

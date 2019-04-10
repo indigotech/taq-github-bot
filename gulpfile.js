@@ -4,12 +4,14 @@ const tsProject = ts.createProject('tsconfig.json')
 const outDir = tsProject.config.compilerOptions.outDir
 const resolver = require('@taqtile/gulp-module-resolver')
 
-gulp.task('build', () => {
+const build = () => {
   return tsProject
     .src()
     .pipe(tsProject())
     .pipe(resolver({ rootPath: outDir }))
     .pipe(gulp.dest(outDir))
-})
+}
 
-gulp.task('default', ['build'])
+gulp.task('build', build)
+
+gulp.task('default', build)
