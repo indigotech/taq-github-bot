@@ -1,11 +1,17 @@
-In the following tracks you'll apply the concepts you've learn so far, as well as some practices we use here at Taqtile in your project.
+Your project is almost finished. There's no new features in the following tracks, you'll just apply the concepts you've learned so far, as well as some practices we use here at Taqtile.
 
-# Step 1 - UX (Setup)
-#### Estimated time: 2 hours
+# Step 1 - Thinking about components
+#### Estimated time: 10 minutes
 
-We ❤️apps. And a crucial part when making a good app is the User Experience, a.k.a UX.
+We ❤️apps. And a crucial part when making a good app is the User Experience, a.k.a UX. You've learned that a crucial part for making good and usable apps is componentize. So, this step is just a mental exercise. We have below two images representing 2 of the screens you developed so far: `Login` and `Create User`:
 
-But before we can jump into it, let's setup some tools for our UX development. Here at Taqtile we use the [Styled Components](https://www.styled-components.com/docs/basics) library, which helps us to styling our components in a very convenient way.
+![Screens](./screens.jpg)
 
+Looking at these screens, you can extract from them some components that can be (re)used. They are relatively simple to componentize, but, as you can imagine, there's not only one way of doing it, specially when the design gets more complex. So, before coding them in a hurry, let's take some minutes to think:
 
-So for now, your job is to install, understand (at least the basic concepts) and use the **Styled Components** library.
+1. What components can be extracted?
+2. Why we should extract them?
+3. What attributes each of these components will contain?
+
+After you answer these questions, go to next step to see our suggestions on how to componentize them.
+Then, you'll start coding these components.
