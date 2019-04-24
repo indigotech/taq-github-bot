@@ -3,7 +3,7 @@ Your project is almost finished. There's no new features in the following tracks
 # Step 1 - Thinking about components
 #### Estimated time: 10 minutes
 
-We ❤️apps. And a crucial part when making a good app is the User Experience, a.k.a UX. You've learned that a crucial part for making good and usable apps is componentize. So, this step is just a mental exercise. We have below two images representing 2 of the screens you developed so far: `Login` and `Create User`:
+We ❤️apps. And a crucial part when making a good app is the User Experience, a.k.a UX. Also, you've learned about componentization and how it contributes to make a good and usable app. So, this step is just a mental exercise. We have below two images representing 2 of the screens you developed so far: `Login` and `Create User`:
 
 ![Screens](./screens.jpg)
 
@@ -15,3 +15,8 @@ Looking at these screens, you can extract from them some components that can be 
 
 After you answer these questions, go to next step to see our suggestions on how to componentize them.
 Then, you'll start coding these components.
+
+Btw, as we are talking about UX, here are some references if you want to know more about it:
+- [Nielsen Norman Group](https://www.nngroup.com/)
+- [Google Design](https://medium.com/google-design/tagged/ux)
+- [Facebook Design](https://medium.com/facebook-design)
