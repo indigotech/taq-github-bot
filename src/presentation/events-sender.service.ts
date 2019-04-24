@@ -35,7 +35,6 @@ export class GithubEventSender {
     }
 
     const nextProgress: DeveloperProgress = await this.nextProgressUseCase.execute(progress);
-    console.log('Next progress:', nextProgress);
 
     const isNewTrack = nextProgress.step === 0;
     if (isNewTrack) {
