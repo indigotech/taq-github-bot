@@ -10,6 +10,6 @@ Examples of how getting started a new project with:
 - [iOS](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/BuildABasicUI.html#//apple_ref/doc/uid/TP40015214-CH5-SW1)
 
 
-**Note:** For now on, some steps will have an **estimated time** to help you organising your time better. 
+**Note:** For now on, some steps will have an **estimated time** to help you organizing your time better. 
 If you do not finish the step in the estimated time **don't worry**! It's just an average time based on previous onboards
 By the way, remember that if you're struggling with any topic, feel free asking any Taqtiler ;)

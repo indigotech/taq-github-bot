@@ -32,8 +32,9 @@ export class CommentReceiver extends Receiver {
 
     const comment: string = payload.comment && payload.comment.body;
     const commentInfo: CommentInfo = { developerId: devInput.developerId, issueId: payload.issue.id, comment };
-    const shouldIncrementProgress: boolean = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
 
+    const shouldIncrementProgress: boolean = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
+    console.log('Should increment:', shouldIncrementProgress);
     if (shouldIncrementProgress) {
       await this.incrementProgress(context, devInput);
     }
@@ -41,6 +42,7 @@ export class CommentReceiver extends Receiver {
 
   private async incrementProgress(context, devInput: DeveloperInput) {
     const developer = await this.incrementProgressUseCase.execute(devInput.developerId);
+    console.log('Developer:', developer);
     return this.eventsSender.openEvent(context, developer);
   }
 }

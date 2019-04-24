@@ -7,7 +7,7 @@ So, as promised, let's present our suggestions. First, we'd like to show [this d
 
 The way we thought about it, basically 3 components, as shown on the image below: **H1** (text component), **Form field** and **button**.
 
-![Suggestions](./screens_suggestion.jpg)
+![Suggestions](../images/screens-suggestion.jpg)
 
 > 2. Why we should extract them?
 

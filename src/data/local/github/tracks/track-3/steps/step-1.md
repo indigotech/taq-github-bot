@@ -13,8 +13,11 @@ Talking about view components, your screen should have a form containing:
 - **a password input**
 - **a submit button**
 
-You can use the following images as inspiration:
-> TODO: Trocar as imagens
+You can use the following image as an inspiration:
+
+![login](../images/login.jpg)
+
+Don't mind the styles, borders and colors, you can choose your own, if you want to.
 
 Once you've done, open a PR.
 
