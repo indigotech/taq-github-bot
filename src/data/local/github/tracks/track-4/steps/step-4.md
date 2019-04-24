@@ -7,11 +7,11 @@ Here are some SUGGESTIONS (don't mind about styling for now) of loading indicato
 
 ### Page loading
 
-![Page Loading](../images/load-screen.jpg)
+![Page Loading](https://raw.githubusercontent.com/indigotech/taq-github-bot/develop/images/load-screen.jpg)
 
 
 ### Button Load (with change of text)
 
-![Button Loading](../images/load-button.jpg)
+![Button Loading](https://raw.githubusercontent.com/indigotech/taq-github-bot/develop/images/load-button.jpg)
 
 **NOTE:** while on load, the user should not be able to click on the button again. This way we avoid performing the login request more times unecessarily.

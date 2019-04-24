@@ -27,7 +27,7 @@ export class GithubEventSender {
       return;
     }
 
-    const justFinished: boolean = progress.completed === 1;
+    const justFinished: boolean = progress.completed >= 1;
     if (justFinished) {
       context.log(`Congratulating ${developer.name} for finishing tutorial...`);
       await this.createComment(context, RobotStrings.FinishOnboard);
