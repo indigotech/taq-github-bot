@@ -1,19 +1,22 @@
-It's time to learn more about forms.
+Your project is almost finished. There's no new features in the following tracks, you'll just apply the concepts you've learned so far, as well as some practices we use here at Taqtile.
 
-Your task now is to create a screen with a form to create a new user.
+# Step 1 - Thinking about components
+#### Estimated time: 10 minutes
 
-# Step 1 - Create a form for a new user
+We ❤️apps. And a crucial part when making a good app is the User Experience, a.k.a UX. Also, you've learned about componentization and how it contributes to make a good and usable app. So, this step is just a mental exercise. We have below two images representing 2 of the screens you developed so far: `Login` and `Create User`:
 
-This form should contain:
+![Screens](https://raw.githubusercontent.com/indigotech/taq-github-bot/develop/images/fe_screens.jpg)
 
-- name
-- email
-- password
-- role (2 possible types, `user` or `admin`)
+Looking at these screens, you can extract from them some components that can be (re)used. They are relatively simple to componentize, but, as you can imagine, there's not only one way of doing it, specially when the design gets more complex. So, before coding them in a hurry, let's take some minutes to think:
 
-## Validations
+1. What components can be extracted?
+2. Why we should extract them?
+3. What attributes each of these components will contain?
 
-All fields are required and should be validated:
-- name - should have only letters
-- email - valid email format
-- password - minimum of 7 characters, with at least one digit and one alphanumeric
+After you answer these questions, go to next step to see our suggestions on how to componentize them.
+Then, you'll start coding these components.
+
+Btw, as we are talking about UX, here are some references if you want to know more about it:
+- [Nielsen Norman Group](https://www.nngroup.com/)
+- [Google Design](https://medium.com/google-design/tagged/ux)
+- [Facebook Design](https://medium.com/facebook-design)

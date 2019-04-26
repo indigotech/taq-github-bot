@@ -1,8 +1,6 @@
-In this issue, you will have to:
-
 # Step 1 - Create a git branch
 
-- [ ] Create a branch called `feature/setup`
+- Create a branch called `feature/setup`
 
 If you don't remember how to create a branch, check the references in the previous issues.
 

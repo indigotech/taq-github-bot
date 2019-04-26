@@ -1,7 +1,22 @@
-# Step 2 - Challenge: Add pagination to the list
+# Step 2 - Users List Integration
+#### Estimated time: 4 hours
 
-Generally, lists with a minimum amount items are paginated. We currently use 3 types of pagination:
+Let's get some real data. 
 
-- classical - displaying page numbers, eventually a next and previous button ([reference](https://dribbble.com/shots/4144198-Daily-UI-085-Pagination))
-- infinite list with next button - at the end of the list, a button with "load more" ([reference](https://dribbble.com/shots/9331-Load-More-Channels))
-- infinite scroll - the app automatically loads the next page of the user is near the end of the list ([reference](https://dribbble.com/shots/3567980-Infinite-Feed))
+Your task here is to get the real users list from the server.
+
+### Authentication
+
+Every other request except Login demands an authorization token to be made. This is one way of guaranteeing user authentication. Some [reference](https://stackoverflow.com/a/1592572/6789109) if you want to know more.
+
+So, on the next integration tasks, you should add a header on your HTTP Request:
+
+```
+Authorization: token_that_you_have_stored
+```
+
+### User list request
+
+The GraphQL query used for users list is called `Users`. The query documentation can be found on GraphiQL Document Explorer.
+
+You'll notice that this request returns a particular kind of structure (count, nodes, pageInfo). This is one way of doing **pagination**. You'll explore more about this on next step. For now, send the query with no parameters and show the data returned on `node` field.

@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "allowJs": false,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "noLib": false,
-    "lib": ["es2015", "es2017"],
+    "lib": ["es2015", "es2017", "esnext.asynciterable"],
     "module": "commonjs",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "target": "es6",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "pretty": true,
     "sourceMap": true,
-    "baseUrl": "./src",
-    "outDir": "./dist",
+    "outDir": "dist",
     "skipLibCheck": true,
     "noImplicitAny": false,
     "noImplicitUseStrict": false,
@@ -23,21 +25,21 @@
       "node_modules/@types"
     ],
     "paths": {
+      "@core": ["./core"],
+      "@core/*": ["./core/*"],
       "@data": ["./data"],
       "@data/*": ["./data/*"],
-      "@domain": ["./domain/"],
+      "@domain": ["./domain"],
       "@domain/*": ["./domain/*"],
       "@presentation": ["./presentation"],
       "@presentation/*": ["./presentation/*"]
     }
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules",
     "dist",
     "tsconfig-paths-dist.js"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "buildOnSave": false
 }

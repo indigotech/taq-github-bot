@@ -1,47 +1,22 @@
-Now that you have your form, it's time to send data to the server. Your task now is to **integrate your app with the server**.
+# Step 1 - The component pattern
+#### Estimated time: 8 hours
 
-# Step 1 - Integrate the app with the server
+When talking about software architecture, the word here is **responsability**, or which set of tasks should a single part (component) of your app should handle?
 
-We are going to integrate the app with the server by sending the data you've collected in the form and checking the response.
+The most used classification of components responsabilities may be the dumb and smart (or presentational and container) components. This classification is commonly called the **container pattern**. 
 
-## Endpoint
+The main diference between this two component categories is the dumb components doesn't know how to retrieve the data it's presenting.
 
-The endpoint you'll consume is this one:
+In a user list page, for example, a dumb (or presentational) component doesn't know if the data is coming from a web request, or from local storage - it doesn't matter for the component - the only responsability of this component is to display a list of users in screen. 
 
-```bash
-POST https://tq-template-server-sample.herokuapp.com/users
-```
+On the other hand, if this same user list component were a smart (or container) component, it (ideally) has the responsability to retrieve the list data and pass this data to a dumb component show it properly on screen.
 
-And the body sent should be as follow:
+That being said, your task here is to split the UI components of your **Login** and **Add User** pages into dumb and smart components.
 
-```ts
-{
-  name: string;
-  password: string;
-  email: string;
-  role: string;
-}
-```
+If you want to know more about this component categorization, here are some articles for you:
 
-**Important**
-The role should have one of the following values: `admin`, `user`.
+- [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)*
+- [How to develop your React superpowers with the Container Pattern](https://medium.freecodecamp.org/react-superpowers-container-pattern-20d664bdae65)
 
-## Behaviour
+**Note:** This pattern is being rethinked since [React Hooks](https://reactjs.org/docs/hooks-intro.html) were introduced (as stated in the first article). As a recent React feature, we are still using the dumb/smart components in our projects while studying/migrating to (maybe) a new architecture. Anyhow, the component pattern shown here is a widely used pattern in React community and it's worthy to know more about ;)
 
-Your app should behave as follow:
-
-### Before submitting
-
-Your form should not allow the user to submit the creation request if there is an invalid/missing piece of data (i.e missing name, invalid email format, etc).
-
-Following good UX practices, each wrong form should be highlighted and a message should appear below the corresponding form.
-
-### While submitting
-
-In order to avoid submitting more than once, your app should block the submit button and it should show a loading. It can be a full page loading or a button loading.
-
-### After submitting
-
-If the user was successfully created, your app should navigate back to the list and show a success message.
-
-Otherwise, it should remain on the form page and display the message received from the server.

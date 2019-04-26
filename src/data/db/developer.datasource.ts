@@ -1,21 +1,21 @@
 import { Service } from 'typedi';
-import { Developer } from '@domain/entities/developer.model';
-import { redisClient } from './redis-client';
+import { DBClient } from '@data/db/db.client';
+import { Developer } from '@domain';
 
 @Service()
 export class DeveloperDataSource {
-  async createOrUpdate(developer: Developer): Promise<boolean> {
-    try {
-      await redisClient.set(developer.githubId.toString(), JSON.stringify(developer));
-      return true;
-    } catch (e) {
-      console.log(e);
-      return false;
-    }
+  constructor(private readonly db: DBClient) {}
+
+  create(developer: Developer): Promise<boolean> {
+    return this.db.setObject(developer.developerId.toString(), developer);
   }
 
-  async get(githubId: number): Promise<Developer> {
-    const devData = await redisClient.get(githubId.toString());
-    return JSON.parse(devData);
+  async update(devId: number, developer: Partial<Developer>): Promise<boolean> {
+    const currentDev = await this.get(devId);
+    return this.db.setObject(devId.toString(), {...currentDev, ...developer});
+  }
+
+  get(githubId: number): Promise<Developer> {
+    return this.db.getObject(githubId.toString());
   }
 }

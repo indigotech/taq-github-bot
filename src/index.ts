@@ -1,4 +1,9 @@
 import 'reflect-metadata';
-import { robot } from '@presentation/robot';
+import Container from 'typedi';
+import { Robot } from './robot';
+import { configureRobot } from './robot.configure';
 
-export = robot;
+configureRobot();
+const robot = Container.get(Robot);
+
+export = robot.webhookReceiver;
