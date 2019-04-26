@@ -9,6 +9,3 @@ Our screen should have:
   - answers
 - An 'add user' button
 - Fields validation, according to `UserType` GraphQL type.
-
-
-**Note:** Later on, we'll create an User Detail Screen and it's a common practice to reuse some UI components of Detail screen in Create screen. So think if is possible, in your app, to create the same UI for both detail and create user screen.
