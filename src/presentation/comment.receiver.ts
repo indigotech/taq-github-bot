@@ -32,6 +32,7 @@ export class CommentReceiver extends Receiver {
 
     const comment: string = payload.comment && payload.comment.body;
     const commentInfo: CommentInfo = { developerId: devInput.developerId, issueId: payload.issue.id, comment };
+
     const shouldIncrementProgress: boolean = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
 
     if (shouldIncrementProgress) {

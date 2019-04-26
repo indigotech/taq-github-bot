@@ -7,7 +7,7 @@ So, as promised, let's present our suggestions. First, we'd like to show [this d
 
 The way we thought about it, basically 3 components, as shown on the image below: **H1** (text component), **Form field** and **button**.
 
-![Suggestions](./screens_suggestion.jpg)
+![Suggestions](https://raw.githubusercontent.com/indigotech/taq-github-bot/develop/images/screens-suggestion.jpg)
 
 > 2. Why we should extract them?
 
@@ -27,4 +27,4 @@ So, for the components of question 1:
 
 + **H1**: we can put inside the component the font family, size, weight (normal, bold, semi-bold, etc...) and color.
 + **Button**: the style of the label, background color, borders, and also some behaviours, such as the state when clicked or loading.
-+ **Form**: we may consider that the form is a component made of sub-components. For the form on the example, these sub-components are the textfield to enter text, the label above it and a possible caption for errors, below the textfield. Each of these sub-components can have its own attributes.
++ **Form**: we may consider that the form is a component made of sub-components. For the form of the example, these sub-components are the textfield to enter text, the label above it and a possible caption for errors, below the textfield. Each of these sub-components can have its own attributes.

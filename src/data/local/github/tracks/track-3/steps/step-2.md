@@ -17,6 +17,4 @@ Your login screen should have the following validations:
 
 All these validations should be triggered when the user taps the submit button, showing message errors accordingly. Here are some examples of form validation:
 
-> TODO: Trocar as imagens
-
 Once you've done, open a PR.

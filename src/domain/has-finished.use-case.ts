@@ -7,6 +7,6 @@ export class HasFinishedUseCase {
 
   async execute(developerId: number): Promise<boolean> {
     const developer = await this.developerDataSource.get(developerId);
-    return developer.progress && developer.progress.completed === 1;
+    return developer.progress && developer.progress.completed >= 1;
   }
 }

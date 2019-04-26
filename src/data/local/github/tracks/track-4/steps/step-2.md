@@ -10,14 +10,14 @@ GraphQL can be a little scary at the first sight, but don't worry, you'll get us
 - [GraphQL official page](https://graphql.org/learn)
 - [How to GraphQL](https://www.howtographql.com/). We recommend, for now, watch only the first 4 videos of this tutorial.
 
-
 ## Practice
-As we do with REST, let's make a GraphQL request using a tool called **GraphiQL** (no code yet, hang in there). You don't need to download it, just access https://tq-template-server-sample.herokuapp.com/graphiql and you're good to go.
+As we do with REST, let's make a GraphQL request using a tool called **GraphiQL** (no code yet, hang in there). You should download [Graphiql app](https://electronjs.org/apps/graphiql) because it helps a lot to set headers on requests. Once done, access https://tq-template-server-sample.herokuapp.com/graphql and you're good to go.
 
-In GraphiQL, you'll have to make the **login mutation**. Fortunally, the GraphiQL contains the **documentation explorer** which shows how the queries and mutations should be used. 
+In GraphiQL, you'll have to make the **login mutation**. Fortunally, the GraphiQL contains the **documentation explorer** (tab on right) which shows how the queries and mutations should be used. 
 
 The test user for this login mutation is:
+
 ```
-user: admin@taqtile.com
-pass: 1111
+Email: admin@taqtile.com
+Password: 1111
 ```
