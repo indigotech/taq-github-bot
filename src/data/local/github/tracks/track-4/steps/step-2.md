@@ -19,5 +19,5 @@ The test user for this login mutation is:
 
 ```
 Email: admin@taqtile.com
-Password: 1111
+Password: 1234qwer
 ```
