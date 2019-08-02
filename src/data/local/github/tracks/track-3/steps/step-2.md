@@ -12,8 +12,9 @@ Your login screen should have the following validations:
   - Should not be empty (required field)
 
 - **Password input**:
-  - Minimum of 7 characters, with at least one digit and one alphanumeric
   - Should not be empty (required field)
+  - Minimum of 7 characters
+  - Should have at least one digit and one letter
 
 All these validations should be triggered when the user taps the submit button, showing message errors accordingly. Here are some examples of form validation:
 
