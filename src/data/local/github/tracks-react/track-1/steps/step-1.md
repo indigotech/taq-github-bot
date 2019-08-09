@@ -1,6 +1,6 @@
 # Step 1 - Update README.md
 
-This one is easy. All you have to do is add the following topics to `README.md` file. Just remember that these modifications must be done in **local README** file you just cloned. With that in mind, add these topics:
+This one is easy. All you have to do is add the following topics to `README.md` file. Just remember that these modifications must be done in your **local README** file. With that in mind, add these topics:
 
   - Project's Name (pick one 😎)
   - Project's Description
