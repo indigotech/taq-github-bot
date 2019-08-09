@@ -12,3 +12,5 @@ Since the `feature/setup` is (probably) still being reviewed, we need to create 
 - The `Steps to run and debug` section is usually filled with information about how to run your project, such as what commands should the developer use or which configurations should he/she turn on/off before executing your project.
 
 After that, open a pull request with these `README.md` changes.
+
+**PS:** an excellent README is that one document that is sufficient for any developer to be able run your project.
