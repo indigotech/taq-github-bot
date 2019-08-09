@@ -1,4 +1,4 @@
-# Step 5 - Rebasing your branch
+# Step 6 - Rebasing your branch
 
 Here in Taqtile, before merging our revised (and approved) branches, we **rebase** this branch into the one we are attempting to merge. In this case, you'll rebase `docs/readme` or `feature/setup` to `develop`, depending on which one was merged first.
 
