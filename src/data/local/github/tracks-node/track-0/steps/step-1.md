@@ -5,7 +5,12 @@ Welcome to the Taqtile onboard. The main goals of this onboard are:
 1. Learn the basics about some concepts building your own application/website
 1. Get you ready for a real project by presenting some of our stack of technology and best practices
 
-It's supposed to last more or less 8 days of work.
+You will create a simple server using our technology stack with the following features:
+
+1. Login
+1. Users list
+1. User info
+1. Create user
 
 # Step 1 - Warming up - Mastering the Basics
 
