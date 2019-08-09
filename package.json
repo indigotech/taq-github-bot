@@ -21,7 +21,7 @@
     "lint": "tslint 'src/**/*.ts' --project ./tsconfig.json",
     "postinstall": "yarn run clean-dist && tsc && yarn run copy-resources",
     "reinstall": "rimraf ./node_modules || true && yarn cache clean && yarn",
-    "test": "jest --detectOpenHandles && standard",
+    "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"
@@ -31,47 +31,40 @@
     "ioredis": "4.14.0",
     "lodash": "4.17.15",
     "probot": "7.5.1",
-    "typedi": "0.8.0",
-    "reflect-metadata": "0.1.13"
+    "reflect-metadata": "0.1.13",
+    "typedi": "0.8.0"
   },
   "devDependencies": {
-    "@babel/core": "7.4.3",
-    "@babel/preset-env": "7.4.3",
-    "@babel/preset-typescript": "7.3.3",
+    "@taqtile/gulp-module-resolver": "0.3.3-alpha.1",
     "@types/bunyan": "1.8.6",
     "@types/faker": "4.1.5",
-    "@types/node": "10.14.15",
-    "@types/lodash": "4.14.136",
     "@types/ioredis": "4.0.13",
-    "@types/jest": "24.0.11",
+    "@types/jest": "^24.0.17",
+    "@types/lodash": "4.14.136",
     "@types/nock": "9.3.1",
-    "@taqtile/gulp-module-resolver": "0.3.3-alpha.1",
-    "babel-jest": "24.7.0",
+    "@types/node": "10.14.15",
     "copyfiles": "2.1.0",
     "faker": "4.1.0",
     "gulp": "4.0.0",
     "gulp-typescript": "5.0.1",
-    "jest": "24.7.0",
+    "jest": "24.8.0",
     "nock": "10.0.6",
     "nodemon": "1.18.10",
     "rimraf": "2.6.3",
     "smee-client": "1.1.0",
     "standard": "12.0.1",
+    "ts-jest": "24.0.2",
     "tsconfig-paths-jest": "0.0.1",
-    "ts-jest": "24.0.1",
     "tslint": "5.18.0",
-    "typescript": "3.5.3"
+    "typescript": "^3.5.3"
   },
   "engines": {
-    "node": "10.15.3",
+    "node": ">=10.16.0",
     "yarn": ">=1.13.0"
   },
   "standard": {
     "env": [
       "jest"
     ]
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }
