@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "dotenv": "6.0.0",
-    "ioredis": "4.9.0",
-    "lodash": "4.17.11",
+    "ioredis": "4.14.0",
+    "lodash": "4.17.15",
     "probot": "7.5.1",
     "typedi": "0.8.0",
     "reflect-metadata": "0.1.13"
@@ -40,9 +40,9 @@
     "@babel/preset-typescript": "7.3.3",
     "@types/bunyan": "1.8.6",
     "@types/faker": "4.1.5",
-    "@types/node": "10.14.3",
-    "@types/lodash": "4.14.123",
-    "@types/ioredis": "4.0.10",
+    "@types/node": "10.14.15",
+    "@types/lodash": "4.14.136",
+    "@types/ioredis": "4.0.13",
     "@types/jest": "24.0.11",
     "@types/nock": "9.3.1",
     "@taqtile/gulp-module-resolver": "0.3.3-alpha.1",
@@ -59,8 +59,8 @@
     "standard": "12.0.1",
     "tsconfig-paths-jest": "0.0.1",
     "ts-jest": "24.0.1",
-    "tslint": "5.15.0",
-    "typescript": "3.3.3"
+    "tslint": "5.18.0",
+    "typescript": "3.5.3"
   },
   "engines": {
     "node": "10.15.3",

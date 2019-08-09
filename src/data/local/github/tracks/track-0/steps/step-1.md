@@ -1,8 +1,17 @@
+# Taqtile - Onboard
+
+Welcome to the Taqtile onboard. The main goals of this onboard are:
+
+1. Learn the basics about some concepts building your own application/website
+1. Get you ready for a real project by presenting some of our stack of technology and best practices
+
+It's supposed to last more or less 8 days of work.
+
+# Step 1 - Warming up - Mastering the Basics
+
 Ok! Your very first tasks are to **clone this repository** into your own account and **update the README.md** file.
 
 But before moving on, let's be sure you know all the basics we use daily here.
-
-# Step 1 - Warming up - Mastering the Basics
 
 We use [git](https://git-scm.com/)... a lot. If you don't feel confident in your skills using git, here are some recommendations:
 
