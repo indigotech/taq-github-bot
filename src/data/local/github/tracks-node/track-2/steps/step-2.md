@@ -1,18 +1,11 @@
-# Step 2 - The concepts
+# Step 2 - GraphQL setup
+#### Estimated time: 4 hours
 
-Let's present all the concepts and tools we're going to use on your server. There are a lot of them, but don't be frightened, this is why this onboard exists. Some of them may be familiar to you depending on your background.
+In this step you'll have two main tasks: **create a typescript project** and **setup a graphql server**. You can both setup these by yourself as showed in [this tutorial](https://www.howtographql.com/graphql-js/1-getting-started/) or use a cli to make this whole setup for you as [shown here](https://github.com/graphql-boilerplates/typescript-graphql-server/tree/master/basic) (we won't tell anyone 🤫).
 
-Each person has its unique method of learning things, so use your best method based on the suggested links and/or the internet. 
+After the setup, you should be able to access the Graphql docs (on browser, [Graphiql](https://github.com/graphql/graphiql) or [Graphql Playground](https://github.com/prisma/graphql-playground)) and successfully write some GraphQL query.
 
-1. **Typescript:** this is what we call a **superset** of the javascript language. It helps us a lot developing, with the types and other features. You can check [their website](https://www.typescriptlang.org/) for more info.
-1. **Node:** our core [environment](https://nodejs.org/)
-1. **Express:** [framework](https://expressjs.com/) for building node applications.
-1. **HTTP communication and REST:** this is pre-requisite for the next one.
-1. **GraphQL**: it's a query-language that follows REST model. Facebook created it for the community to use. Check [their docs](https://graphql.org/) and/or this [tutorial](https://www.howtographql.com/)
-1. **GraphQL Yoga**: a [tool](https://github.com/prisma/graphql-yoga) to make it easier to setup a GraphQL server.
-1. **Postgres**: the [relational database](https://www.postgresql.org/about/) (SQL) we use.
-1. **Docker**: we use [docker](https://www.docker.com/) mainly to make it easier for us to create containers for the database on our machines.
+**Note:** For now on, some steps will have an **estimated time** to help you organizing your time better. 
+If you do not finish the step in the estimated time **don't worry**! It's just an average time based on previous onboards. The main purpose of it is to indicate when you should ask for help in case you're stuck.
 
-There are also some core libraries we use here. They will be presented as the onboard progresses.
-
-Go to the next step after taking a look on each of these items, and remember you can ask us anything that was not clear after your reseacrh ;)
+By the way, remember that if you're struggling with any topic, feel free asking any Taqtiler ;)
