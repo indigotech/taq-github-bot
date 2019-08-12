@@ -10,7 +10,7 @@ After creating a user, you should implement your mutation as follows:
 
 1. Get the input e-mail received on the mutation and try to find one on database.
 1. Check if the given password is correct. Remember that you should apply all the layers of security to the input password in oder to compare them correctly.
-1. Return the user info and a token, so user can use this token as an `Authorization` header for future requests. You can use a [JWT token](https://jwt.io/introduction/) for that.
+1. Return the user info and a token, so user can use this token as an `Authorization` header for future requests. You can use a [JWT token](https://jwt.io/introduction/) for that, with a secret to encode it and a shot expiration, like 15 minutes.
 
 On each of these steps, some error may occur. It's important in these cases to provide a good description to the client of went wrong. For example, if the password is wrong, you could return an error message like "Invalid credentials, please check your e-mail and password". 
 
