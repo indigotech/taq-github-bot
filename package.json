@@ -13,13 +13,13 @@
     "probot-app"
   ],
   "scripts": {
-    "build": "yarn lint && gulp",
+    "build": "yarn lint && tsc -p tsconfig.json",
     "clean-dist": "rimraf ./dist",
-    "copy-resources": "copyup 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl}' 'dist/'",
+    "copy-resources": "copyup 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl,md}' 'dist/'",
     "start": "probot run ./dist/index.js",
-    "dev": "yarn lint && nodemon -e ts --ignore dist/ --exec \"npm start\"",
+    "dev": "nodemon -e ts --ignore dist/ --exec \"yarn build && npm run start\"",
     "lint": "tslint 'src/**/*.ts' --project ./tsconfig.json",
-    "postinstall": "yarn run clean-dist && tsc && yarn run copy-resources",
+    "postinstall": "yarn run clean-dist && yarn build && yarn run copy-resources",
     "reinstall": "rimraf ./node_modules || true && yarn cache clean && yarn",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage",
@@ -35,19 +35,17 @@
     "typedi": "0.8.0"
   },
   "devDependencies": {
-    "@taqtile/gulp-module-resolver": "0.3.3-alpha.1",
     "@types/bunyan": "1.8.6",
     "@types/faker": "4.1.5",
     "@types/ioredis": "4.0.13",
-    "@types/jest": "^24.0.17",
+    "@types/jest": "24.0.17",
     "@types/lodash": "4.14.136",
     "@types/nock": "9.3.1",
     "@types/node": "10.14.15",
     "copyfiles": "2.1.0",
     "faker": "4.1.0",
-    "gulp": "4.0.0",
-    "gulp-typescript": "5.0.1",
     "jest": "24.8.0",
+    "module-alias": "2.2.1",
     "nock": "10.0.6",
     "nodemon": "1.18.10",
     "rimraf": "2.6.3",
@@ -66,5 +64,11 @@
     "env": [
       "jest"
     ]
+  },
+  "_moduleAliases": {
+    "@core": "dist/core",
+    "@data": "dist/data",
+    "@domain": "dist/domain",
+    "@presentation": "dist/presentation"
   }
 }
