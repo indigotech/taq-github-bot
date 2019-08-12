@@ -1,5 +1,4 @@
 # Step 4 - The test 🤓
-
 ### Estimated time: 3 hours
 
 This is another super-important concept on the process of building your own server. Have you ever stopped to think about how you would test if your code works? 🤔
