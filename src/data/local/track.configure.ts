@@ -22,10 +22,9 @@ export class TrackConfigure {
   configure() {
     console.info('Creating tracks...');
     Container.set(TRACKS, this.createTracksFromFolder());
-    console.log(Container.get(TRACKS));
   }
 
-  private tracksFolderPath = (trackname?: string) => `src/data/local/github/${this.tracksFolder}/${trackname || ''}`;
+  private tracksFolderPath = (trackname?: string) => `${__dirname}/github/${this.tracksFolder}/${trackname || ''}`;
 
   private createTracksFromFolder(): Track[] {
     try {

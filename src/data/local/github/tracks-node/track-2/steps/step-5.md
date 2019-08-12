@@ -11,7 +11,7 @@ We use [Docker](https://www.docker.com/) to create containers on our machines an
 1. Create your `docker-compose.yml` on the root of your repository. You can use [this](https://gist.github.com/alanraso/8341faa973918392d55e39a7b323209a) as an inspiration if you want.
 1. Run `$ docker-compose up -d` on terminal to mount your containers.
 
-**NOTE:** everytime docker stops running, you will need to to run it again. If you want to stop them yourself, you can use `$ docker-compose stop`.
+**NOTE:** everytime docker stops running, you will need to run it again. If you want to stop them yourself, you can use `$ docker-compose stop`.
 
 ## Connecting and using the database
 
@@ -31,7 +31,6 @@ Another useful tool to check if things are going well with the database is [Tabl
 After successfully connecting to database, it's time to see it working by creating your first entity. Guess what? It will be table called `users`!
 
 1. Check on typeorm docs how to create your entity.
-1. Take a look at what migration is.
 1. After creating the table, try creating a row (an user 🙆‍). You can do this either coding or directly on Tableplus, whatever you prefer.
 
 **NOTE:** After all the dabatase setup, don't forget to open a pull request on another branch for people to review your code.
