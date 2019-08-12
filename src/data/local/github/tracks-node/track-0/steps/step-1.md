@@ -2,7 +2,7 @@
 
 Welcome to the Taqtile onboard. The main goals of this onboard are:
 
-1. Learn the basics about some concepts building your own application/website
+1. Learn the basics about some concepts building your own server
 1. Get you ready for a real project by presenting some of our stack of technology and best practices
 
 You will create a simple server using our technology stack with the following features:

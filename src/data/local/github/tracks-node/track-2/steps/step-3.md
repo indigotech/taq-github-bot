@@ -1,7 +1,7 @@
 # Step 3 - A simple Hello World
 #### Estimated time: 2 hours
 
-**NOTE:** Plase make sure you understood at least the basics of **GraphQL** before begining this step.
+**NOTE:** Please make sure you understood at least the basics of **GraphQL** before beginning this step.
 
 Your task now is to create very simple node server using the concepts from previous step. You can follow some tutorials of your choice for this setup, but please consider some recommendations we have below, so you can become to get used to the stack and tools we use here. You can change the order if you want, too.
 
