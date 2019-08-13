@@ -1,16 +1,11 @@
 # Taqtile - Onboard
 
-Welcome to the Taqtile onboard. The main goals of this onboard are:
+Welcome to the Taqtile onboard. It will help you to get used to our technology stack, patterns and best practices.
 
-1. Learn the basics about some concepts building your own server
-1. Get you ready for a real project by presenting some of our stack of technology and best practices
+Thoughout your onboard, you will develop a server able to:
 
-You will create a simple server using our technology stack with the following features:
-
-1. Login
-1. Users list
-1. User info
-1. Create user
+1. Store some data in a database (db)
+1. [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) that data stored in db
 
 # Step 1 - Warming up - Mastering the Basics
 
