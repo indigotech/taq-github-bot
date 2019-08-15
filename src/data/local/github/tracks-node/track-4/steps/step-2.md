@@ -8,4 +8,6 @@ After checking the authentication, it's time to fully integrate your mutation wi
   + It should have at least 7 characters
   + It should have at least 1 letter and 1 digit.
 
-You can add some validations if you want. For example, minimum and maximum birth date. But the most importants are these two above.
+You can add some validations if you want. For example, minimum and maximum birth date. But the most importants are those two above.
+
+**NOTE:** as we discussed, remember not to save the password in plain text on database. Use at least a good hash alghorithm (with salt system, optionally).

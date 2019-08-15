@@ -9,6 +9,6 @@ The idea is to write some code to populate your database, creating an environmen
 1. Create a file and write some code to add at least 50 users on database.
 1. Setup the script to run this file. It should connect to database before running.
 
-You can check on TablePlus if your script worked. One thing that can help you with this code is  [Faker](https://www.npmjs.com/package/faker): a library that has some cool features to return several kinds of randomic data you want, like names, websites, numbers, sentences, and a lot more.
+You can check on TablePlus if your script worked. One thing that can help you with this code is [Faker](https://www.npmjs.com/package/faker): a library that has some cool features to return several kinds of randomic data you want, like names, websites, numbers, sentences, and a lot more.
 
 **NOTE:** this is an example of task that we use the `chore/` prefix on the name of the branch.

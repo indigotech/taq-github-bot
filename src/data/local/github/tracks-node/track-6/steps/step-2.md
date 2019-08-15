@@ -26,7 +26,6 @@ In this case, the app should ask the server, in that order:
 
 Let's say some user has a total of 35 orders. The steps above would be repeated until the client asks for the last 10 orders (after 30th), in which the server would return the 5 last orders, and some information warning that are no more orders to be loaded.
 
-If you search on the internet, you're going to find different ways of doing pagination, but in general they follow the rules listed above. You can choose anyway you want to do this since you follow them.
-
+If you search on the internet, you're going to find different ways of doing pagination, but in general they follow the rules listed above. You can choose anyway you want to do this, given they are followed.
 
 **NOTE:** as usual, don't forget to write the tests for you query!
