@@ -1,6 +1,6 @@
-# Step 1 - Integrating with the database
+# Step 2 - Integrating with the database
 
-### Estimated time: 2 hours
+### Estimated time: 3 hours
 
 Now you're going to fully integrate the Login mutation with the database. Since we don't have a mutation to create users (yet), we should create one directly on the database, so we have the conditions to test it properly.
 
