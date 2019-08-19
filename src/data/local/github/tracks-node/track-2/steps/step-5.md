@@ -1,5 +1,5 @@
 # Step 5 - Using database's data
-### Estimated time: 8 hours
+### Estimated time: 3 hours
 
 In this step, you'll connect your code with the database and create your first table using only Typescript 😎.
 
@@ -24,13 +24,7 @@ Feel free to choose one of these above, or any other app you want :D
 
 After successfully connecting TypeORM to your database, it's time to see it working by creating your first table. Guess what? It will be called `User` (we told you so)
 
-<<<<<<< HEAD
-1. Check on typeorm docs how to create your entity.
-1. After creating the table, try creating a row (an user 🙆‍). You can do this either coding or directly on Tableplus, whatever you prefer.
-=======
 1. Check on TypeORM docs how to create a [TypeORM entity](https://github.com/typeorm/typeorm/blob/master/docs/entities.md#what-is-entity)
-1. Take a look at what migration is.
 1. After creating the table, try creating a row (an user 🙆‍). You can do this either coding (it's possible) or directly on Tableplus, whatever you prefer.
->>>>>>> fix: track 2
 
 **Note 2:** too much for one step? Don't get stuck and feel free to ask anything to any Taqtiler 👍
