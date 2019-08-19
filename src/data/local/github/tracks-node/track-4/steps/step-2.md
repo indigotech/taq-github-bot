@@ -1,5 +1,5 @@
 # Step 2 - Integrate with the database
-### Estimated time: 3 hours
+### Estimated time: 4 hours
 
 After checking the authentication, it's time to fully integrate your mutation with the database. If the token provided is ok, the server should validate the given input, and if everything is right, create a user on database. Wait, what validations? 🧐
 

@@ -1,5 +1,5 @@
 # Step 4 - The test 🤓
-### Estimated time: 3 hours
+### Estimated time: 4 hours
 
 This is another super-important concept on the process of building your own server. Have you ever stopped to think about how you would test if your code works? 🤔
 If you thought about performing the query/mutation on one of those applications (browser, graphiql, graphql playground) and checking if it works as expected, that's one way of doing it. But we have a more solid proposal: writing more code for tests! The principle is simple: you give an entrance and check if the response is the expected. Why is it better? Well, some advantages:

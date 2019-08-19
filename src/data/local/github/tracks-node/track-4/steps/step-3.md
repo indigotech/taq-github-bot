@@ -1,5 +1,5 @@
 # Step 3 - Tests
-### Estimated time: 2 hours
+### Estimated time: 3 hours
 
 Now it's time to write some tests for the new mutation. it should be easier now that you have everything setup. Remember to test every single scenario you have in mind.
 

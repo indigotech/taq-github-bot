@@ -1,5 +1,5 @@
 # Step 2 - The tests
-### Estimated time: 1 hour
+### Estimated time: 2 hour
 
 Now it's time to test your query and all its possible scenarios.
 
