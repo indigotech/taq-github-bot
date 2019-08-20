@@ -18,7 +18,7 @@ Your task now is to install these libraries and write one test for your recently
 1. Remember how you connected your server with the database? We said at the time about having a second container for tests with docker. That's right, we're going to use a second database for the tests, so we don't interfere with our normal database on the process. Before actually running your tests, you should connect with this test dabatase, just like you did when running the server locally.
 1. Try to write a test script on `package.json`, so you can just run `npm run test` on terminal to perform them.
 1. Your test should predict as much scenarios as possible. In case of the Login mutation, some examples are:
-  1. "Success case": an existing e-mail with the right password is given to the system.
-  1. "Wrong password": the input has a valid existing e-mail, but the password is not right.
-  1. "User not found": e-mail sent on input is not present on database.
-  1. "E-mail with invalid format": e-mail sent on input has an invalid format.
+  + "Success case": an existing e-mail with the right password is given to the system.
+  + "Wrong password": the input has a valid existing e-mail, but the password is not right.
+  + "User not found": e-mail sent on input is not present on database.
+  + "E-mail with invalid format": e-mail sent on input has an invalid format.

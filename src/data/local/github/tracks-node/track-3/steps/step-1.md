@@ -12,15 +12,19 @@ Let's call the mutation `Login`. It should receive an e-mail and a password as p
   "data": {
     "Login": {
       "user": {
+        "id": "12",
         "name": "User Name",
-        "email": "User e-mail"
-        // More user fields
+        "email": "User e-mail",
+        "birthDate": "04-25-1990",
+        "cpf": "XXXXXXXXXXX",
       },
       "token": "the_token"
     }
   } 
 }
 ```
+
+Your `User` can have other information if you want, but these fields above should be enough.
 
 **Note:** Did you notice that there is a `data` object wrapping the `Login` response? Don't worry, it's the GraphQL response format. It wraps all the successful response data inside the `data` object and all the errors in an `errors` array of objects. You can read more about it [here](https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#data).
 

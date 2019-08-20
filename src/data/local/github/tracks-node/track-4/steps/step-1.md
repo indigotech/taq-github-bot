@@ -23,17 +23,17 @@ mutation CreateUser($user: CreateUserInput!) {
 {
   "name": "User Name",
   "email": "User e-mail",
-  "password": "User password"
-  // Other user fields
+  "birthDate": "04-25-1990",
+  "cpf": "XXXXXXXXXXX",
 }
 ```
 
 2. The response: you can return either the created user or only a success message.
 3. The first thing your mutation should do after called is checking user authentication. Check the `Authorization` header: the client must have sent a JWT token and it should be a valid one. It's important to check if:
-  + It **is** a JWT token
-  + It has all the payload data you designed earlier
-  + It's not expired
-  + Its signature is correct.
+    + It **is** a JWT token
+    + It has all the payload data you designed earlier
+    + It's not expired
+    + Its signature is correct.
 
 **NOTE:** have in mind that anyone can create a JWT token with any payload data they want (remember [jwt.io](https://jwt.io)?), but only those who have the secret can generate the right signature. Only the server should know this secret.
 
