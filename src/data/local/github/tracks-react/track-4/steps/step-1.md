@@ -15,7 +15,7 @@ For this, we'll just make a REST request using a tool called [Postman](https://w
 ```JSON
 {
 	"email": "admin@taqtile.com",
-	"password": "1111"
+	"password": "1234qwer"
 }
 ```
 
