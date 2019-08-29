@@ -12,4 +12,4 @@ Unlike the previous tracks, now you're going to write the query prototype and in
 
 **NOTE:** think about the database fields you're going to return when creating the `User` GraphQL type. You wouldn't return, for example, the password hash, right? 👀
 
-**NOTE:** don't forget to predict error cases. In this query, the most obvious one is an invalid user id.
+**NOTE:** don't forget to predict error cases. In this query, the most obvious one is passing an id that doens't exist on database.
