@@ -1,4 +1,4 @@
-# Step 2 - Create the 'develop' branch
+# Step 2/3 - Create the 'develop' branch
 
 To create a new branch, go to Terminal in your Project's folder and type this command:
 

@@ -5,7 +5,7 @@ Welcome to the Taqtile onboard. The main goals of this onboard are:
 1. Learn the basics about some concepts building your own application/website
 1. Get you ready for a real project by presenting some of our stack of technology and best practices
 
-# Step 1 - Warming up - Mastering the Basics
+# Step 1/3 - Warming up - Mastering the Basics
 
 Ok! Your very first tasks are to **clone this repository** into your own account and **update the README.md** file.
 

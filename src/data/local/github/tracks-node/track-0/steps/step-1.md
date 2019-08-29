@@ -7,7 +7,7 @@ Thoughout your onboard, you will develop a server able to:
 1. Store some data in a database (db)
 1. [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) that data stored in db
 
-# Step 1 - Warming up - Mastering the Basics
+# Step 1/3 - Warming up - Mastering the Basics
 
 Ok! Your very first tasks are to **clone this repository** into your own account and **update the README.md** file.
 

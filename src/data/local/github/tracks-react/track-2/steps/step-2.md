@@ -1,4 +1,4 @@
-# Step 2 - Create a simple Hello World
+# Step 2/5 - Create a simple Hello World
 #### Estimated time: 3 hours
 
 Follow a tutorial project to create a minimal "Hello World" application using the technology stack you were assigned. If you don't know on which stack you are, please ask your tutor before continuing.

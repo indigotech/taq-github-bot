@@ -1,4 +1,4 @@
-# Step 3 - Styled components library
+# Step 3/4 - Styled components library
 #### Estimated time: 1 hour
 
 After some minutes of theory, it's finally time to put all the previous thoughts on code.

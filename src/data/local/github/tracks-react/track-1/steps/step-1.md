@@ -1,4 +1,4 @@
-# Step 1 - Update README.md
+# Step 1/3 - Update README.md
 
 This one is easy. All you have to do is add the following topics to `README.md` file. Just remember that these modifications must be done in your **local README** file. With that in mind, add these topics:
 

@@ -1,4 +1,4 @@
-# Step 4 - Update README.md
+# Step 4/5 - Update README.md
 
 ### Estimated time: 20 minutes
 

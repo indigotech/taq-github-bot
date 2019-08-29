@@ -1,6 +1,6 @@
 Login is done. Now, let's make the user list UI.
 
-# Step 1 - Users List Frontend (FE)
+# Step 1/3 - Users List Frontend (FE)
 #### Estimated time: 3 hours
 
 This screen will list all registered users. Each list cell (or list row) should contain:

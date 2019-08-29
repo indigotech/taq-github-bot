@@ -1,4 +1,4 @@
-# Step 3 - Set the default branch
+# Step 3/3 - Set the default branch
 
 Set the default branch of your repository to the `develop` branch.
 

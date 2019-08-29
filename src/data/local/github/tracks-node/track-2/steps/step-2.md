@@ -1,4 +1,4 @@
-# Step 2 - GraphQL setup
+# Step 2/6 - GraphQL setup
 #### Estimated time: 3 hours
 
 In this step you'll have two main tasks: **create a node project with typescript** and **setup a graphql server**. But before you start, there are some core concepts you need to know in order to understand what's going on on your code. Try to do some research on your own about these topics, but feel free to ask your tutor, or even another Taqtiler, for references, tips and/or clarifications:

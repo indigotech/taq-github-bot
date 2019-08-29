@@ -1,4 +1,4 @@
-# Step 6 - Rebasing your branch
+# Step 6/6 - Rebasing your branch
 
 Here in Taqtile, before merging our revised (and approved) branches, we **rebase** it into the one we are attempting to merge. In this case, you'll rebase `feature/setup-graphql` to `develop`.
 

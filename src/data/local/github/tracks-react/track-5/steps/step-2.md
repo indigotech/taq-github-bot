@@ -1,4 +1,4 @@
-# Step 2 - Users List Integration
+# Step 2/3 - Users List Integration
 #### Estimated time: 4 hours
 
 Let's get some real data. 

@@ -1,4 +1,4 @@
-# Challenge: Add pagination to the list
+# Step 3/3: Challenge: Add pagination to the list
 #### Estimated time: 4 hours
 
 Generally, lists with a minimum amount items are paginated. We currently use 3 types of pagination:

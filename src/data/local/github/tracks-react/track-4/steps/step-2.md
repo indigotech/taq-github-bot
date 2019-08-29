@@ -1,4 +1,4 @@
-# Step 2 - GraphQL
+# Step 2/4 - GraphQL
 #### Estimated time: 2 hours
 
 ## Getting started

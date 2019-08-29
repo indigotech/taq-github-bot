@@ -1,4 +1,4 @@
-# Step 4 - Containers everywhere
+# Step 4/6 - Containers everywhere
 ### Estimated time: 2 hours
 
 **[Spoiler alert]:** in the end of this onboard, you'll basically develop a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) of an entity called `User`. So, in order to store the user data in our app, let's create a real database.

@@ -1,4 +1,4 @@
-# Step 3 - Git Flow
+# Step 3/3 - Git Flow
 
 Before continuing, it's important to be familiar with our branch model and a few more git tricks.
 
