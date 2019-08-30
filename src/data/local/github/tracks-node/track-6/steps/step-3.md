@@ -6,7 +6,7 @@
 The idea is to write some code to populate your database, creating an environment to facilitate your `Users` (list) query develop. Follow the steps:
 
 1. Create a new script on `package.json` and name it `seeds`. Leave it empty, for now.
-1. Create a file on a folder of your choice and write some code to add at least 50 users on database. This is is going to be your seed script.
+1. Create a file on a folder of your choice and write some code to add at least 50 users on database. This is going to be your seed script.
 1. Think about how you would make it run properly, return to `package.json` and create your `npm run seeds` command.
 
 **NOTE:** don't forget that you have to connect with the database in order to run the code, right?

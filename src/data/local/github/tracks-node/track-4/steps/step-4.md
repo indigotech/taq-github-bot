@@ -1,25 +1,16 @@
-# Step 4/4 - The Login Mutation test
-### Estimated time: 3 hours
+# Step 4/5 - Database and environments
+### Estimated time: 1 hour
 
-Now it's time to (finally) write the tests for your recently implemented `LoginMutation`. But first, some theory: unlike our simple `Hello` query, this mutation is integrated with database. So we should involve the database on our tests. But how should be these tests? Well, some general good practices for every test you're going to perform:
+Now we're going to include the database on our tests. After all, we should test if our queries will be returning what is on the database correctly, and if our mutations are changing the database accordingly. 
 
-+ **Setup the database:** to check if some feature is working, most of the time we need to have a certain state on the database before running the test. For example, we should have at least one valid user on db to make a successful login
-+ **Create an input:** you should create one example of input to run your query/mutation. On your login example, it should be a user/password, with an optional rememberMe.
-+ **Run the test:** well.... Run the test 🏃.
-+ **Check the response:** Given the input **and** the state of database previously set up, you should check if the response is returned as expected. On a successfull login test of yours, a token should be generated and the user info should be returned
-+ **Check the database after the test:** in some cases, we change the database after the request. We should check not only if the response is as expected, but also the new values on db.
-+ **Clear the database:** we want our tests to be independent, so we can make sure every piece of our lego works and can be properly united on a good system. So, it's important to reset the state of the database after every test, so the next one can be clear to run. You can read more about the importance of independant tests on the internet.
+Do you remember we talked about setting up 2 containers because we were going to use 2 databases. Yeah, the north remembers 🐺! As a preparation for this step, you're going to prepare 2 environments: the one you're already using to develop with `npm start` and one additional to run the tests. Do some reasearch about the importance of having separate environments on our development workflow. We will talk about it sometime on our meetings too.
 
-Do you remember we talked about setting up 2 containers because we were going to use 2 databases. Yeah, the north remembers 🐺! As a preparation for this step, you're going to prepare 2 environments: the one you're already using to develop with `npm start` and one additional to run the tests. Take some time to think about why we should have 2 environmets/databases. If you can't find a good answer, ask someone about it!
+One way of handling separate environments is to use **environment variables**. They are variables that can be set for each environment, so when we start our server on that environment, we use the specific values for it. We could have as envirinment variables, for example, our database host, user, url, etc... 
 
-You're going to connect with one of two databases now, depending on if you're running the server the normal way, of if you're runnning the tests. You can check the details of each database on your `docker-compose` file. TypeORM has more than one way to get the database params to connect. In most projects, we use the files `.env` and `.env.test` to define these database parameters.
+Your task now is to set some environment variables to connect with the right database for each environment: `local` and `test`. Create a `.env` and a `.env.test` file to store the values of these variables. This [package](https://www.npmjs.com/package/dotenv) can help you on reading the right file depending on the environment you're running.
 
-Your task now is to write some tests to your `LoginMutation`. Try to follow those good practices above, and try to predict on your tests as many scnearios as you can, so the tests can be more complete. Some examples:
+Now, our step-by-step for the tests is incremented again:
 
-+ Successful login
-+ Wrong e-mail or password
-+ User not found
-+ If you finished the challenge, you can also check if the token duration is behaving as expected according to `rememberMe` input
-
-**NOTE:** don't forget that you should connect to the database **before** (not that joke again) beginning the tests. And it should be the right one.
-**NOTE 2:** don't forget to open a PR with your tests.
+1. Connect to database (the test one)
+1. Start the server
+1. Run a single test
