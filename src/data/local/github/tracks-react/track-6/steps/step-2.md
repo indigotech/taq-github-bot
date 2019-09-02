@@ -1,4 +1,4 @@
-# Step 2 - Add User Screen Integration
+# Step 2/2 - Add User Screen Integration
 #### Estimated time: 3 hours
 
 After you create the frontend, it's time to send this data to the server for creating the user. 

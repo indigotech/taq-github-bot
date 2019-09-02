@@ -1,4 +1,4 @@
-# Step 3 - The token
+# Step 3/4 - The token
 ### Estimated time: 2 hours
 
 Now you're going to finish your `Login` mutation returning a proper token instead of an empty string. Take a look at an example of the token you're going to implement:

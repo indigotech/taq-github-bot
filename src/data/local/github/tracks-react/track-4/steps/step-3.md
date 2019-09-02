@@ -1,4 +1,4 @@
-# Step 3 - Integrate the app with the server
+# Step 3/4 - Integrate the app with the server
 #### Estimated time: 4 hours
 
 In the previous step you made a GraphQL query using the GraphiQL tool, right? For this step, we'll make the same query in your project (code time 🎉).

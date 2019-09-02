@@ -1,6 +1,6 @@
 Your project is almost finished. There's no new features in the following tracks, you'll just apply the concepts you've learned so far, as well as some practices we use here at Taqtile.
 
-# Step 1 - Thinking about components
+# Step 1/4 - Thinking about components
 #### Estimated time: 10 minutes
 
 We ❤️apps. And a crucial part when making a good app is the User Experience, a.k.a UX. Also, you've learned about componentization and how it contributes to make a good and usable app. So, this step is just a mental exercise. We have below two images representing 2 of the screens you developed so far: `Login` and `Create User`:

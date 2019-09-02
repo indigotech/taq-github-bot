@@ -1,4 +1,4 @@
-# Step 2 - Login validations
+# Step 2/2 - Login validations
 #### Estimated time: 2 hours
 
 **(Re-Re-)Note:** Don't forget to open a new branch!

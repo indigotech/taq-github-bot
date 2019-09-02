@@ -1,4 +1,4 @@
-# Step 3 - Create a Pull Request
+# Step 3/6 - Create a Pull Request
 
 - Open a Pull Request of your `feature/setup-graphql` branch
 

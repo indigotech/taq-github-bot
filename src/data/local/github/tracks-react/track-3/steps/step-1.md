@@ -2,7 +2,7 @@ With everything set up, it's coding time! (finally)
 
 **(Re-)Note:** because this is a new step, don't forget to open a new branch!
 
-# Step 1 - Login screen Frontend (FE)
+# Step 1/2 - Login screen Frontend (FE)
 #### Estimated time: 2 hours
 
 Your task now is to create the Login Screen frontend. That means laying out the view components (inputs, buttons, images...) in the screen. In the frontend steps, you **don't need to** make web requests, save data locally and etc. Your job here is **only** layout properly all the view components you'll need in your screen.

@@ -1,4 +1,4 @@
-# Step 4 - Turning theory into code
+# Step 4/4 - Turning theory into code
 #### Estimated time: 8 hours
 
 Now that you have the most important and powerful tool we use, let's turn our components of steps 1 and 2 into code!

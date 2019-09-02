@@ -1,13 +1,18 @@
-# Step 2 - Integrate with the database
-### Estimated time: 4 hours
+# Step 2/5 - Other library: supertest
+### Estimated time: 1 hour
 
-After checking the authentication, it's time to fully integrate your mutation with the database. If provided token is valid, the server should validate the given input, and if everything is right, create a user on database. Wait, validate what? 🧐
+Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library is makes our work of performing requests to our server easier. Take a look at their docs.
 
-1. The system should not allow two or more users with the same e-mail
-1. The system should not allow a very weak password. Follow these rules:
-    + It should have at least 7 characters
-    + It should have at least 1 letter and 1 digit.
+Now, let's increment our step-by-step for the test execution:
 
-You can add some validations if you want. For example, minimum and maximum birth date. But the most importants are those two above.
+1. Start the server
+1. Run a single test
 
-**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash alghorithm (with salt system, optionally).
+In order to acomplish this new first step, your task is to:
+
+1. Install the library
+2. Change your code to start the server `before(() => {})` (🤣) beginning the test
+2. Use the `request` function of `supertest` to communicate with the server you just started. You can use the `localhost:port` for this.
+3. Try to perform your previously implemented `Hello` query, from the `graphql-yoga` setup. For now, just check if it's working with `console.log`
+
+**NOTE:** you can open a pull request after this step, so we can check if your setup is going ok for now.

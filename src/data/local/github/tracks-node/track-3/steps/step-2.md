@@ -1,4 +1,4 @@
-# Step 2 - Integrating with the database
+# Step 2/4 - Integrating with the database
 
 ### Estimated time: 3 hours
 

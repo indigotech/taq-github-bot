@@ -1,4 +1,4 @@
-# Step 2 - Clone this repository
+# Step 2/3 - Clone this repository
 
 You can follow these steps in order to clone this repository:
 

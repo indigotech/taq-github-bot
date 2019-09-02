@@ -1,4 +1,4 @@
-# Step 1 - Add User Screen Frontend (FE)
+# Step 1/2 - Add User Screen Frontend (FE)
 #### Estimated time: 2 hours
 
 Now, we need an Add User Screen so we can... well... add new user users into our app. 😑

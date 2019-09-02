@@ -1,4 +1,4 @@
-# Step 5 - Using database's data
+# Step 5/6 - Using database's data
 ### Estimated time: 3 hours
 
 In this step, you'll connect your code with the database and create your first table using only Typescript 😎.

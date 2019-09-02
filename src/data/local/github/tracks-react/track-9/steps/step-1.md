@@ -1,5 +1,5 @@
-# Step 1 - The component pattern
-#### Estimated time: 8 hours
+# Step 1/1 - The component pattern
+#### Estimated time: 4 hours
 
 When talking about software architecture, the word here is **responsability**, or which set of tasks should a single part (component) of your app should handle?
 
