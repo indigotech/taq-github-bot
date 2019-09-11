@@ -16,6 +16,7 @@ import { TrackSeed } from './seed/track.seed';
 // tslint:disable:max-line-length
 
 const installationPayload = require('./webhook-simulations/installation.payload.json');
+const installationWithRequesterPayload = require('./webhook-simulations/installation-with-requester.payload.json');
 const commentFinishPayload = require('./webhook-simulations/comment-finish.payload.json');
 
 nock.disableNetConnect();
@@ -72,7 +73,7 @@ describe('Webhooks', () => {
     });
 
     describe('New user', () => {
-      it('should create user on database with no progress', async () => {
+      it('should create sender user on database with no progress', async () => {
         const mockResponse = require('./mocks/CreateIssueMockResponse.json');
         nock('https://api.github.com').post('/repos/alanraso/teste-probot-2/issues', _ => true).reply(201, mockResponse);
 
@@ -81,6 +82,20 @@ describe('Webhooks', () => {
         const developer = JSON.parse(devDb);
 
         expect(developer.developerId).toBe(defaultUserId);
+        expect(developer.issueId).not.toBeNull();
+        expect(developer.progress).toBeNull();
+      });
+
+      it('should create requester user on database with no progress', async () => {
+        const mockResponse = require('./mocks/CreateIssueMockResponse.json');
+        nock('https://api.github.com').post('/repos/alanraso/teste-probot-2/issues', _ => true).reply(201, mockResponse);
+        const requesterUserId: number = 12345678;
+
+        await probot.receive({ name: GithubEvents.Installation.Created, payload: installationWithRequesterPayload });
+        const devDb = await db.get(requesterUserId.toString());
+        const developer = JSON.parse(devDb);
+
+        expect(developer.developerId).toBe(requesterUserId);
         expect(developer.issueId).not.toBeNull();
         expect(developer.progress).toBeNull();
       });
