@@ -25,6 +25,7 @@ mutation CreateUser($user: CreateUserInput!) {
   "email": "User e-mail",
   "birthDate": "04-25-1990",
   "cpf": "XXXXXXXXXXX",
+  "password": "1234qwer"
 }
 ```
 

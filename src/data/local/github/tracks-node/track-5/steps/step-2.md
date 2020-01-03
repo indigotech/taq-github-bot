@@ -10,4 +10,4 @@ After checking the authentication, it's time to fully integrate your mutation wi
 
 You can add some validations if you want. For example, minimum and maximum birth date. But the most importants are those two above.
 
-**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash alghorithm (with salt system, optionally).
+**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash algorithm (with salt system, optionally).

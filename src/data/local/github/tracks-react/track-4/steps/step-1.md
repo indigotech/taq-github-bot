@@ -12,6 +12,7 @@ For this, we'll just make a REST request using a tool called [Postman](https://w
 + Base URL: https://tq-template-server-sample.herokuapp.com
 + Endpoint: /authenticate 
 + Body:
+
 ```JSON
 {
 	"email": "admin@taqtile.com",
@@ -41,5 +42,3 @@ If you succeed, you'll receive on body a JSON that looks like this:
 ```
 
 **Note 2:** The **Postman** is just a suggestion. Feel free to use any other tool to make a REST request.
-
-

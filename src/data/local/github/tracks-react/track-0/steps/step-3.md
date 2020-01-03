@@ -17,9 +17,9 @@ In order to improve our workflow, a few years ago, we've adopted Vincent Driesse
 There are a few conventions we use here and it's important for you to be aware of these:
 
 1. Feature branches are:
-   - prepended with `feature/` *i.e. feature/new-user-screen*
-   - should have meaningful names - they should give good hints about what modifications to the system they have
-   - should not have your name on it
+  - prepended with `feature/` *i.e. feature/new-user-screen*
+  - should have meaningful names - they should give good hints about what modifications to the system they have
+  - should not have your name on it
 
 2. Bugfix branches are:
-   - prepended with `bugfix/` *i.e. bugfix/user-list*
+  - prepended with `bugfix/` *i.e. bugfix/user-list*
