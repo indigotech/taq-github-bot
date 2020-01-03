@@ -16,6 +16,6 @@ Your login screen should have the following validations:
   - Minimum of 7 characters
   - Should have at least one digit and one letter
 
-All these validations should be triggered when the user taps the submit button, showing message errors accordingly.
+All these validations should be triggered when the user taps the submit button, showing error messages accordingly.
 
 Once you've done, open a PR.

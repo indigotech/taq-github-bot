@@ -14,7 +14,7 @@ Set up tests on your server is not an easy tasks. There are a couple of things t
 
 As you can imagine, giving the previous steps, there are more cool libraries to help us on this process. We're going to present them one at a time.
 
-The first one is the main library to write the tests codes: [mocha](https://mochajs.org/). Take a look at their docs. It's important to know that mocha provides some methods that can be executed like a timeline. This is very useful to handle tasks in specif orders.
+The first one is the main library to write the tests codes: [mocha](https://mochajs.org/). Take a look at their docs. It's important to know that mocha provides some methods that can be executed like a timeline. This is very useful to handle tasks in specific orders.
 
 Your task is very simple in this first step:
 

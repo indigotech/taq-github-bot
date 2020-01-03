@@ -13,6 +13,6 @@ This may look like a random string, but this token has a lot of power, because t
 1. When it expires
 1. Which user is sending
 
-This is an example of the famous [JWT token](https://jwt.io/). You're going to build these tokens and return on your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token absed authentication, jwt tokens and an example of how to imnplement it on code.
+This is an example of the famous [JWT token](https://jwt.io/). You're going to build these tokens and return on your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token based authentication, jwt tokens and an example of how to implement it on code.
 
 Your task now is to implement a model of JWT tokens for your server and return them on your `Login` mutation.

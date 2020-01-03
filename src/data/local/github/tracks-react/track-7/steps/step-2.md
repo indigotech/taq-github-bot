@@ -7,4 +7,4 @@ The Authorization Header, as you could see so far, must be filled with the authe
 
 A common approach for this problem is to use an **interceptor**, which is a method that is executed before every GraphQL request you make in your app. The Apollo Client, for example, [has support for interceptors](https://www.apollographql.com/docs/react/recipes/authentication.html#Header).
 
-Your task now is to use an interceptor in the library you choose to **set the authentication token only once** in your entire code.
+Your task now is to use an interceptor in the GraphQL client library you are using to **set the authentication token in only one place** on your entire code.

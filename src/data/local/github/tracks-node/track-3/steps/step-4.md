@@ -5,5 +5,5 @@
 
 After implementing the login, you must have noticed that one of the possible parameters for creating a JWT token is the `expiration`. This parameter allows us set an expiration timestamp coded on the token. The challenge consists of:
 
-1. Adding an aditional optional parameter on the Login mutation called `remeberMe`. It's a boolean.
+1. Adding an aditional optional parameter on the Login mutation called `rememberMe`. It's a boolean.
 1. If `rememberMe` was sent and its value is `true`, you should increase the expiration of the returned token. 1 week is good for the context.
