@@ -15,6 +15,11 @@ export class InstallationReceiver extends Receiver {
   onReceive = async (context: Context): Promise<void> => {
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
 
+    if (!devInput) {
+      context.log(`Developer was not foun on hook, nothing to do...`);
+      return;
+    }
+
     const user = await this.initiateUseCase.execute(devInput);
 
     if (user.alreadyExists) {
