@@ -18,4 +18,8 @@ Your login screen should have the following validations:
 
 All these validations should be triggered when the user taps the submit button, showing error messages accordingly.
 
-Once you've done, open a PR.
+**NOTE:** as usual, create a new branch and open a Pull Request after you've done it.
+By the way, every task from now on should be made on a new branch. This has several benefits, such as:
++ CR process becomes easier and more effective with less code
++ Allows possible version rollbacks without having to worry with the feature branches commits.
+ 
