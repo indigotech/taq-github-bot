@@ -13,4 +13,4 @@ Since the `feature/setup` is (probably) still being reviewed, we need to create 
 
 After that, open a pull request with these `README.md` changes.
 
-**PS:** an excellent README is that one document that is sufficient for any developer to be able run your project.
+**TIP:** an excellent README is that one document that is sufficient for any developer to be able run and contribute to your project.

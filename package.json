@@ -21,7 +21,7 @@
     "lint": "tslint 'src/**/*.ts' --project ./tsconfig.json",
     "postinstall": "yarn run clean-dist && yarn build && yarn run copy-resources",
     "reinstall": "rimraf ./node_modules || true && yarn cache clean && yarn",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --runInBand",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"

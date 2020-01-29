@@ -32,7 +32,7 @@ describe('Webhooks', () => {
   let stepsPerTrack: number[];
   let stepProgress: number;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     Container.set(REDIS, new IORedis('6380'));
     db = Container.get(REDIS);
 
