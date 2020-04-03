@@ -13,14 +13,14 @@
     "probot-app"
   ],
   "scripts": {
-    "build": "yarn lint && tsc -p tsconfig.json",
+    "build": "npm run lint && tsc -p tsconfig.json",
     "clean-dist": "rimraf ./dist",
     "copy-resources": "copyup 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl,md}' 'dist/'",
     "start": "probot run ./dist/index.js",
-    "dev": "nodemon -e ts --ignore dist/ --exec \"yarn build && npm run start\"",
+    "dev": "nodemon -e ts --ignore dist/ --exec \"npm run build && npm run start\"",
     "lint": "tslint 'src/**/*.ts' --project ./tsconfig.json",
-    "postinstall": "yarn run clean-dist && yarn build && yarn run copy-resources",
-    "reinstall": "rimraf ./node_modules || true && yarn cache clean && yarn",
+    "postinstall": "npm run clean-dist && npm run build && npm run copy-resources",
+    "reinstall": "rimraf ./node_modules || true && npm install",
     "test": "jest --runInBand",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
@@ -54,11 +54,11 @@
     "ts-jest": "24.0.2",
     "tsconfig-paths-jest": "0.0.1",
     "tslint": "5.18.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.8.3"
   },
   "engines": {
-    "node": ">=10.16.0",
-    "yarn": ">=1.13.0"
+    "node": "12.16.1",
+    "npm": ">=6.9.0"
   },
   "standard": {
     "env": [
