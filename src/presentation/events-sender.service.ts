@@ -47,9 +47,7 @@ export class GithubEventSender {
       trackToSend = tracks[nextProgress.track];
       const createdIssue = await this.createIssue(context, trackToSend.title, trackToSend.steps[0].body);
       await this.updateDeveloperIssue.execute(developer.developerId, createdIssue.data.id);
-      console.log('A');
       await this.createComment(context, RobotStrings.NextTrack(createdIssue.data.html_url));
-      console.log('B');
       return;
     }
 
@@ -70,7 +68,7 @@ export class GithubEventSender {
     const event = context.issue(Object.assign(context.event, { body }));
     const params = Object.assign(event, { issue_number: event.number, });
     delete params.number;
-    console.log(JSON.stringify(params));
+
     return context.github.issues.createComment(params);
   }
 

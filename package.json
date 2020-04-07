@@ -21,7 +21,7 @@
     "lint": "tslint 'src/**/*.ts' --project ./tsconfig.json",
     "postinstall": "npm run clean-dist && npm run build && npm run copy-resources",
     "reinstall": "rimraf ./node_modules || true && npm install",
-    "test": "npm run build && mocha -r ts-node/register -r tsconfig-paths/register 'src/**/*.test.ts'",
+    "test": "npm run build && mocha -r ts-node/register -r tsconfig-paths/register 'src/**/*.test.ts' --timeout 5000 --exit",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"
   },

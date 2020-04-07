@@ -1,16 +1,15 @@
-import { Inject, Service } from 'typedi';
+import Container, { Service } from 'typedi';
 import { MathUtils } from '@core';
 import { Track } from '@domain/track.model';
 import { TRACKS } from './track.configure';
 
 @Service()
 export class TrackDataSource {
-  readonly tracks: ReadonlyArray<Track>;
+  readonly tracks: ReadonlyArray<Track> = Object.freeze(Container.get(TRACKS));
   readonly totalSteps: number;
   readonly incrementProgressStep: number;
 
-  constructor(@Inject(TRACKS) tracks: Track[]) {
-    this.tracks = Object.freeze(tracks);
+  constructor() {
     this.totalSteps = this.calculateTotalSteps();
     this.incrementProgressStep = MathUtils.round(1 / this.totalSteps, 4);
   }

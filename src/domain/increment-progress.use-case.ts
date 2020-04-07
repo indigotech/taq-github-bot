@@ -1,11 +1,11 @@
-import { Service } from 'typedi';
+import Container, { Service } from 'typedi';
 import { RobotError } from '@core';
 import { TrackDataSource } from '@data/local';
 import { DeveloperProgress } from './developer.model';
 
 @Service()
 export class IncrementProgressUseCase {
-  constructor(private readonly trackDataSource: TrackDataSource) {}
+  private readonly trackDataSource: TrackDataSource = Container.get(TrackDataSource);
 
   execute(progress: DeveloperProgress): Promise<DeveloperProgress> {
     const tracks = this.trackDataSource.tracks;

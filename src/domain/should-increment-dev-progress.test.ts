@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { DBClient, DeveloperDataSource } from '@data/db';
+import Container from 'typedi';
+import { DeveloperDataSource, REDIS } from '@data/db';
 import { Developer } from './developer.model';
 import { CommentInfo, ShouldIncrementDevProgressUseCase } from './should-increment-dev-progress.use-case';
 
@@ -12,13 +13,19 @@ describe('ShouldIncrementDevProgressUseCase', () => {
   let issueId: number;
 
   before(() => {
-    const datasource = new DeveloperDataSource(new DBClient(null));
-    shouldIncrementUseCase = new ShouldIncrementDevProgressUseCase(datasource);
+    Container.set(REDIS, {});
+    const datasource = Container.get(DeveloperDataSource);
+    shouldIncrementUseCase = Container.get(ShouldIncrementDevProgressUseCase);
 
     developerId = 123;
     issueId = 456;
     const developer: Developer = { developerId, issueId, name: null, progress: null };
     sinon.stub(datasource, 'get').callsFake(async () => developer);
+  });
+
+  after(() => {
+    Container.reset();
+    sinon.restore();
   });
 
   it('should validate "finish" anywhere on sentence, and its variations', async () => {

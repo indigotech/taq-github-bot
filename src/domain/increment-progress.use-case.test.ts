@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { createTrack } from 'test/seed/track.seed';
-import { TrackDataSource } from '@data/local';
+import Container from 'typedi';
+import { TRACKS } from '@data/local/track.configure';
 import { IncrementProgressUseCase } from '@domain/increment-progress.use-case';
 
 describe('IncrementProgressUseCase', () => {
@@ -10,7 +11,12 @@ describe('IncrementProgressUseCase', () => {
     const tracks = [3, 5, 4].map((stepsNumber: number, i: number) => {
       return createTrack(i, stepsNumber);
     });
-    incrementProgressUseCase = new IncrementProgressUseCase(new TrackDataSource(tracks));
+    Container.set(TRACKS, tracks);
+    incrementProgressUseCase = new IncrementProgressUseCase();
+  });
+
+  after(() => {
+    Container.reset();
   });
 
   it('should increment first progress possible', async () => {
