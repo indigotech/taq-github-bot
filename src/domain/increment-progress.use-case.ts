@@ -1,6 +1,5 @@
 import { Service } from 'typedi';
 import { RobotError } from '@core';
-import { MathUtils } from '@core/math.utils';
 import { TrackDataSource } from '@data/local';
 import { DeveloperProgress } from './developer.model';
 
@@ -11,7 +10,8 @@ export class IncrementProgressUseCase {
   execute(progress: DeveloperProgress): Promise<DeveloperProgress> {
     const tracks = this.trackDataSource.tracks;
 
-    const hasNextStep: boolean = progress.step + 1 < tracks[progress.track].steps.length;
+    const totalStepsForCurrentTrack = tracks[progress.track].steps.length;
+    const hasNextStep: boolean = progress.step + 1 < totalStepsForCurrentTrack;
     const hasNextTrack: boolean = progress.track + 1 < tracks.length;
 
     if (hasNextStep) {
@@ -23,7 +23,7 @@ export class IncrementProgressUseCase {
       throw new RobotError(500, 'Error getting next progress.');
     }
 
-    progress.completed = MathUtils.round(progress.completed + this.trackDataSource.incrementProgressStep, 4);
+    progress.completedStepsOverall++;
 
     return Promise.resolve(progress);
   }

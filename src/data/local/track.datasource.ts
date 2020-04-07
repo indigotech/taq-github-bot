@@ -1,6 +1,6 @@
 import { Inject, Service } from 'typedi';
 import { MathUtils } from '@core';
-import { Track } from '@domain';
+import { Track } from '@domain/track.model';
 import { TRACKS } from './track.configure';
 
 @Service()

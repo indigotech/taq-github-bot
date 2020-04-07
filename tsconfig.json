@@ -32,7 +32,9 @@
       "@domain": ["./domain"],
       "@domain/*": ["./domain/*"],
       "@presentation": ["./presentation"],
-      "@presentation/*": ["./presentation/*"]
+      "@presentation/*": ["./presentation/*"],
+      "@test": ["./__tests__"],
+      "@test/*": ["./__tests__/*"]
     }
   },
   "exclude": [

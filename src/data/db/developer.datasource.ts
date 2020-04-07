@@ -1,10 +1,10 @@
 import { Service } from 'typedi';
 import { DBClient } from '@data/db/db.client';
-import { Developer } from '@domain';
+import { Developer } from '@domain/developer.model';
 
 @Service()
 export class DeveloperDataSource {
-  constructor(private readonly db: DBClient) {}
+  constructor(private readonly db: DBClient) { }
 
   create(developer: Developer): Promise<boolean> {
     return this.db.setObject(developer.developerId.toString(), developer);

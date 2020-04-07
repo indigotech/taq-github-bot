@@ -1,9 +1,9 @@
 import * as Faker from 'faker';
 import IORedis from 'ioredis';
-import { Developer } from '@domain';
+import { Developer } from '@domain/developer.model';
 
 export class DeveloperSeed {
-  constructor(private readonly redisClient: IORedis.Redis) {}
+  constructor(private readonly redisClient: IORedis.Redis) { }
 
   async reset(): Promise<number> {
     const keys = await this.redisClient.keys('*');

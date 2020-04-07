@@ -1,8 +1,9 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
 import {
-  CommentInfo, DeveloperInput, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase
+  CommentInfo, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase
 } from '@domain';
+import { DeveloperInput } from '@domain/developer.model';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
 
@@ -23,20 +24,24 @@ export class CommentReceiver extends Receiver {
 
     const payload = context.payload;
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(payload);
+
+    const { developerId, name } = devInput;
     const hasAlreadyFinished = await this.hasFinishedUseCase.execute(devInput.developerId);
 
     if (hasAlreadyFinished) {
-      context.log(`Developer ${devInput.name} has already finished onboard, nothing to do here...`);
+      context.log.info(`Developer ${name} (${developerId}) has already finished onboard, nothing to do here...`);
       return;
     }
 
     const comment: string = payload.comment && payload.comment.body;
-    const commentInfo: CommentInfo = { developerId: devInput.developerId, issueId: payload.issue.id, comment };
+    const commentInfo: CommentInfo = { developerId, issueId: payload.issue.id, comment };
 
     const shouldIncrementProgress: boolean = await this.shouldIncrementDevProgressUseCase.execute(commentInfo);
 
     if (shouldIncrementProgress) {
       await this.incrementProgress(context, devInput);
+    } else {
+      context.log.info(`No reason to increment developer ${name} (${developerId}) detected`);
     }
   }
 

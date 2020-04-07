@@ -1,6 +1,6 @@
 import IORedis from 'ioredis';
 import Container from 'typedi';
-import { REDIS } from './data/db';
+import { DBClient } from './data/db';
 import { ONBOARD_STACK, OnboardStack, TrackConfigure } from './data/local/track.configure';
 
 export function configureRobot() {
@@ -9,7 +9,7 @@ export function configureRobot() {
 }
 
 function configureDB() {
-  Container.set(REDIS, new IORedis(process.env.REDIS_URL));
+  Container.set(DBClient, new DBClient(new IORedis(process.env.REDIS_URL)));
   console.info('Connected to Database...');
 }
 

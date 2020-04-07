@@ -1,19 +1,24 @@
-import { DeveloperDataSource } from '@data/db';
-import { Developer } from '@domain/developer.model';
-import { CommentInfo, ShouldIncrementDevProgressUseCase } from '@domain/should-increment-dev-progress.use-case';
+import { expect } from 'chai';
+import * as sinon from 'sinon';
+import { DBClient, DeveloperDataSource } from '@data/db';
+import { Developer } from './developer.model';
+import { CommentInfo, ShouldIncrementDevProgressUseCase } from './should-increment-dev-progress.use-case';
 
-describe('Comment received', () => {
+// tslint:disable: no-unused-expression
+
+describe('ShouldIncrementDevProgressUseCase', () => {
   let shouldIncrementUseCase: ShouldIncrementDevProgressUseCase;
   let developerId: number;
   let issueId: number;
 
-  beforeAll(() => {
-    shouldIncrementUseCase = new ShouldIncrementDevProgressUseCase(new DeveloperDataSource(null));
+  before(() => {
+    const datasource = new DeveloperDataSource(new DBClient(null));
+    shouldIncrementUseCase = new ShouldIncrementDevProgressUseCase(datasource);
 
     developerId = 123;
     issueId = 456;
     const developer: Developer = { developerId, issueId, name: null, progress: null };
-    DeveloperDataSource.prototype.get = jest.fn<Promise<Developer>, any>(() => Promise.resolve(developer));
+    sinon.stub(datasource, 'get').callsFake(async () => developer);
   });
 
   it('should validate "finish" anywhere on sentence, and its variations', async () => {
@@ -30,7 +35,7 @@ describe('Comment received', () => {
 
     await Promise.all(commentInfo.map(async info => {
       const shouldIncrement: boolean = await shouldIncrementUseCase.execute(info);
-      expect(shouldIncrement).toBe(true);
+      expect(shouldIncrement).to.be.true;
     }));
   });
 
@@ -48,7 +53,7 @@ describe('Comment received', () => {
 
     await Promise.all(commentInfo.map(async info => {
       const shouldIncrement: boolean = await shouldIncrementUseCase.execute(info);
-      expect(shouldIncrement).toBe(true);
+      expect(shouldIncrement).to.be.true;
     }));
   });
 
@@ -64,7 +69,7 @@ describe('Comment received', () => {
 
     await Promise.all(commentInfo.map(async info => {
       const shouldIncrement: boolean = await shouldIncrementUseCase.execute(info);
-      expect(shouldIncrement).not.toBe(true);
+      expect(shouldIncrement).not.to.be.true;
     }));
   });
 });
