@@ -17,7 +17,7 @@ export class InstallationReceiver extends Receiver {
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
 
     if (!devInput) {
-      context.log.warn(`Developer was not foun on hook, nothing to do...`);
+      context.log.warn(`Developer was not found on hook, nothing to do...`);
       return;
     }
 
