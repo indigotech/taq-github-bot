@@ -6,7 +6,7 @@ export interface DeveloperInput {
 export interface DeveloperProgress {
   track: number;
   step: number;
-  completed: number; // [0,1]
+  completedStepsOverall: number;
 }
 
 export interface Developer extends DeveloperInput {

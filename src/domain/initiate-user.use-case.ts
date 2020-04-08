@@ -19,7 +19,6 @@ export class InitiateUserUseCase {
     }
 
     developer = await this.createNewUser(input);
-
     return { developer, alreadyExists: false };
   }
 

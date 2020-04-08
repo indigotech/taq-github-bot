@@ -1,6 +1,6 @@
 import IORedis from 'ioredis';
 import Container from 'typedi';
-import { REDIS } from './data/db';
+import { REDIS } from '@data/db';
 import { ONBOARD_STACK, OnboardStack, TrackConfigure } from './data/local/track.configure';
 
 export function configureRobot() {

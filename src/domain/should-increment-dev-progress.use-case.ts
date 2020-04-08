@@ -1,4 +1,4 @@
-import { Service } from 'typedi';
+import Container, { Service } from 'typedi';
 import { DeveloperDataSource } from '@data/db';
 
 export interface CommentInfo {
@@ -9,7 +9,7 @@ export interface CommentInfo {
 
 @Service()
 export class ShouldIncrementDevProgressUseCase {
-  constructor(private readonly dataSource: DeveloperDataSource) { }
+  private readonly dataSource: DeveloperDataSource = Container.get(DeveloperDataSource);
 
   async execute(commentInfo: CommentInfo): Promise<boolean> {
     const commentLowerCase = commentInfo.comment.toLowerCase();

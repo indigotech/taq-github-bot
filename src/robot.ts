@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { Application } from 'probot';
 import { Service } from 'typedi';
 import { GithubEvents } from './github-events.constants';

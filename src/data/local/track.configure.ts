@@ -1,5 +1,5 @@
 import { Container, Inject, Service } from 'typedi';
-import { Step, Track } from '@domain';
+import { Step, Track } from '@domain/track.model';
 import { readAllFiles, readFile, readFolder } from './file.utils';
 
 export const TRACKS = 'TRACKS';

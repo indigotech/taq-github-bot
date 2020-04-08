@@ -1,6 +1,7 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
-import { DeveloperInput, InitiateUserUseCase } from '@domain';
+import { InitiateUserUseCase } from '@domain';
+import { DeveloperInput } from '@domain/developer.model';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
 
@@ -16,14 +17,14 @@ export class InstallationReceiver extends Receiver {
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
 
     if (!devInput) {
-      context.log(`Developer was not foun on hook, nothing to do...`);
+      context.log.warn(`Developer was not found on hook, nothing to do...`);
       return;
     }
 
     const user = await this.initiateUseCase.execute(devInput);
 
     if (user.alreadyExists) {
-      context.log(`Developer "${user.developer.name}" is already registered, nothing to do...`);
+      context.log.info(`Developer "${user.developer.name}" is already registered, nothing to do...`);
     } else {
       await this.eventsSender.openEvent(context, user.developer);
     }
