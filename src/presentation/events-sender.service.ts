@@ -73,7 +73,8 @@ export class GithubEventSender {
   }
 
   private createFirstIssue(context: Context, title: string, body: string) {
-    const fullNameSplit = context.payload.repositories[0].full_name.split('/');
+    const repository = context.payload.repository || context.payload.repositories[0];
+    const fullNameSplit = repository.full_name.split('/');
     const params = { owner: fullNameSplit[0], repo: fullNameSplit[1], title, body };
 
     return context.github.issues.create(params);

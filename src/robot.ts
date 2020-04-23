@@ -14,6 +14,7 @@ export class Robot {
   webhookReceiver = (app: Application) => {
     app.on(GithubEvents.Installation.Created, this.installationReceiver.onReceive);
     app.on(GithubEvents.Installation.Added, this.installationReceiver.onReceive);
+    app.on(GithubEvents.Member.Added, this.installationReceiver.onReceive);
     app.on(GithubEvents.IssueComment.Created, this.commentReceiver.onReceive);
   }
 }

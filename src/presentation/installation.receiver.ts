@@ -7,13 +7,15 @@ import { Receiver } from './receiver';
 
 @Service()
 export class InstallationReceiver extends Receiver {
-  constructor(
-    private readonly initiateUseCase: InitiateUserUseCase,
-  ) {
+  constructor(private readonly initiateUseCase: InitiateUserUseCase) {
     super();
   }
 
   onReceive = async (context: Context): Promise<void> => {
+    if (context.isBot) {
+      return;
+    }
+
     const devInput: DeveloperInput = PayloadMapper.mapToDeveloper(context.payload);
 
     if (!devInput) {

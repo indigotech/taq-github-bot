@@ -19,13 +19,14 @@ import { GithubEventSender } from '@presentation/events-sender.service';
 // tslint:disable:max-line-length
 // tslint:disable:no-unused-expression
 
-const installationPayload = require('./webhook-simulations/installation.payload.json');
-const installationWithRequesterPayload = require('./webhook-simulations/installation-with-requester.payload.json');
-const commentFinishPayload = require('./webhook-simulations/comment-finish.payload.json');
-
 describe('Webhooks', () => {
   const defaultId = '2ad1ce00-75d8-11ea-8f0b-8dd55d1cefec';
   const totalSteps = 10;
+
+  let installationPayload;
+  let installationWithRequesterPayload;
+  let memberAddedPayload;
+  let commentFinishPayload;
 
   let db: Redis;
   let developerSeed: DeveloperSeed;
@@ -37,6 +38,11 @@ describe('Webhooks', () => {
   let stepsPerTrack: number[];
 
   before(async () => {
+    installationPayload = require('./webhook-simulations/installation.payload.json');
+    installationWithRequesterPayload = require('./webhook-simulations/installation-with-requester.payload.json');
+    memberAddedPayload = require('./webhook-simulations/member-added.payload.json');
+    commentFinishPayload = require('./webhook-simulations/comment-finish.payload.json');
+
     Container.set(REDIS, new IORedis('6380'));
     db = (Container.get(DBClient) as any).redisClient;
 
@@ -116,6 +122,43 @@ describe('Webhooks', () => {
 
     it('should do nothing if developer is already created', async () => {
       const context = { id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload };
+
+      await developerSeed.createNewUser(defaultUserId);
+
+      const devDbBefore = await db.get(defaultUserId.toString());
+      await probot.receive(context);
+      const devDbAfter = await db.get(defaultUserId.toString());
+
+      expect(devDbBefore).to.be.eq(devDbAfter);
+    });
+  });
+
+  describe('Member added', () => {
+    beforeEach(() => {
+      nock('https://api.github.com').post('/app/installations/8287662/access_tokens').reply(200, { token: 'test' });
+    });
+
+    it('should create member user on database with no progress', async () => {
+      const mockResponse = require('./mocks/CreateIssueMockResponse.json');
+      const firstTrack: Track = Container.get<Track[]>(TRACKS)[0];
+      const firstIssueData = { title: firstTrack.title, body: firstTrack.steps[0].body };
+      sinon.stub((GithubEventSender.prototype as any), 'createFirstIssue').callsFake(async (_, title: string, body: string) => {
+        expect(title).to.be.deep.eq(firstIssueData.title);
+        expect(body).to.be.deep.eq(firstIssueData.body);
+        return { data: mockResponse };
+      });
+      await probot.receive({ id: defaultId, name: GithubEvents.Member.Added, payload: memberAddedPayload });
+
+      const devDb = await db.get(defaultUserId.toString());
+      const developer = JSON.parse(devDb);
+
+      expect(developer.developerId).to.be.eq(defaultUserId);
+      expect(developer.issueId).not.to.be.null;
+      expect(developer.progress).to.be.null;
+    });
+
+    it('should do nothing if developer is already created', async () => {
+      const context = { id: defaultId, name: GithubEvents.Member.Added, payload: memberAddedPayload };
 
       await developerSeed.createNewUser(defaultUserId);
 
