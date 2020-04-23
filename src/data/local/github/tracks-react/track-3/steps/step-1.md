@@ -15,7 +15,7 @@ Talking about view components, your screen should have a form containing:
 
 You can use the following image as an inspiration:
 
-![login](https://raw.githubusercontent.com/indigotech/taq-github-bot/develop/images/login.jpg)
+![login](https://raw.githubusercontent.com/indigotech/taq-github-bot/master/images/login.jpg)
 
 Don't mind the styles, borders and colors, you can choose your own, if you want to.
 

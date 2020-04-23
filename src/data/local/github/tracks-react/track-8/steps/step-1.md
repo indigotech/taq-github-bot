@@ -5,7 +5,7 @@ Ok, there is no more features to add to your project by now! Now, you'll just ap
 
 We ❤️ apps. And a crucial part when making a good app is the User Experience, a.k.a UX. Also, you've learned about componentization and how it contributes to make a good and usable app. So, this step is just a mental exercise. We have below two images representing 2 of the screens you developed so far: `Login` and `Create User`:
 
-![Screens](https://raw.githubusercontent.com/indigotech/taq-github-bot/develop/images/fe_screens.jpg)
+![Screens](https://raw.githubusercontent.com/indigotech/taq-github-bot/master/images/fe_screens.jpg)
 
 Looking at these screens, you can extract from them some components that can be (re)used. They are relatively simple to componentize, but, as you can imagine, there's not only one way of doing it, specially when the design gets more complex. So, before coding them in a hurry, let's take some minutes to think:
 
