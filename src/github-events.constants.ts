@@ -7,21 +7,11 @@ export const GithubEvents = {
     Created: 'installation.created',
     Added: 'integration_installation_repositories.added',
   },
-
-  Issues: {
-    Opened: 'issues.opened',
-    Reopened: 'issues.reopened',
-    Edited: 'issues.edited',
-    Closed: 'issues.closed',
-  },
-
   IssueComment: {
     Created: 'issue_comment.created',
   },
-
-  PullRequest: {
-    Opened: 'pull_request.opened',
+  Member: {
+    Added: 'member.added',
   },
-
   // Add more Github events if needed
 };
