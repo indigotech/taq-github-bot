@@ -17,6 +17,6 @@ Authorization: token_that_you_have_stored
 
 ### User list request
 
-The GraphQL query used for users list is called `Users`. The query documentation can be found on GraphiQL Document Explorer.
+The GraphQL query used for users list is called `users`. The query documentation can be found on GraphiQL Document Explorer.
 
 You'll notice that this request returns a particular kind of structure (count, nodes, pageInfo). This is one way of doing **pagination**. You'll explore more about this on next step. For now, send the query with no parameters and show the data returned on `nodes` field.

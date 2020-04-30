@@ -18,6 +18,6 @@ In GraphiQL, you'll have to make the **login mutation**. Fortunally, the GraphiQ
 The test user for this login mutation is:
 
 ```
-Email: admin@taqtile.com
+Email: admin@taqtile.com.br
 Password: 1234qwer
 ```

@@ -18,7 +18,7 @@ If everything goes well with the login mutation, you should store the received t
 ### On Login Error
 If you get an error with the login mutation, just **show the error message you'll receive from server**.
 
-The error response you'll receive in this case will have the following structure:
+The error response you'll receive in this case will have in its structure:
 
 ```json
 {
@@ -26,7 +26,7 @@ The error response you'll receive in this case will have the following structure
     "errors": [
         {
             "name": "string",
-            "original": "string",
+            "code": number,
             "message": "string"
         }
     ]
