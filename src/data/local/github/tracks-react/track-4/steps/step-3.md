@@ -1,4 +1,4 @@
-# Step 3/4 - Integrate the app with the server
+# Step 3/5 - Integrate the app with the server
 #### Estimated time: 4 hours
 
 In the previous step you made a GraphQL query using the GraphiQL tool, right? For this step, we'll make the same query in your project (code time 🎉).
@@ -13,17 +13,7 @@ When you finish this step, your login screen should have the following behaviour
 - Your form should not allow the user to submit the login request if there is an invalid/missing piece of data (i.e invalid email format, etc).
 
 ### On Login Success
-If everything goes well with the login mutation, you should:
-
-- Store the received token, which will be used in your latter GraphQL requests.
-- Navigate to the User List page. It can be a blank page, since it's not implemented yet.
-
-When **storing the token** you can use any method you want to save this data, but remember that **it should persist even if the user quits the application**.
-
-Here are a few common options to store these data locally: 
-- Local storage
-- Local database
-- Local preferences
+If everything goes well with the login mutation, you should store the received token, which will be used in your latter GraphQL requests. When **storing the token** you can use any method you want to save this data, but remember that **it should persist even if the user quits the application**.
 
 ### On Login Error
 If you get an error with the login mutation, just **show the error message you'll receive from server**.
