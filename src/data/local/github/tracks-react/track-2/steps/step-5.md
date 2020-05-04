@@ -1,6 +1,6 @@
 # Step 5/5 - Rebasing your branch
 
-Here in Taqtile, before merging our revised (and approved) branches, we **rebase** this branch into the one we are attempting to merge. In this case, you'll rebase `docs/readme` or `feature/setup` to `develop`, depending on which one was reviewed and approved first.
+Here in Taqtile, before merging our revised (and approved) branches, we **rebase** this branch into the one we are attempting to merge. In this case, you'll rebase `docs/update-readme` or `feature/setup` to `develop`, depending on which one was reviewed and approved first.
 
 Too confusing? Here are some good links you can read about **rebase**:
 - [Git Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)

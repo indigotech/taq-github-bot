@@ -1,4 +1,4 @@
-# Step 1/4 - Network Communication
+# Step 1/5 - Network Communication
 #### Estimated time: 15 minutes
 
 ## REST
