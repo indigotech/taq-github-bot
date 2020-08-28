@@ -9,7 +9,7 @@ export class IncrementDeveloperProgressUseCase {
   constructor(
     private readonly developerDataSource: DeveloperDataSource,
     private readonly nextProgressUseCase: IncrementProgressUseCase,
-  ) { }
+  ) {}
 
   async execute(developerId: number): Promise<Developer> {
     const developer: Developer = await this.developerDataSource.get(developerId);
@@ -18,7 +18,7 @@ export class IncrementDeveloperProgressUseCase {
       throw new RobotError(404, `Developer ${developer.developerId} not found`);
     }
 
-    const firstProgress: boolean = !developer.progress;
+    const firstProgress = !developer.progress;
     const progress = firstProgress ? this.firstProgress() : await this.nextProgressUseCase.execute(developer.progress);
 
     await this.developerDataSource.update(developerId, { progress });

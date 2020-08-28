@@ -18,6 +18,6 @@ export class DBClient {
   }
 
   async getObject<T>(key: string): Promise<T> {
-    return JSON.parse(await this.redisClient.get(key));
+    return JSON.parse(await this.redisClient.get(key)) as T;
   }
 }

@@ -5,7 +5,7 @@
 export const GithubEvents = {
   Installation: {
     Created: 'installation.created',
-    Added: 'integration_installation_repositories.added',
+    Added: 'installation_repositories.added',
   },
   IssueComment: {
     Created: 'issue_comment.created',

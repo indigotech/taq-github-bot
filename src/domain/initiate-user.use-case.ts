@@ -9,7 +9,7 @@ export interface InitiateUser {
 
 @Service()
 export class InitiateUserUseCase {
-  constructor(private readonly dataSource: DeveloperDataSource) { }
+  constructor(private readonly dataSource: DeveloperDataSource) {}
 
   async execute(input: DeveloperInput): Promise<InitiateUser> {
     let developer = await this.dataSource.get(input.developerId);

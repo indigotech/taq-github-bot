@@ -5,6 +5,7 @@ import { Step, Track } from '@domain/track.model';
 export class TrackSeed {
   tracks: Track[];
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   createTracks(stepsPerTrack: number[]) {
     this.tracks = stepsPerTrack.map((stepsNumber: number, i: number) => {
       return createTrack(i, stepsNumber);
@@ -14,7 +15,7 @@ export class TrackSeed {
   }
 }
 
-export function createTrack(n: number, stepsNumber: number = 3) {
+export function createTrack(n: number, stepsNumber = 3) {
   const stepPrefix = `Step ${n} - `;
   const steps: Step[] = new Array(stepsNumber).fill(null).map((_, i: number) => ({
     body: stepPrefix + i,

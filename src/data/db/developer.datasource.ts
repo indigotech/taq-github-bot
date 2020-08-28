@@ -12,7 +12,7 @@ export class DeveloperDataSource {
 
   async update(devId: number, developer: Partial<Developer>): Promise<boolean> {
     const currentDev = await this.get(devId);
-    return this.db.setObject(devId.toString(), {...currentDev, ...developer});
+    return this.db.setObject(devId.toString(), { ...currentDev, ...developer });
   }
 
   get(githubId: number): Promise<Developer> {

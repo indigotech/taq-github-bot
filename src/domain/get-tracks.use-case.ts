@@ -6,7 +6,7 @@ import { Track } from './track.model';
 export class GetTracksUseCase {
   constructor(private readonly dataSource: TrackDataSource) {}
 
-  exec(): Promise<{ tracks: ReadonlyArray<Track>, totalSteps: number }> {
+  exec(): Promise<{ tracks: ReadonlyArray<Track>; totalSteps: number }> {
     return Promise.resolve({ tracks: this.dataSource.tracks, totalSteps: this.dataSource.totalSteps });
   }
 }
