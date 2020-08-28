@@ -1,7 +1,10 @@
 import { Context } from 'probot';
 import { Service } from 'typedi';
 import {
-  CommentInfo, HasFinishedUseCase, IncrementDeveloperProgressUseCase, ShouldIncrementDevProgressUseCase
+  CommentInfo,
+  HasFinishedUseCase,
+  IncrementDeveloperProgressUseCase,
+  ShouldIncrementDevProgressUseCase,
 } from '@domain';
 import { DeveloperInput } from '@domain/developer.model';
 import { PayloadMapper } from './payload.mapper';
@@ -43,7 +46,7 @@ export class CommentReceiver extends Receiver {
     } else {
       context.log.info(`No reason to increment developer ${name} (${developerId}) detected`);
     }
-  }
+  };
 
   private async incrementProgress(context, devInput: DeveloperInput) {
     const developer = await this.incrementProgressUseCase.execute(devInput.developerId);

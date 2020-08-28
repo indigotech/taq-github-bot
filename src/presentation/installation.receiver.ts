@@ -30,5 +30,5 @@ export class InstallationReceiver extends Receiver {
     } else {
       await this.eventsSender.openEvent(context, user.developer);
     }
-  }
+  };
 }

@@ -11,7 +11,7 @@ export function readFile(basePath: string, file: string): string {
 }
 
 export function readAllFiles(folderPath: string): string[] {
-  return readdirSync(resolve(folderPath)).map(filename => readFile(folderPath, filename));
+  return readdirSync(resolve(folderPath)).map((filename) => readFile(folderPath, filename));
 }
 
 export function readFolder(folderPath: string) {

@@ -1,5 +1,5 @@
-import { Container, Inject, Service } from 'typedi';
 import { Step, Track } from '@domain/track.model';
+import { Container, Inject, Service } from 'typedi';
 import { readAllFiles, readFile, readFolder } from './file.utils';
 
 export const TRACKS = 'TRACKS';
@@ -13,7 +13,7 @@ export enum OnboardStack {
 @Service()
 export class TrackConfigure {
   private readonly stepsFolderName = '/steps';
-  private readonly tracksFolder;
+  private readonly tracksFolder: string;
 
   constructor(@Inject(ONBOARD_STACK) stack: string) {
     this.tracksFolder = stack === OnboardStack.Node ? 'tracks-node' : 'tracks-react';
@@ -28,13 +28,15 @@ export class TrackConfigure {
 
   private createTracksFromFolder(): Track[] {
     try {
-      const trackNames = readFolder(this.tracksFolderPath())
-        .filter(dirname => dirname.startsWith('track-'));
+      const trackNames = readFolder(this.tracksFolderPath()).filter((dirname) => dirname.startsWith('track-'));
 
-      const tracks = trackNames.map(trackName => ({
-        ...JSON.parse(readFile(this.tracksFolderPath(trackName), trackName.concat('.json'))),
-        steps: this.createSteps(trackName),
-      }));
+      const tracks = trackNames.map(
+        (trackName) =>
+          ({
+            ...JSON.parse(readFile(this.tracksFolderPath(trackName), trackName.concat('.json'))),
+            steps: this.createSteps(trackName),
+          } as Track),
+      );
 
       return tracks;
     } catch (error) {
@@ -46,8 +48,7 @@ export class TrackConfigure {
   private createSteps(trackName: string): Step[] {
     try {
       const stepsBasePath = this.tracksFolderPath(trackName) + this.stepsFolderName;
-      const steps = readAllFiles(stepsBasePath)
-        .map(body => ({ body }));
+      const steps = readAllFiles(stepsBasePath).map((body) => ({ body }));
 
       return steps;
     } catch (error) {

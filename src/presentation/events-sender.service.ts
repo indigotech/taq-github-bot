@@ -11,14 +11,14 @@ export class GithubEventSender {
     private readonly getTracksUseCase: GetTracksUseCase,
     private readonly nextProgressUseCase: IncrementProgressUseCase,
     private readonly updateDeveloperIssue: UpdateDeveloperIssueUseCase,
-  ) { }
+  ) {}
 
   async openEvent(context: Context, developer: Developer) {
     const { tracks, totalSteps } = await this.getTracksUseCase.exec();
     const progress: DeveloperProgress = developer.progress;
     let trackToSend: Track;
 
-    const isNewUser: boolean = !progress;
+    const isNewUser = !progress;
     if (isNewUser) {
       context.log.info(`Creating first track for ${developer.name}...`);
       trackToSend = tracks[0];
@@ -66,7 +66,7 @@ export class GithubEventSender {
 
   private createComment(context: Context, body: string) {
     const event = context.issue(Object.assign(context.event, { body }));
-    const params = Object.assign(event, { issue_number: event.number, });
+    const params = Object.assign(event, { issue_number: event.number });
     delete params.number;
 
     return context.github.issues.createComment(params);

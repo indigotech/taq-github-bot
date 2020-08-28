@@ -7,7 +7,7 @@ export class HasFinishedUseCase {
   constructor(
     private readonly developerDataSource: DeveloperDataSource,
     private readonly tracksDatasource: TrackDataSource,
-  ) { }
+  ) {}
 
   async execute(developerId: number): Promise<boolean> {
     const developer = await this.developerDataSource.get(developerId);
