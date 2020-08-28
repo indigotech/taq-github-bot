@@ -40,7 +40,7 @@ describe('Webhooks', () => {
   before(async () => {
     installationPayload = require('./webhook-simulations/installation.payload.json');
     installationWithRequesterPayload = require('./webhook-simulations/installation-with-requester.payload.json');
-    memberAddedPayload = require('./webhook-simulations/member-added.payload.json');
+    memberAddedPayload = require('./webhook-simulations/member-added-as-admin.payload.json');
     commentFinishPayload = require('./webhook-simulations/comment-finish.payload.json');
 
     Container.set(REDIS, new IORedis('6380'));
@@ -133,7 +133,7 @@ describe('Webhooks', () => {
     });
   });
 
-  describe('Member added', () => {
+  describe('Member added as admin', () => {
     beforeEach(() => {
       nock('https://api.github.com').post('/app/installations/8287662/access_tokens').reply(200, { token: 'test' });
     });
