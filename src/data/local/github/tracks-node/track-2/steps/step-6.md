@@ -8,3 +8,7 @@ Too confusing? Here are some good links you can read about **rebase**:
 - Bonus: [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
 **Note:** after your `feature/setup-database` is approved, you'll repeat this process.
+
+The ideal setup we are trying to achieve with the rebases are something like below.:
+
+![git_flow](https://user-images.githubusercontent.com/6992731/73354485-99ab4780-4274-11ea-996b-44e9faf8981d.png)

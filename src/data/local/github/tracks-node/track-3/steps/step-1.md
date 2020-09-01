@@ -5,12 +5,12 @@ In this track, you will implement a login mutation fully integrated with the dat
 
 Let's start with baby steps, by creating the mutation prototype, with no integration with the dabatase (yet).
 
-Let's call the mutation `Login`. It should receive an e-mail and a password as parameters and return the following structure on body:
+Let's call the mutation `login`. It should receive an e-mail and a password as parameters and, in case of success, return the following structure on body:
 
 ```json
 {
   "data": {
-    "Login": {
+    "login": {
       "user": {
         "id": "12",
         "name": "User Name",
@@ -28,4 +28,6 @@ Your `User` can have other information if you want, but these fields above shoul
 
 **Note:** Did you notice that there is a `data` object wrapping the `Login` response? Don't worry, it's the GraphQL response format. It wraps all the successful response data inside the `data` object and all the errors in an `errors` array of objects. You can read more about it [here](https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#data).
 
-For now, you can return the above structure populated with some mock data.
+For now, you can return the above structure directly on your code populated with some mock data.
+
+**Note 2:** don't forget to open Pull Requests at the end of every step that has some code to be written!
