@@ -1,7 +1,8 @@
 # Step 2/5 - Create a simple Hello World
 #### Estimated time: 3 hours
 
-Follow a tutorial project to create a minimal "Hello World" application using the technology stack you were assigned. If you don't know on which stack you are, please ask your tutor before continuing. We use **react** for web projects and **react-native** for apps, both using **Typescript**. Read them carefully:
+Follow a tutorial project to create a minimal "Hello World" application using the technology stack you were assigned. If you don't know on which tech stack you are, please ask your tutor before continuing. We use **react** for web projects and **react-native** for mobile apps, both using **Typescript**. 
+Below there are instructions for creating an simple Hello World in the tech stack you were assigned. So pick up yours and read it carefully:
 
 ## React
 
