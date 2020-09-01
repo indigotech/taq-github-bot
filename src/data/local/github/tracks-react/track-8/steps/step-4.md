@@ -5,7 +5,7 @@ Now that you have the most important and powerful tool we use, let's turn our co
 
 To do that in a reasonable time, we will focus only on on **Login** and **Add User**, as we did before. Your job is to create some components and use them at both UIs, so you can see all of the thoughts of steps 1 and 2 on action.
 
-Here are some specifications our "design team" is giving to help you build the components. You don't exactly need to follow all the detailed values if you don't want to. Whats's __extremely important__ is to __have__ those scpecs parametrized, as the values as not that important: we design our code to change them easily if necessary.
+Here are some specifications our "design team" is giving to help you build the components. You don't exactly need to follow all the detailed values if you don't want to. Whats's __extremely important__ is to __have__ those specs parametrized, as the values as not that important: we should design our code to change them easily if necessary.
 
 ### H1: 
 + __Text size:__ 24px

@@ -8,4 +8,7 @@ git checkout -b name_of_your_branch
 
 With this, you'll create a new branch and change the current working branch to this new one. Your new branch should be named `develop`
 
-**Note**: after created, don't forget to push your new branch to remote repository (a.k.a `origin`).
+**Note**: after created, don't forget to push your new branch to remote repository (a.k.a `origin`). To do so, run:
+```batch
+git push origin develop
+```

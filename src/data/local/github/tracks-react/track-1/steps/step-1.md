@@ -7,6 +7,6 @@ This one is easy. All you have to do is add the following topics to `README.md` 
   - Environment and tools *
   - Steps to run and debug *
 
-Note that you will be asked to fill the section with * later.
+The section with * you'll fill in later steps 👍.
 
-After you fill `README.md`, commit these changes and push to `master` branch.
+After you fill `README.md`, commit the changes and push to `master` branch.

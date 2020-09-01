@@ -17,7 +17,7 @@ You can use the following image as an inspiration:
 
 ![login](https://raw.githubusercontent.com/indigotech/taq-github-bot/master/images/login.jpg)
 
-Don't mind the styles, borders and colors, you can choose your own, if you want to.
+Don't mind about the styles, borders and colors. Later on, you'll be asked to work on the styles and UI components.
 
 Create a feature branch with a meaningful name for this task, and once you've done it, open a PR.
 
