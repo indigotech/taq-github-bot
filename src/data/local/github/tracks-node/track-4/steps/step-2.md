@@ -1,7 +1,7 @@
 # Step 2/6 - Other library: supertest
 ### Estimated time: 1 hour
 
-Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library makes our work of performing requests to our server easier. Take a look at their docs.
+Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library makes our work of performing requests to the server easier. Take a look at their docs.
 
 Now, let's increment our step-by-step for the test execution:
 

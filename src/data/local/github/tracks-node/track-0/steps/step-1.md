@@ -22,4 +22,4 @@ BTW, we highly encourage training using the terminal.
 On the end of every task of this onboard, comment the word `Finish` on the issue to receive your next task (you can try reloading the page if it's taking too long).
 You can also comment the word `next`, in case you had to skip the current task.
 
-Incase of any issue, you can ask your tutor for help. Go to next step!
+In case of any issue, you can ask your tutor for help. Go to next step!

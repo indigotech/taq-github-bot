@@ -9,5 +9,5 @@ Now you're going to fully integrate the Login mutation with the database. Since 
 After creating an user, you should implement your mutation as follows:
 
 1. Get the input e-mail received on the mutation and try to find one on database.
-1. Check if the given password is correct. Remember that, in order to comapre them properly, the input password should be submitted to the same process of transformation that the ones stored on Database, right?
-1. If e-mail exists on db and the password is right, return the user info and a token. For now, the token can be only an empty string. You're going to implement it on next step.
+1. Check if the given password is correct. Remember that, in order to compare them properly, the input password should be submitted to the same process of transformation that the ones stored on Database, right?
+1. If the e-mail can be found on the database and the password is valid, return the user info and a token. For now, the token can be only an empty string. You're going to implement it on next step.
