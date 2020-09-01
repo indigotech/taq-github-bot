@@ -1,7 +1,7 @@
-# Step 2/5 - Other library: supertest
+# Step 2/6 - Other library: supertest
 ### Estimated time: 1 hour
 
-Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library is makes our work of performing requests to our server easier. Take a look at their docs.
+Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library makes our work of performing requests to our server easier. Take a look at their docs.
 
 Now, let's increment our step-by-step for the test execution:
 
@@ -11,7 +11,7 @@ Now, let's increment our step-by-step for the test execution:
 In order to acomplish this new first step, your task is to:
 
 1. Install the library
-2. Change your code to start the server `before(() => {})` (🤣) beginning the test
+2. Change your code to start the server `before(() => {})` beginning the test... (🤣)
 2. Use the `request` function of `supertest` to communicate with the server you just started. You can use the `localhost:port` for this.
 3. Try to perform your previously implemented `Hello` query, from the `graphql-yoga` setup. For now, just check if it's working with `console.log`
 
