@@ -25,9 +25,9 @@ The error response you'll receive in this case will have in its structure:
     "data": null,
     "errors": [
         {
-            "name": "string",
-            "code": number,
-            "message": "string"
+            "name": "a stirng",
+            "code": 500,
+            "message": "a stirng"
         }
     ]
 }

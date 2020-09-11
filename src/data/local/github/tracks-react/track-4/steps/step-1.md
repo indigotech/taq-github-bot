@@ -15,7 +15,7 @@ For this, we'll just make a REST request using a tool called [Postman](https://w
 
 ```JSON
 {
-	"email": "admin@taqtile.com",
+	"email": "admin@taqtile.com.br",
 	"password": "1234qwer"
 }
 ```
@@ -30,7 +30,7 @@ If you succeed, you'll receive on body a JSON that looks like this:
         "user": {
             "id": 51,
             "active": true,
-            "email": "admin@taqtile.com",
+            "email": "admin@taqtile.com.br",
             "createdAt": "2018-06-25T23:11:56.472Z",
             "updatedAt": "2019-01-17T15:28:04.567Z",
             "name": "Taqtile Adm",

@@ -17,7 +17,13 @@ First, we use [git](https://git-scm.com/)... a lot. If you don't feel confident 
 - https://www.atlassian.com/git/tutorials
 - https://learngitbranching.js.org/
 
-BTW, we highly encourage you to use the terminal.
+If you don't have it already, we recommend you to install the [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) VSCode extension. It's going to help you a lot with git by adding an extra view on activity bar (the icons on the left side).
+
+![GitLens](https://github.com/indigotech/taq-github-bot/blob/master/images/gitlens.jpg)
+
+It will help you to check the modified files, as well as the changes on each of them.
+
+Even though this extension has some tools to perform git commands, we highly encourage you to use the terminal, and use the extension as a visual guide to your changes.
 
 ---
 
