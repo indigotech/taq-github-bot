@@ -1,16 +1,11 @@
-# Step 4/6 - Database and environments
-### Estimated time: 1 hour
+# Step 4/4 - Challenge: the token duration
+### Estimated time: 2 hours
 
-Now we're going to include the database on our tests. After all, we should test if our queries will be returning what is on the database correctly, and if our mutations are changing the database accordingly. 
+**NOTE:** some steps on this onboard are classified as "challenges". They are meant to be some additional tasks that add some bonus features, but are not necessarily core of the server. Try not to loose too much time on them 🙃
 
-Do you remember we talked about setting up 2 containers because we were going to use 2 databases? Yeah, the north remembers 🐺! As a preparation for this step, you're going to prepare 2 environments: the one you're already using to develop with `npm start` and one additional to run the tests. Do some reasearch about the importance of having separate environments on our development workflow. We will talk about it sometime on our meetings too.
+After implementing the login, you must have noticed that one of the possible parameters for creating a JWT token is the `expiration`. This parameter allows us set an expiration timestamp coded on the token. The challenge consists of:
 
-One way of handling separate environments is to use **environment variables**. They are variables that can be set for each environment, so when we start our server on that environment, we use the specific values for it. We could have as environment variables, for example, our database host, user, url, etc... 
+1. Adding an aditional optional parameter on the Login mutation called `rememberMe`. It's a boolean.
+1. If `rememberMe` was sent and its value is `true`, you should increase the expiration of the returned token. 1 week is good for our context.
 
-Your task now is to set some environment variables to connect with the right database for each environment: `localhost` and `test`. Create a `.env` and a `.env.test` file to store the values of these variables. This [package](https://www.npmjs.com/package/dotenv) can help you on reading the right file depending on the environment you're running.
-
-Now, our step-by-step for the tests is incremented again:
-
-1. Connect to database (the test one)
-1. Start the server
-1. Run a single test
+Now your clients will have the oportunity to use that famous "Remember me" checkbox!

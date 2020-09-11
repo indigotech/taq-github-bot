@@ -1,11 +1,14 @@
-# Step 4/4 - Challenge: the token duration
-### Estimated time: 2 hours
+# Step 4/4 - Rebasing your branch
 
-**NOTE:** some steps on this onboard are classified as "challenges". They are meant to be some additional tasks that add some bonus features, but are not necessarily core of the server. Try not to loose too much time on them 🙃
+Here in Taqtile, before merging our revised (and approved) branches, we **rebase** it into the one we are attempting to merge. In this case, you'll rebase `feature/setup-graphql` to `develop`.
 
-After implementing the login, you must have noticed that one of the possible parameters for creating a JWT token is the `expiration`. This parameter allows us set an expiration timestamp coded on the token. The challenge consists of:
+Too confusing? Here are some good links you can read about **rebase**:
+- [Git Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+- [What is git rebase?](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
+- Bonus: [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
-1. Adding an aditional optional parameter on the Login mutation called `rememberMe`. It's a boolean.
-1. If `rememberMe` was sent and its value is `true`, you should increase the expiration of the returned token. 1 week is good for our context.
+**Note:** after your `feature/setup-database` is approved, you'll repeat this process.
 
-Now your clients will have the oportunity to use that famous "Remember me" checkbox!
+The ideal setup we are trying to achieve with the rebases are something like below.:
+
+![git_flow](https://user-images.githubusercontent.com/6992731/73354485-99ab4780-4274-11ea-996b-44e9faf8981d.png)

@@ -1,13 +1,35 @@
-# Step 2/4 - Integrating with the database
-
+# Step 2/4 - Using database's data
 ### Estimated time: 3 hours
 
-Now you're going to fully integrate the Login mutation with the database. Since we don't have a mutation to create users (yet), we should create one directly on the database, so we have the conditions to test it properly.
+In this step, you'll connect your code with the database and create your first table using only Typescript 😎.
 
-**NOTE:** One of the required data to create a user is the password. You should have read or heard already that storing users password as plain text in the database is a bad idea. If not, you're reading now: it **is** a bad idea 🤦‍. The minimum security we should have on this case is to use a hash algorithm to store the password. This is not a 100% secure method, but it helps already. Interested in this security matter? Check [this post](https://itnext.io/how-not-to-store-passwords-4955569e6e84) for additional details. Since this is only an onboard server, you don't need to have a ultra-master-blaster security method. Our main goal here is to show you some levels of security and prevent you from beginning your projects with an ultra-master-blaster insecure method.
+## Connecting with the database
 
-After creating an user, you should implement your mutation as follows:
+Do we have a library to access our database? Of course we do. For this, we use the [TypeORM](https://typeorm.io/#/) library. It helps us to make database operations (create tables, access data and so on) in a very simple way.
 
-1. Get the input e-mail received on the mutation and try to find one on database.
-1. Check if the given password is correct. Remember that, in order to compare them properly, the input password should be submitted to the same process of transformation that the ones stored on Database, right?
-1. If the e-mail can be found on the database and the password is valid, return the user info and a token. For now, the token can be only an empty string. You're going to implement it on next step.
+1. Take some time to learn how this library works. It's super cool, but it's also a lot of abstraction.
+1. Follow their docs to add it to your project (remember that we're using postgres).
+1. Choose an option provided by typeorm to connect to your database. The credentials are the ones you set on `docker-compose.yml`.
+1. Try to connect with database before running the yoga `start` code. For now, you can connect only with your **local** database, leaving the test connection for later.
+
+**Note:** don't forget to check if your docker container is running before connecting to the DB, otherwise it will fail.
+
+Now you can ask: "Do they have a tool to manage the data inside the database without code?" Of course we do, young padawan. Actually, we recommend these two apps:
+- [Tableplus](https://tableplus.io/)
+- [PopSQL](https://popsql.com/)
+
+Feel free to choose one of these above, or any other app you want :D
+
+## Creating your first entity
+
+After successfully connecting TypeORM to your database, it's time to see it working by creating your first table. Guess what? It will be called `User` (we told you so)
+
+1. Check on TypeORM docs how to create a [TypeORM entity](https://github.com/typeorm/typeorm/blob/master/docs/entities.md#what-is-entity)
+1. After creating the table, try creating a row (an user 🙆‍). You can do this either coding (it's possible) or directly on Tableplus, whatever you prefer.
+
+**Note 2:** too much for one step? Don't get stuck and feel free to ask anything to any Taqtiler 👍
+
+
+## Open a Pull Request
+
+Now open a pull request for your `feature/setup-database` branch.
