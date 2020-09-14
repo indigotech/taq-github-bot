@@ -1,14 +1,16 @@
-# Step 5/5 - Rebasing your branch
+# Step 5/6 - Update README.md
 
-Here in Taqtile, before merging our revised (and approved) branches, we **rebase** this branch into the one we are attempting to merge. In this case, you'll rebase `docs/update-readme` or `feature/setup` to `develop`, depending on which one was reviewed and approved first.
+### Estimated time: 20 minutes
 
-Too confusing? Here are some good links you can read about **rebase**:
-- [Git Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
-- [What is git rebase?](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
-- Bonus: [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+Do you remember we created the `README.md` of this project before? Now that you have a project created on your technology stack, it's time to update it with some piece of information.
 
-**Note:** Remember that if you are stuck in any of these topics, feel free to ask any Taqtiler. We are here to help 😉
+Since the `feature/setup` is (probably) still being reviewed, we need to create a new branch for this current step's task. Let's call this new branch `docs/update-readme`. Here's what you'll need to do:
 
-The ideal setup we are trying to achieve with the rebases are something like this:
+- Go to develop branch: `git checkout develop`
+- Open a new branch called `docs/update-readme`
+- Update the `Environment and tools` section with some data about... well... your machine environment and the tools you're using. Things like the Node version, the Android Studio/Xcode version, the programming language any other relevant data for a developer to getting started in your project.
+- The `Steps to run and debug` section is usually filled with information about how to run your project, such as what commands should the developer use or which configurations should he/she turn on/off before executing your project.
 
-![git_flow](https://user-images.githubusercontent.com/6992731/73354485-99ab4780-4274-11ea-996b-44e9faf8981d.png)
+After that, open a pull request with these `README.md` changes.
+
+**TIP:** an excellent README is that one document that is sufficient for any developer to be able to run and contribute to your project.

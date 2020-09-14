@@ -1,4 +1,4 @@
-# Step 1/6 - Create a git branch
+# Step 1/4 - Create a git branch
 
 - Create a branch called `feature/setup-graphql`
 

@@ -1,18 +1,13 @@
-# Step 2/6 - Other library: supertest
-### Estimated time: 1 hour
+# Step 2/4 - Integrating with the database
 
-Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library makes our work of performing requests to the server easier. Take a look at their docs.
+### Estimated time: 3 hours
 
-Now, let's increment our step-by-step for the test execution:
+Now you're going to fully integrate the Login mutation with the database. Since we don't have a mutation to create users (yet), we should create one directly on the database, so we have the conditions to test it properly.
 
-1. Start the server
-1. Run a single test
+**NOTE:** One of the required data to create a user is the password. You should have read or heard already that storing users password as plain text in the database is a bad idea. If not, you're reading now: it **is** a bad idea 🤦‍. The minimum security we should have on this case is to use a hash algorithm to store the password. This is not a 100% secure method, but it helps already. Interested in this security matter? Check [this post](https://itnext.io/how-not-to-store-passwords-4955569e6e84) for additional details. Since this is only an onboard server, you don't need to have a ultra-master-blaster security method. Our main goal here is to show you some levels of security and prevent you from beginning your projects with an ultra-master-blaster insecure method.
 
-In order to acomplish this new first step, your task is to:
+After creating an user, you should implement your mutation as follows:
 
-1. Install the library
-2. Change your code to start the server `before(() => {})` beginning the test... (🤣)
-2. Use the `request` function of `supertest` to communicate with the server you just started. You can use the `localhost:port` for this.
-3. Try to perform your previously implemented `Hello` query, from the `graphql-yoga` setup. For now, just check if it's working with `console.log`
-
-**NOTE:** you can open a pull request after this step, so we can check if your setup is going ok for now.
+1. Get the input e-mail received on the mutation and try to find one on database.
+1. Check if the given password is correct. Remember that, in order to compare them properly, the input password should be submitted to the same process of transformation that the ones stored on Database, right?
+1. If the e-mail can be found on the database and the password is valid, return the user info and a token. For now, the token can be only an empty string. You're going to implement it on next step.

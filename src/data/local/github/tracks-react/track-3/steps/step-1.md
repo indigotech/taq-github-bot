@@ -19,6 +19,8 @@ You can use the following image as an inspiration:
 
 Don't mind about the styles, borders and colors. Later on, you'll be asked to work on the styles and UI components.
 
+**TIP**: you will have to name your typescript React components with the extension `.tsx` to be able to use the html-like React syntax (jsx). But as the project goes, you may want to create some other files on your code that are not necesarily React components with this syntax. On those, you can use the traditional `.ts` extension.
+
 Create a feature branch with a meaningful name for this task, and once you've done it, open a PR.
 
 **Note**: Bear in mind that this task is only the login screen **frontend**, which means that, for now, you don't have to communicate with server to check the user credentials for example. All you have to do here is to layout properly all the view components you'll need in your screen.

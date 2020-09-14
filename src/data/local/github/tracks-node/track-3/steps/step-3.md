@@ -1,18 +1,14 @@
-# Step 3/4 - The token
-### Estimated time: 2 hours
+# Step 3/4 - Readme
 
-Now you're going to finish your `Login` mutation returning a proper token instead of an empty string. Take a look at an example of the token you're going to implement:
+Remember you created a `README.md` file. Now it's time to populate it. Fill the blank topics that were left before. Create a branch named `docs/update-readme` and fill in the info you left blank before. Open a pull request for this branch after finished.
 
 ```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+  - Project's Name
+  - Project's Description
+  - Environment and tools *
+  - Steps to run and debug *
 ```
 
-This may look like a random string, but this token has a lot of power, because there are some information encoded on it. The server can know only with a token, for example:
+**TIP:** an excellent README is that one document that is sufficient for any developer to be able to run and contribute to your project.
 
-1. When it was created
-1. When it expires
-1. Which user is sending
-
-This is an example of the famous [JWT token](https://jwt.io/). You're going to build these tokens and return on your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token based authentication, jwt tokens and an example of how to implement it on code.
-
-Your task now is to implement a model of JWT tokens for your server and return them on your `Login` mutation.
+**NOTE 2:** For now on, you're going to create branches and Pull requests on your own. Pick good and clear branch names and try to open Pull Requests for one or only few steps. It's not a good practice to have too much code on a PR. 😅

@@ -1,8 +1,10 @@
-# Step 3/3 - Tests
-### Estimated time: 3 hours
+# Step 3/6 - The last library (for now): chai
+### Estimated time: 30 minutes
 
-Now it's time to write some tests for the new mutation. it should be easier now that you have everything setup. Remember to test every single scenario you have in mind.
+The last library for tests is [chai](https://www.chaijs.com/). Chai is a very complete library that handles assertion, i.e., checking if the result has the values that were expected to have. As usual, take a look at theis docs, install it on your project and try to use the `expect` function to compare the return of your `Hello` query with the expected value.
 
-Just to remember another important thing to test that didn't happen on the previous track (login): the database changes. You should not only test if the return of the mutation is the expected, but also if the database was updated as it should be. For example, if you have 4 users on the database, and you add one more, you should check on your test if there are 5 users after the mutation is called, as well as if all the new user info were properly inserted.
+Try to use these functions as if you were writing a sentence, to improve readability. For example:
 
-After you write all tests and they are running properly, you can open a PR and go to next track.
+```typescript
+expect(queryResponseField).to.be.eq('Hello, Taqtiler!');
+```

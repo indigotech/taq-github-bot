@@ -1,16 +1,9 @@
-# Step 4/5 - Update README.md
+# Step 4/6 - Create a Pull Request
 
-### Estimated time: 20 minutes
+- Open a Pull Request of your `feature/setup` branch
 
-Do you remember we created the `README.md` of this project before? Now that you have a project created on your technology stack, it's time to update it with some piece of information.
+If you don't remember how to open a Pull Request, check out the references in the previous issues. Your PR should have `develop` branch as base, to be merged into later.
 
-Since the `feature/setup` is (probably) still being reviewed, we need to create a new branch for this current step's task. Let's call this new branch `docs/update-readme`. Here's what you'll need to do:
+This pull request will be reviewed by your Taqtile tutor and possibly by some other people. This process is called **Code Review (CR)**. You can ask your tutor who will be revising your code.
 
-- Go to develop branch: `git checkout develop`
-- Open a new branch called `docs/update-readme`
-- Update the `Environment and tools` section with some data about... well... your machine environment and the tools you're using. Things like the Node version, the Android Studio/Xcode version, the programming language any other relevant data for a developer to getting started in your project.
-- The `Steps to run and debug` section is usually filled with information about how to run your project, such as what commands should the developer use or which configurations should he/she turn on/off before executing your project.
-
-After that, open a pull request with these `README.md` changes.
-
-**TIP:** an excellent README is that one document that is sufficient for any developer to be able run and contribute to your project.
+Mark them on every Pull Request as reviewers. Check [here](https://github.com/indigotech/br-qsaude-ecommerce-api/pull/119) an example of Code Review. You'll possibly have some changes requested/suggested in order to merge your new branch on `develop`. Make sure to resolve all those changes **before** merging your branch into develop. 😉

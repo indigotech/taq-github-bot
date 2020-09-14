@@ -1,15 +1,43 @@
-# Step 1/3 - The query
+In this track, you will implement a `CreateUser` mutation. This mutation allows **authenticated users** to create other users.
+
+# Step 1/3 - The authentication
 ### Estimated time: 2 hours
 
-This is the first query you're going to implement on the project. After logging in and creating user, now it's time to provide a query for fetching a user information. Some details:
+Let's start by exploring the **authentication**. This mutation is considered an authenticated one, which means that the whoever uses it must be allowed to. The permission is granted by the token we were talking about on last track. 
 
-1. **Query Name:** `User`
-1. **Parameter:** a user id
-1. It's authenticated
-1. **Response:** a user type. If you created a type to return a user on the previous track, you can reuse it. If not, create a GraphQL type with all user info that can be returned
+Create the `CreateUser` mutation prototype and check client authentication (again: without integrating with database, for now). Follow the steps:
 
-Unlike the previous tracks, now you're going to write the query prototype and integrate with the database already.
+1. The prototype: it can be something like this.
 
-**NOTE:** think about the database fields you're going to return when creating the `User` GraphQL type. You wouldn't return, for example, the password hash, right? 👀
+```graphql
+mutation CreateUser($user: CreateUserInput!) {
+  CreateUser(user: $user) {
+    // Your return
+  }
+}
+```
 
-**NOTE:** don't forget to predict error cases. In this query, the most obvious one is passing an id that doesn't exist on database.
+2. The input. It can be something like this:
+
+```json
+{
+  "name": "User Name",
+  "email": "User e-mail",
+  "birthDate": "04-25-1990",
+  "cpf": "XXXXXXXXXXX",
+  "password": "1234qwer"
+}
+```
+
+2. **The response**: you can return either the created user or only a success message.
+3. The first thing your mutation should do after called is checking user authentication. Check the `Authorization` header: the client must have sent a JWT token and it should be a valid one. It's important to check if:
+    + It **is** a JWT token
+    + It has all the payload data you designed earlier
+    + It's not expired
+    + Its signature is correct.
+
+**NOTE:** have in mind that anyone can create a JWT token with any payload data they want (remember [jwt.io](https://jwt.io)?), but only those who have the secret can generate the right signature. Only the server should know this secret.
+
+4. If the JWT token has any problem, you should return an authentication error with a message.
+
+If everything is ok with the authentication, you can return a mocked user and go to next step to integrate with database.

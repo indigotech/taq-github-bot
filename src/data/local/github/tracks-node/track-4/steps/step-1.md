@@ -1,24 +1,33 @@
-# Step 1/6 - First test setup
+In this track, you will implement a login mutation fully integrated with the database. There are many ways of implementing an [authentication](https://en.wikipedia.org/wiki/Authentication_server). The way we're doing it is: the user sends a password to prove that he is who he claims, and then the server provides a token that allows him to access some data on future requests. This token generally have an expiration, after which the user has to login again to get a new one. 
+
+# Step 1/4 - The mutation setup
 ### Estimated time: 1 hour
 
-Now you're going to work on another super-important concept on the process of building your own server. Have you ever stopped to think about how you would test if your code works? 🤔
-If you thought about performing the query/mutation on one of those applications (browser, graphiql, graphql playground) and checking if it works as expected, that's one way of doing it. But we have a more solid proposal: writing more code for tests! The principle is simple: you give an input and check if the response is the expected. Why is it better? Well, some advantages:
+Let's start with baby steps, by creating the mutation prototype, with no integration with the dabatase (yet).
 
-1. The time gain: you write your test once, and then you can run it whenever you want.
-1. While you develop other features, you can keep running the tests for all the previous implemented queries/mutation to make sure they are still working.
-1. Test codes can serve as a kind of documentation as well. People who read them are able to know all the particular scenarios of a query/mutation.
+Let's call the mutation `login`. It should receive an e-mail and a password as parameters and, in case of success, return the following structure on body:
 
-If you search on the Internet, you'll find out there are many ways to test a code. Depending on the project, people decide to use one, or several of them. Here, we're going to write `Integration tests`, or `E2E tests` (end-to-end). For each query/mutation of your server, you're going to setup the database for them, provide some input scenarios, and then check if the response is given as expected. Take some minutes to read about them on the Internet.
+```json
+{
+  "data": {
+    "login": {
+      "user": {
+        "id": "12",
+        "name": "User Name",
+        "email": "User e-mail",
+        "birthDate": "04-25-1990",
+        "cpf": "XXXXXXXXXXX",
+      },
+      "token": "the_token"
+    }
+  } 
+}
+```
 
-Setting up tests on your server is not an easy task. There are a couple of things to learn and prepare first. We're going to create a step-by-step to help.
+Your `User` can have other information if you want, but these fields above should be enough.
 
-As you can imagine, giving the previous steps, there are more cool libraries to help us on this process. We're going to present them one at a time.
+**Note:** Did you notice that there is a `data` object wrapping the `Login` response? Don't worry, it's the GraphQL response format. It wraps all the successful response data inside the `data` object and all the errors in an `errors` array of objects. You can read more about it [here](https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#data).
 
-The first one is the main library to write the tests codes: [mocha](https://mochajs.org/). Take a look at their docs. It's important to know that mocha provides some methods that can be executed like a timeline. This is very useful to handle tasks in specific orders.
+For now, you can return the above structure directly on your code populated with some mock data.
 
-Your task is very simple in this first step:
-
-+ Install the library. You can use the `devDependencies` to install it. Would you be able to say why? 🤔
-+ Create a test folder on the root of your project with an `index.ts` inside it.
-+ Create a script on your `package.json` to run your tests with `npm run test`
-+ Write a simple test with describe/it that just prints something. If it's running properly, go to next step.
+**Note 2:** don't forget to open Pull Requests at the end of every step that has some code to be written!

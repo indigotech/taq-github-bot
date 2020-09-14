@@ -1,8 +1,15 @@
-# Step 1/2 - Only list
-#### Estimated time: 2 hours
+# Step 1/3 - The query
+### Estimated time: 2 hours
 
-Your task now is to create a new query called `Users`.
+This is the first query you're going to implement on the project. After logging in and creating user, now it's time to provide a query for fetching a user information. Some details:
 
-1. It will be an authenticated query
-1. It should receive an integer as parameter (optional) that indicates the maximum number of users to return. If not passed, you can return a default number.
-1. It should return users ordered alphabetically
+1. **Query Name:** `User`
+1. **Parameter:** a user id
+1. It's authenticated
+1. **Response:** a user type. If you created a type to return a user on the previous track, you can reuse it. If not, create a GraphQL type with all user info that can be returned
+
+Unlike the previous tracks, now you're going to write the query prototype and integrate with the database already.
+
+**NOTE:** think about the database fields you're going to return when creating the `User` GraphQL type. You wouldn't return, for example, the password hash, right? 👀
+
+**NOTE:** don't forget to predict error cases. In this query, the most obvious one is passing an id that doesn't exist on database.

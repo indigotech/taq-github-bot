@@ -1,33 +1,22 @@
-In this track, you will implement a login mutation fully integrated with the database. There are many ways of implementing an [authentication](https://en.wikipedia.org/wiki/Authentication_server). The way we're doing it is: the user sends a password to prove that he is who he claims, and then the server provides a token that allows him to access some data on future requests. This token generally have an expiration, after which the user has to login again to get a new one. 
+# Step 1/4 - Containers everywhere
+### Estimated time: 2 hours
 
-# Step 1/4 - The mutation setup
-### Estimated time: 1 hour
+**[Spoiler alert]:** in the end of this onboard, you'll basically develop a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) of an entity called `User`. So, in order to store the user data in our app, let's create a real database.
 
-Let's start with baby steps, by creating the mutation prototype, with no integration with the dabatase (yet).
+The database we use on most of our projects is [PostgresSQL](https://www.postgresql.org/), an open-source relational database.
 
-Let's call the mutation `login`. It should receive an e-mail and a password as parameters and, in case of success, return the following structure on body:
+## Creating the database containers
 
-```json
-{
-  "data": {
-    "login": {
-      "user": {
-        "id": "12",
-        "name": "User Name",
-        "email": "User e-mail",
-        "birthDate": "04-25-1990",
-        "cpf": "XXXXXXXXXXX",
-      },
-      "token": "the_token"
-    }
-  } 
-}
-```
++ You can create a new branch called `feature/setup-database` for the next 2 steps.
 
-Your `User` can have other information if you want, but these fields above should be enough.
+There are a lot of setup so far right? In order to reduce the project setup time, we use [Docker containers](https://www.docker.com/) to create a database to work locally while developing. We'll create 2 databases: one for running server locally and another for (spoiler alert 2) the tests. Yeah, we will write tests. 🤓
 
-**Note:** Did you notice that there is a `data` object wrapping the `Login` response? Don't worry, it's the GraphQL response format. It wraps all the successful response data inside the `data` object and all the errors in an `errors` array of objects. You can read more about it [here](https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#data).
+First, make sure you have Docker installed on your machine. Just hit <kbd>Command</kbd> <kbd>Space</kbd> and type `Docker`. If not, you can download on their site.
 
-For now, you can return the above structure directly on your code populated with some mock data.
+1. Create a `docker-compose.yml` file on your root project folder.
+1. Setup the two databases in the `docker-compose.yml` file. You can use [this example](https://gist.github.com/alanraso/8341faa973918392d55e39a7b323209a) if you want, just replace the values on `environment` fields.
+1. Run `$ docker-compose up -d` on terminal to mount your containers.
 
-**Note 2:** don't forget to open Pull Requests at the end of every step that has some code to be written!
+**Note:** Before run `docker-compose` commands, make sure that the docker is running on your mac. You can use again <kbd>Command</kbd> <kbd>Space</kbd>, type `Docker` and hit <kbd>Enter</kbd>.
+
+**Note 2:** If you want to stop your containers, you can run `$ docker-compose stop` command in your project's root folder.

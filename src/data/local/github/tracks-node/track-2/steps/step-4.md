@@ -1,22 +1,11 @@
-# Step 4/6 - Containers everywhere
-### Estimated time: 2 hours
+# Step 4/4 - Create a Pull Request
 
-**[Spoiler alert]:** in the end of this onboard, you'll basically develop a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) of an entity called `User`. So, in order to store the user data in our app, let's create a real database.
+- Open a Pull Request of your `feature/setup-graphql` branch
 
-The database we use on most of our projects is [PostgresSQL](https://www.postgresql.org/), an open-source relational database.
+If you don't remember how to open a Pull Request, check out the references in the previous issues. Your PR should have `develop` branch as base, to be merged into later.
 
-## Creating the database containers
+This pull request will be reviewed by your Taqtile tutor and possibly by some other people. This process is called **Code Review (CR)**. You can ask your tutor about who will be revising your code.
 
-+ You can create a new branch called `feature/setup-database` for the next 2 steps.
+Make sure you're marking them on every Pull Request as reviewers. Check [here](https://github.com/indigotech/br-qsaude-ecommerce-api/pull/119) for an example of Code Review. You'll possibly have some requested/suggested changes in order to merge this new branch on `develop`. Make sure to resolve all those changes **before** merging your branch into develop. 😉
 
-There are a lot of setup so far right? In order to reduce the project setup time, we use [Docker containers](https://www.docker.com/) to create a database to work locally while developing. We'll create 2 databases: one for running server locally and another for (spoiler alert 2) the tests. Yeah, we will write tests. 🤓
-
-First, make sure you have Docker installed on your machine. Just hit <kbd>Command</kbd> <kbd>Space</kbd> and type `Docker`. If not, you can download on their site.
-
-1. Create a `docker-compose.yml` file on your root project folder.
-1. Setup the two databases in the `docker-compose.yml` file. You can use [this example](https://gist.github.com/alanraso/8341faa973918392d55e39a7b323209a) if you want, just replace the values on `environment` fields.
-1. Run `$ docker-compose up -d` on terminal to mount your containers.
-
-**Note:** Before run `docker-compose` commands, make sure that the docker is running on your mac. You can use again <kbd>Command</kbd> <kbd>Space</kbd>, type `Docker` and hit <kbd>Enter</kbd>.
-
-**Note 2:** If you want to stop your containers, you can run `$ docker-compose stop` command in your project's root folder.
+After opening the pull request, you can continue your work on a new branch. 
