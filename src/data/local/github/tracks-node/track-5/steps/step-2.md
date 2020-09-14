@@ -1,4 +1,4 @@
-# Step 2/6 - Other library: supertest
+# Step 2/6 - Libraries everywhere: supertest
 ### Estimated time: 1 hour
 
 Another of those cool libraries is [supertest](https://github.com/visionmedia/supertest). This library makes our work of performing requests to the server easier. Take a look at their docs.

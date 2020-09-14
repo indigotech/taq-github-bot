@@ -29,7 +29,7 @@ mutation CreateUser($user: CreateUserInput!) {
 }
 ```
 
-2. The response: you can return either the created user or only a success message.
+2. **The response**: you can return either the created user or only a success message.
 3. The first thing your mutation should do after called is checking user authentication. Check the `Authorization` header: the client must have sent a JWT token and it should be a valid one. It's important to check if:
     + It **is** a JWT token
     + It has all the payload data you designed earlier

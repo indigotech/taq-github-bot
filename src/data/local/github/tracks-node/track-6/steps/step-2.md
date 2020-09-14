@@ -8,6 +8,6 @@ After checking the authentication, it's time to fully integrate your mutation wi
     + It should have at least 7 characters
     + It should have at least 1 letter and 1 digit.
 
-You can add some validations if you want. For example, minimum and maximum birth date. But the most importants are those two above.
+You can add some validations if you want. For example, minimum and maximum birth date. But the most important are those two above.
 
-**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash algorithm (with salt system, optionally).
+**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash algorithm (with [salt system](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#salting), optionally). Ask your tutor if you got stuck 👍 
