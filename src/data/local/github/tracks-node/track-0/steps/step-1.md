@@ -18,11 +18,11 @@ We use [git](https://git-scm.com/)... a lot. If you don't feel confident in your
 - https://learngitbranching.js.org/
 
 
-If you don't have it already, we recommend you to install the [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) VSCode extension. It's going to help you a lot with git by adding an extra view on activity bar (the icons on the left side).
+If you don't have it already, we recommend you to install a VSCode extension called [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens). It's going to help you a lot with git by adding some functionalities to VSCode, including an extra view on activity bar (the icons on the left side).
 
 ![GitLens](https://github.com/indigotech/taq-github-bot/blob/master/images/gitlens.jpg)
 
-It will help you to check the modified files, as well as the changes on each of them.
+With Gitlens you'll be able (among other things...) to check who modifies the file and the prevision versions (previous changes) of that file, right in VSCode.
 
 Even though this extension has some tools to perform git commands, we highly encourage you to use the terminal, and use the extension as a visual guide to your changes.
 

@@ -3,10 +3,6 @@
 
 So, now that you have properly setup and run your project, let's talk about some nice tools that we use to format our code and also some conventions we have. These are very important subjects when we work as a team, making our work of reading and contributing on projects much easier.
 
-## Editorconfig
-
-[EditorConfig](https://editorconfig.org/) is an open source tool to help all people style the code in the same way across multiple possible IDEs. We just need a `.editorconfig` file on the root of the repository for this.
-
 ## Prettier
 
 [Prettier](https://prettier.io/) is also a tool that helps us formatting our code. It has a lot more options than editorconfig and language-specific formatting rules. They have a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) that makes possible to auto-format a file according to these rules. We highly recommend you install it, if it's not already present there.
