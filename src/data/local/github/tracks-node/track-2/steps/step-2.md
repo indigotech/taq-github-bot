@@ -19,7 +19,9 @@ If you want some suggestions, you can begin with:
 - GraphQL [Getting Started](https://graphql.org/graphql-js/) guide
 - GraphQL [Running Express + GraphQL](https://graphql.org/graphql-js/running-an-express-graphql-server/) guide
 
-To get more familiar with our projects, we recommend you follow the previous guide, and then use [Apollo Server](https://www.apollographql.com/docs/apollo-server/getting-started/) to setup your GraphQL Server. Don't forget that you should add **[Typescript](https://www.typescriptlang.org/)** to your project. We will talk about why we use it on a meeting!
+To get you more familiar with our projects, we recommend you follow the previous guide, and then use [Apollo Server](https://www.apollographql.com/docs/apollo-server/getting-started/) to setup your GraphQL Server. It's a library that makes GraphQL setup easier and has some nice features encapsulated. For example, the express itself.
+
+Don't forget that you should add **[Typescript](https://www.typescriptlang.org/)** to your project! We will talk about why we use it on a meeting.
 
 After the setup, you should be able to access the Graphql docs, either on browser, [Graphiql](https://github.com/graphql/graphiql) or [Graphql Playground](https://github.com/prisma/graphql-playground) (you can choose the one you like) and successfully write some GraphQL queries/mutations. You can use the `Hello` query to verify your server is working. Keep this query for future testing!
 
