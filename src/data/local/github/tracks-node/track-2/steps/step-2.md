@@ -8,11 +8,22 @@ In this step you'll have two main tasks: **create a node project with typescript
 1. REST
 1. GraphQL
 
-You can both setup these by yourself as showed in [this tutorial](https://www.howtographql.com/graphql-js/1-getting-started/) or use a cli to make this whole setup for you as [shown here](https://github.com/graphql-boilerplates/typescript-graphql-server/tree/master/basic) (we won't tell anyone 🤫). But remember: using this kind of setup doesn't mean you shouldn't know what's going on on that code.
+You can find any GraphQL server setup on internet to get this done. But to finish this task, make sure you have, in the end:
 
-After the setup, you should be able to access the Graphql docs, either on browser, [Graphiql](https://github.com/graphql/graphiql) or [Graphql Playground](https://github.com/prisma/graphql-playground) (you can choose the one you like) and successfully write some GraphQL queries/mutations. You can use the `Hello` query of the setups above to verify your server is working. Keep this query for future testing!
+1. A proper GraphQL server set up
+1. Typescript installed and being used
+1. One query called `Hello` that correctly returns a string: "Hello, World!"
 
-**Note:** For now on, some steps will have an **estimated time** to help you organizing your time better. 
+If you want some suggestions, you can begin with:
+
+- GraphQL [Getting Started](https://graphql.org/graphql-js/) guide
+- GraphQL [Running Express + GraphQL](https://graphql.org/graphql-js/running-an-express-graphql-server/) guide
+
+To get more familiar with our projects, we recommend you follow the previous guide, and then use [Apollo Server](https://www.apollographql.com/docs/apollo-server/getting-started/) to setup your GraphQL Server. Don't forget that you should add **[Typescript](https://www.typescriptlang.org/)** to your project. We will talk about why we use it on a meeting!
+
+After the setup, you should be able to access the Graphql docs, either on browser, [Graphiql](https://github.com/graphql/graphiql) or [Graphql Playground](https://github.com/prisma/graphql-playground) (you can choose the one you like) and successfully write some GraphQL queries/mutations. You can use the `Hello` query to verify your server is working. Keep this query for future testing!
+
+**Note:** For now on, some steps will have an **estimated time** to help you organizing your time better.
 If you do not finish the step in the estimated time **don't worry**! It's just an average time based on previous onboards. The main purpose of it is to indicate when you should ask for help in case you're stuck.
 
 By the way, remember that if you're struggling with any topic, feel free to ask any Taqtiler ;)
