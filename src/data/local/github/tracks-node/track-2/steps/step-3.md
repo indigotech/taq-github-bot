@@ -23,6 +23,5 @@ Conventions are very important to maintain all projects code more readable for a
 
 + We name our folders and files with `kebab-case`: lowercase characters and words combined with a dash (-)
 + We name functions and local variables with `camelCase`: first char lowercase and words combined by the first letter at uppercase
-+ We name Typescript interfaces, classes and exported objects with `PascalCase`: similar to `camelCase`, but first char is uppercase
++ We name Typescript interfaces, classes and exported objects with `PascalCase` - it's similar to `camelCase`, but first char is uppercase
 + We don't use `if` without brackets, even if it's a one command only condition. This can avoid some readability problems
-
