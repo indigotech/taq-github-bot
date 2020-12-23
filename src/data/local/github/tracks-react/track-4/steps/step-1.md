@@ -22,7 +22,7 @@ For this, we'll just make a REST request using a tool called [Postman](https://w
 
 **Note 1:** There's no code in this step! It's just a warming up for you to have some knowledge of what's going on inside the GraphQL. Be patient, young padawan. The code will come (in the next steps btw).
 
-If you succeed, you'll receive on body a JSON that looks like this:
+If your request succeed, you'll receive on body a JSON that looks like this:
 
 ```JSON
 {
