@@ -22,7 +22,7 @@
     "lint:fix": "eslint --ext .js,.ts src --fix",
     "postinstall": "npm run clean-dist && npm run build && npm run copy-resources",
     "reinstall": "rm -rf ./node_modules || true && npm install",
-    "test": "npm run build && mocha -r ts-node/register -r tsconfig-paths/register 'src/**/*.test.ts' --timeout 5000 --exit",
+    "test": "npm run build && mocha -r ts-node/register -r tsconfig-paths/register 'src/**/*.test.ts' --exit",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"
   },
@@ -30,7 +30,7 @@
     "dotenv": "8.2.0",
     "ioredis": "4.19.4",
     "module-alias": "2.2.2",
-    "probot": "9.14.1",
+    "probot": "11.0.1",
     "reflect-metadata": "0.1.13",
     "typedi": "0.8.0"
   },

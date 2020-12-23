@@ -1,4 +1,4 @@
-import { Service } from 'typedi';
+import Container, { Service } from 'typedi';
 import { DeveloperDataSource } from '@data/db';
 import { Developer, DeveloperInput } from './developer.model';
 
@@ -9,7 +9,7 @@ export interface InitiateUser {
 
 @Service()
 export class InitiateUserUseCase {
-  constructor(private readonly dataSource: DeveloperDataSource) {}
+  private readonly dataSource = Container.get(DeveloperDataSource);
 
   async execute(input: DeveloperInput): Promise<InitiateUser> {
     let developer = await this.dataSource.get(input.developerId);

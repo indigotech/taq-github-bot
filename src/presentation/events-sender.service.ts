@@ -1,5 +1,5 @@
 import { Context } from 'probot';
-import { Service } from 'typedi';
+import Container, { Service } from 'typedi';
 import { GetTracksUseCase, IncrementProgressUseCase, UpdateDeveloperIssueUseCase } from '@domain';
 import { Developer, DeveloperProgress } from '@domain/developer.model';
 import { Track } from '@domain/track.model';
@@ -7,11 +7,9 @@ import { RobotStrings } from './robot.strings';
 
 @Service()
 export class GithubEventSender {
-  constructor(
-    private readonly getTracksUseCase: GetTracksUseCase,
-    private readonly nextProgressUseCase: IncrementProgressUseCase,
-    private readonly updateDeveloperIssue: UpdateDeveloperIssueUseCase,
-  ) {}
+  private readonly getTracksUseCase = Container.get(GetTracksUseCase);
+  private readonly nextProgressUseCase = Container.get(IncrementProgressUseCase);
+  private readonly updateDeveloperIssue = Container.get(UpdateDeveloperIssueUseCase);
 
   async openEvent(context: Context, developer: Developer) {
     const { tracks, totalSteps } = await this.getTracksUseCase.exec();
@@ -59,12 +57,12 @@ export class GithubEventSender {
     }
   }
 
-  private createIssue(context: Context, title: string, body: string) {
+  private createIssue(context: any, title: string, body: string) {
     const params = context.issue(Object.assign(context.event, { title: title || 'Issue', body }));
     return context.github.issues.create(params);
   }
 
-  private createComment(context: Context, body: string) {
+  private createComment(context: any, body: string) {
     const event = context.issue(Object.assign(context.event, { body }));
     const params = Object.assign(event, { issue_number: event.number });
     delete params.number;
@@ -72,7 +70,7 @@ export class GithubEventSender {
     return context.github.issues.createComment(params);
   }
 
-  private createFirstIssue(context: Context, title: string, body: string) {
+  private createFirstIssue(context: any, title: string, body: string) {
     const repository = context.payload.repository || context.payload.repositories[0];
     const fullNameSplit = repository.full_name.split('/');
     const params = { owner: fullNameSplit[0], repo: fullNameSplit[1], title, body };

@@ -1,13 +1,11 @@
-import { Service } from 'typedi';
 import { DeveloperDataSource } from '@data/db';
 import { TrackDataSource } from '@data/local';
+import Container, { Service } from 'typedi';
 
 @Service()
 export class HasFinishedUseCase {
-  constructor(
-    private readonly developerDataSource: DeveloperDataSource,
-    private readonly tracksDatasource: TrackDataSource,
-  ) {}
+  private readonly developerDataSource = Container.get(DeveloperDataSource);
+  private readonly tracksDatasource = Container.get(TrackDataSource);
 
   async execute(developerId: number): Promise<boolean> {
     const developer = await this.developerDataSource.get(developerId);
