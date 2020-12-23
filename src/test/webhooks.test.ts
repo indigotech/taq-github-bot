@@ -26,7 +26,7 @@ describe('Webhooks', () => {
   let installationPayload;
   let installationWithRequesterPayload;
   let memberAddedPayload;
-  let commentFinishPayload;Robot
+  let commentFinishPayload;
 
   let db: Redis;
   let developerSeed: DeveloperSeed;
