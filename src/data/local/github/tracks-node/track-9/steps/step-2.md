@@ -34,8 +34,10 @@ As you should have guessed, the relation we are doing here will be a **one-to-ma
   | neighborhood |              |
   | city         |              |
   | state        |              |
-  | userId       | FOREIGN KEY  |  ----> this is how we know which user this address belongs. The address table has a "foreign key", which is the "primary key" from the "user" table
+  | userId       | FOREIGN KEY  |  ----> this is how we know which user this address belongs to.
   +--------------+--------------+
+
+  The address table has a "foreign key", which is the "primary key" from the "user" table. If you have doubts about this, there must be a lot of good materials on the internet about the subject.
   ```
 
 </details>
