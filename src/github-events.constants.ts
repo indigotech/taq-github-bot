@@ -14,4 +14,4 @@ export const GithubEvents = {
     Added: 'member.added',
   },
   // Add more Github events if needed
-};
+} as const;

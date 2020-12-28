@@ -1,20 +1,20 @@
-import 'reflect-metadata';
-import { expect } from 'chai';
-import IORedis, { Redis } from 'ioredis';
-import nock from 'nock';
-import { createProbot, Probot } from 'probot';
-import * as sinon from 'sinon';
-import { Container } from 'typedi';
 import { DBClient, REDIS } from '@data/db';
 import { TRACKS } from '@data/local/track.configure';
 import { Developer } from '@domain/developer.model';
 import { Track } from '@domain/track.model';
+import { GithubEventSender } from '@presentation/events-sender.service';
 import { RobotStrings } from '@presentation/robot.strings';
+import { expect } from 'chai';
+import IORedis, { Redis } from 'ioredis';
+import nock from 'nock';
+import { Probot, ProbotOctokit } from 'probot';
+import 'reflect-metadata';
+import * as sinon from 'sinon';
+import { Container } from 'typedi';
 import { GithubEvents } from '../github-events.constants';
 import { Robot } from '../robot';
 import { DeveloperSeed } from './seed';
 import { TrackSeed } from './seed/track.seed';
-import { GithubEventSender } from '@presentation/events-sender.service';
 
 // tslint:disable:max-line-length
 // tslint:disable:no-unused-expression
@@ -56,9 +56,15 @@ describe('Webhooks', () => {
     await developerSeed.reset();
 
     taqBot = Container.get(Robot);
-    probot = createProbot({ id: 1, cert: 'test', githubToken: 'test' });
+    probot = new Probot({
+      githubToken: 'test',
+      Octokit: ProbotOctokit.defaults({
+        retry: { enabled: false },
+        throttle: { enabled: false },
+      }),
+      logLevel: 'fatal',
+    });
     probot.load(taqBot.webhookReceiver);
-    probot.logger.level('fatal');
   });
 
   beforeEach(async () => {
@@ -85,11 +91,13 @@ describe('Webhooks', () => {
       const mockResponse = require('./mocks/CreateIssueMockResponse.json');
       const firstTrack: Track = Container.get<Track[]>(TRACKS)[0];
       const firstIssueData = { title: firstTrack.title, body: firstTrack.steps[0].body };
-      sinon.stub((GithubEventSender.prototype as any), 'createFirstIssue').callsFake(async (_, title: string, body: string) => {
-        expect(title).to.be.deep.eq(firstIssueData.title);
-        expect(body).to.be.deep.eq(firstIssueData.body);
-        return { data: mockResponse };
-      });
+      sinon
+        .stub(GithubEventSender.prototype as any, 'createFirstIssue')
+        .callsFake(async (_, title: string, body: string) => {
+          expect(title).to.be.deep.eq(firstIssueData.title);
+          expect(body).to.be.deep.eq(firstIssueData.body);
+          return { data: mockResponse };
+        });
       await probot.receive({ id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload });
 
       const devDb = await db.get(defaultUserId.toString());
@@ -104,14 +112,20 @@ describe('Webhooks', () => {
       const mockResponse = require('./mocks/CreateIssueMockResponse.json');
       const firstTrack: Track = Container.get<Track[]>(TRACKS)[0];
       const firstIssueData = { title: firstTrack.title, body: firstTrack.steps[0].body };
-      sinon.stub((GithubEventSender.prototype as any), 'createFirstIssue').callsFake(async (_, title: string, body: string) => {
-        expect(title).to.be.deep.eq(firstIssueData.title);
-        expect(body).to.be.deep.eq(firstIssueData.body);
-        return { data: mockResponse };
-      });
+      sinon
+        .stub(GithubEventSender.prototype as any, 'createFirstIssue')
+        .callsFake(async (_, title: string, body: string) => {
+          expect(title).to.be.deep.eq(firstIssueData.title);
+          expect(body).to.be.deep.eq(firstIssueData.body);
+          return { data: mockResponse };
+        });
       const requesterUserId: number = 12345678;
 
-      await probot.receive({ id: defaultId, name: GithubEvents.Installation.Created, payload: installationWithRequesterPayload });
+      await probot.receive({
+        id: defaultId,
+        name: GithubEvents.Installation.Created,
+        payload: installationWithRequesterPayload,
+      });
 
       const devDb = await db.get(requesterUserId.toString());
       const developer = JSON.parse(devDb);
@@ -142,11 +156,13 @@ describe('Webhooks', () => {
       const mockResponse = require('./mocks/CreateIssueMockResponse.json');
       const firstTrack: Track = Container.get<Track[]>(TRACKS)[0];
       const firstIssueData = { title: firstTrack.title, body: firstTrack.steps[0].body };
-      sinon.stub((GithubEventSender.prototype as any), 'createFirstIssue').callsFake(async (_, title: string, body: string) => {
-        expect(title).to.be.deep.eq(firstIssueData.title);
-        expect(body).to.be.deep.eq(firstIssueData.body);
-        return { data: mockResponse };
-      });
+      sinon
+        .stub(GithubEventSender.prototype as any, 'createFirstIssue')
+        .callsFake(async (_, title: string, body: string) => {
+          expect(title).to.be.deep.eq(firstIssueData.title);
+          expect(body).to.be.deep.eq(firstIssueData.body);
+          return { data: mockResponse };
+        });
       await probot.receive({ id: defaultId, name: GithubEvents.Member.Added, payload: memberAddedPayload });
 
       const devDb = await db.get(defaultUserId.toString());
@@ -186,7 +202,7 @@ describe('Webhooks', () => {
       const expectedBody = trackSeed.tracks[0].steps[1].body;
       await developerSeed.createNewUser(defaultUserId, issueId);
 
-      sinon.stub((GithubEventSender.prototype as any), 'createComment').callsFake(async (_, body: string) => {
+      sinon.stub(GithubEventSender.prototype as any, 'createComment').callsFake(async (_, body: string) => {
         expect(body).to.be.eq(expectedBody);
       });
 
@@ -209,7 +225,7 @@ describe('Webhooks', () => {
         progress: { track, step: stepBefore, completedStepsOverall: 5 },
       });
 
-      sinon.stub((GithubEventSender.prototype as any), 'createComment').callsFake(async (_, body: string) => {
+      sinon.stub(GithubEventSender.prototype as any, 'createComment').callsFake(async (_, body: string) => {
         expect(body).to.be.eq(trackSeed.tracks[1].steps[4].body);
       });
 
@@ -232,12 +248,14 @@ describe('Webhooks', () => {
         progress: { track: trackBefore, step: stepBefore, completedStepsOverall: 6 },
       });
       const issueUrl = 'http://www.github.com/new-track-url';
-      sinon.stub((GithubEventSender.prototype as any), 'createIssue').callsFake(async (_, title: string, body: string) => {
-        expect(title).to.be.eq(trackSeed.tracks[2].title);
-        expect(body).to.be.eq(trackSeed.tracks[2].steps[0].body);
-        return { data: { id: '24', html_url: issueUrl } };
-      });
-      sinon.stub((GithubEventSender.prototype as any), 'createComment').callsFake(async (_, body: string) => {
+      sinon
+        .stub(GithubEventSender.prototype as any, 'createIssue')
+        .callsFake(async (_, title: string, body: string) => {
+          expect(title).to.be.eq(trackSeed.tracks[2].title);
+          expect(body).to.be.eq(trackSeed.tracks[2].steps[0].body);
+          return { data: { id: '24', html_url: issueUrl } };
+        });
+      sinon.stub(GithubEventSender.prototype as any, 'createComment').callsFake(async (_, body: string) => {
         expect(body).to.be.eq(RobotStrings.NextTrack(issueUrl));
       });
 
@@ -258,7 +276,7 @@ describe('Webhooks', () => {
         issueId,
         progress: { track, step: stepBefore, completedStepsOverall: 9 },
       });
-      sinon.stub((GithubEventSender.prototype as any), 'createComment').callsFake(async (_, body: string) => {
+      sinon.stub(GithubEventSender.prototype as any, 'createComment').callsFake(async (_, body: string) => {
         expect(body).to.be.eq(RobotStrings.FinishOnboard);
       });
 

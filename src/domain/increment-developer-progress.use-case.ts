@@ -1,15 +1,13 @@
 import { RobotError } from '@core';
 import { DeveloperDataSource } from '@data/db';
+import Container, { Service } from 'typedi';
 import { Developer } from './developer.model';
-import { Service } from 'typedi';
 import { IncrementProgressUseCase } from './increment-progress.use-case';
 
 @Service()
 export class IncrementDeveloperProgressUseCase {
-  constructor(
-    private readonly developerDataSource: DeveloperDataSource,
-    private readonly nextProgressUseCase: IncrementProgressUseCase,
-  ) {}
+  private readonly developerDataSource = Container.get(DeveloperDataSource);
+  private readonly nextProgressUseCase = Container.get(IncrementProgressUseCase);
 
   async execute(developerId: number): Promise<Developer> {
     const developer: Developer = await this.developerDataSource.get(developerId);
