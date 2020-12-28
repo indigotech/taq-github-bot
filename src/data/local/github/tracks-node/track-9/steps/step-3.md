@@ -5,4 +5,4 @@ Now that we have the database properly setup with the addresses, we're going to 
 
 **NOTE:** don't forget to update your tests!
 
-After that, open a PR! We could explore by creating a mutation to add an address to a user, and also update/remove an existing address. But we think this is enough as a intro for the **relation** concept.
+After that, open a PR! We could explore it more by creating a mutation to add an address to a user, and also update/remove an existing address. But we think this is enough as an intro for the **relation** concept.
