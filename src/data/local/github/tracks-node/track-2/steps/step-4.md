@@ -3,7 +3,7 @@
 
 In this step you'll have two main tasks: **add Typescript to your project** and use **Apollo Server** to setup GraphQL. 
 
-But first, lets create a new branch. You can call it `feature/apollo-typescript-setup` (but for now on, you're going to choose the branches names 😼).
+But first, let's create a new branch. You can call it `feature/apollo-typescript-setup` (but for now on, you're going to choose the branches names 😼).
 
 [Apollo Server](https://www.apollographql.com/docs/apollo-server/) is a nice library that we use to make GraphQL setup much easier. You can follow a tutorial of your choice on the internet to get this step done. There are a bunch of posts like "create a Node GraphQL Server with Apollo Server and Typescript" or something like that 📝.
 
