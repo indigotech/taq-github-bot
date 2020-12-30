@@ -30,4 +30,4 @@ Conventions are very important to maintain all projects code more readable for a
 + We name React components, Typescript interfaces, classes and exported objects with `PascalCase`: similar to `camelCase`, but first char is uppercase
 + We don't use `if` without brackets, even if it's a one command only condition. This can avoid some readability problems
 
-Add these tools on your project, check the code you have untill now to follow our conventions, and then open a Pull Request.
+Add these tools on your project, check the code you have until now to follow our conventions, and then open a Pull Request.

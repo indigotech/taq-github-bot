@@ -8,7 +8,7 @@ In this step you'll create a basic **hello-world GraphQL Node Server**. But befo
 1. REST
 1. GraphQL: shema (queries, mutations, types and inputs)
 
-When you are confortable to follow, we suggest you take a look at the GraphQL [Getting Started](https://graphql.org/graphql-js/) guide to begin your quest.
+When you are comfortable to follow, we suggest you take a look at the GraphQL [Getting Started](https://graphql.org/graphql-js/) guide to begin your quest.
 
 To call this step done, you must have:
 
