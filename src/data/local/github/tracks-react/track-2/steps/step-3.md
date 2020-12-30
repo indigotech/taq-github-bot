@@ -3,7 +3,7 @@
 
 So, now that you have properly setup and run your project, let's talk about some nice tools that we use to format our code and also some conventions we have. These are very important subjects when we work as a team, making our work of reading and contributing on projects much easier.
 
-For this task, you are supposed to apply the following conventions on the basic app that you've created on the last step (rename some files and make sure that most of the files are follosing prettier and lint rules).
+For this task, you are supposed to apply the following conventions on the basic app that you've created on the last step (rename some files and make sure that most of the files are following prettier and lint rules).
 
 ## Prettier
 
