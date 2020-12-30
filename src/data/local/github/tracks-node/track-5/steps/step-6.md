@@ -7,7 +7,7 @@ Now it's time to make our `LoginMutation` as complete as possibile, and for that
 1. The client sends an e-mail that doesn't exist on our database
 1. The client sends an existing e-mail but the password is wrong
 
-There are more possibilities but these 3 are enough for the onboard. What do you think we should do on these scenarios? Well, if you thought about returning something on the `errors` field, that is indeed a good approach. You should be able to research and find how you can treat errors when you find one on your code, but it's basically throwing an error and treating it on a proper function that the `graphql-yoga` library receives on the server setup.
+There are more possibilities but these 3 are enough for the onboard. What do you think we should do on these scenarios? Well, if you thought about returning something on the `errors` field, that is indeed a good approach. You should be able to research and find how you can treat errors when you find one on your code, but it's basically throwing an error and treating it on a proper function that the `apollo-server` library receives on the server setup. Check their docs 😝
 
 But how should we return these errors to the client? Well, there are multiple solutions to that, but we have a suggestion:
 

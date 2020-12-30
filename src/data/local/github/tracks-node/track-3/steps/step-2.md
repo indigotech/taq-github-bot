@@ -10,7 +10,7 @@ Do we have a library to access our database? Of course we do. For this, we use t
 1. Take some time to learn how this library works. It's super cool, but it's also a lot of abstraction.
 1. Follow their docs to add it to your project (remember that we're using postgres).
 1. Choose an option provided by typeorm to connect to your database. The credentials are the ones you set on `docker-compose.yml`.
-1. Try to connect with database before running the yoga `start` code. For now, you can connect only with your **local** database, leaving the test connection for later.
+1. Try to connect with database before running the apollo-server `start` code. For now, you can connect only with your **local** database, leaving the test connection for later.
 
 **Note:** don't forget to check if your docker container is running before connecting to the DB, otherwise it will fail.
 
