@@ -7,7 +7,7 @@ Welcome to the Taqtile onboard. The main goals of this onboard are:
 
 # Step 1/3 - Warming up - Mastering the Basics
 
-Ok! Your very first tasks are to **clone this repository** into your own account and **update the README.md** file.
+Ok! Your very first tasks are to **clone this repository** into your own account and **create the README.md** file.
 
 But before moving on, let's be sure you know all the basics we use daily here.
 

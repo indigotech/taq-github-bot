@@ -6,7 +6,7 @@ Network communication is a crucial part of any system nowadays. Here in Taqtile 
 
 But for now, in order to you understand what's happening under the GraphQL's hood, let's start with the (not so) old fashion way of doing network requests: The Representational State Transfer a.k.a. **REST**.
 
-For this, we'll just make a REST request using a tool called [Postman](https://www.getpostman.com/). It should be installed in your mac already. You will perform a Login request very similiar to the one you coding in the next steps. Here are the parameters of your request:
+For this, we'll just make a REST request using a tool called [Postman](https://www.getpostman.com/). It should be installed in your mac already (download [here](https://www.postman.com/downloads/) if it doesn't). You will perform a Login request very similiar to the one you coding in the next steps. Here are the parameters of your request:
 
 + Method: POST
 + Base URL: https://tq-template-server-sample.herokuapp.com
