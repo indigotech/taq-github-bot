@@ -3,11 +3,13 @@
 
 So, now that you have properly setup and run your project, let's talk about some nice tools that we use to format our code and also some conventions we have. These are very important subjects when we work as a team, making our work of reading and contributing on projects much easier.
 
+For this task, you are supposed to apply the following conventions on the basic app that you've created on the last step (rename some files and make sure that most of the files are follosing prettier and lint rules).
+
 ## Prettier
 
 [Prettier](https://prettier.io/) is a tool that helps us formatting our code. It has a lot more options than editorconfig and language-specific formatting rules. They have a [VSCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) as well that makes possible to auto-format a file according to these rules. We highly recommend you install it, if it's not already installed in your pc.
 
-This is the [.prettiertc.js](https://github.com/indigotech/template-react/blob/master/.prettierrc.js) we use on our projects, in case you want to copy.
+This is the [.prettierrc.js](https://github.com/indigotech/template-react/blob/master/.prettierrc.js) we use on our projects, in case you want to copy.
 
 ## Lint
 
@@ -16,6 +18,8 @@ Lint is a very powerful tool to inspect code and warn about some possible mistak
 We recommend you install [eslint VSCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), so the lint errors will be shown in real-time for you.
 
 We have plenty of custom lint rules on our projects, but the minimum the recommended guide above brings is sufficient for now.
+
+This is our [.eslintrc.js](https://github.com/indigotech/template-react/blob/master/.eslintrc.js) presets, in case you want to copy.
 
 ## Conventions
 
