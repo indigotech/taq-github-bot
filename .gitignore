@@ -6,6 +6,7 @@ coverage
 lib
 dist/
 .vscode/
+private-key.pem
 
 # Yarn
 yarn-error.log

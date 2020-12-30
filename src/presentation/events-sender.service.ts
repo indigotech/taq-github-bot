@@ -58,16 +58,13 @@ export class GithubEventSender {
   }
 
   private createIssue(context: any, title: string, body: string) {
-    const params = context.issue(Object.assign(context.event, { title: title || 'Issue', body }));
-    return context.github.issues.create(params);
+    const params = context.issue({ title: title || 'Issue', body });
+    return context.octokit.issues.create(params);
   }
 
   private createComment(context: any, body: string) {
-    const event = context.issue(Object.assign(context.event, { body }));
-    const params = Object.assign(event, { issue_number: event.number });
-    delete params.number;
-
-    return context.github.issues.createComment(params);
+    const issueWithComment = context.issue({ body });
+    return context.octokit.issues.createComment(issueWithComment);
   }
 
   private createFirstIssue(context: any, title: string, body: string) {
@@ -75,6 +72,6 @@ export class GithubEventSender {
     const fullNameSplit = repository.full_name.split('/');
     const params = { owner: fullNameSplit[0], repo: fullNameSplit[1], title, body };
 
-    return context.github.issues.create(params);
+    return context.octokit.issues.create(params);
   }
 }
