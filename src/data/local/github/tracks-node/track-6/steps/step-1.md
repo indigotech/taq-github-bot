@@ -1,4 +1,4 @@
-# Step 1/4 - The mutation setup
+# Step 1/5 - The mutation setup
 ### Estimated time: 1 hour
 
 In this track, you will implement a login mutation fully integrated with the database. There are many ways of implementing an [authentication](https://en.wikipedia.org/wiki/Authentication_server). The way we're doing it is: the user sends a password to prove that he is who he claims, and then the server provides a token that allows him to access some data on future requests. This token generally have an expiration, after which the user has to login again to get a new one. 

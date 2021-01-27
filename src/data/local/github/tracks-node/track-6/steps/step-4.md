@@ -1,4 +1,4 @@
-# Step 4/4 - Challenge: the token duration
+# Step 4/5 - Challenge: the token duration
 ### Estimated time: 2 hours
 
 **NOTE:** some steps on this onboard are classified as "challenges". They are meant to be some additional tasks that add some bonus features, but are not necessarily core of the server. Try not to loose too much time on them 🙃
