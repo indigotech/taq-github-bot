@@ -1,11 +1,8 @@
-# Step 4/4 - Challenge: the token duration
-### Estimated time: 2 hours
+# Step 4/4 - Storing the password
+### Estimated time: 2 hour
 
-**NOTE:** some steps on this onboard are classified as "challenges". They are meant to be some additional tasks that add some bonus features, but are not necessarily core of the server. Try not to loose too much time on them 🙃
+One of the required fields to create a user is the **password**. You should have read or heard already that storing users password as plain text in the database is a bad idea. If not, you're reading now: it **is** a bad idea 🤦‍. The minimum security we should have on this case is to use a hash algorithm to store the password. This is not a 100% secure method, but it helps already.
 
-After implementing the login, you must have noticed that one of the possible parameters for creating a JWT token is the `expiration`. This parameter allows us set an expiration timestamp coded on the token. The challenge consists of:
+Change your `createUser` mutation to store the password with a hash algorithm of your choice.
 
-1. Adding an aditional optional parameter on the Login mutation called `rememberMe`. It's a boolean.
-1. If `rememberMe` was sent and its value is `true`, you should increase the expiration of the returned token. 1 week is good for our context.
-
-Now your clients will have the oportunity to use that famous "Remember me" checkbox!
+**NOTE:** Interested in this security matter? Check [this post](https://itnext.io/how-not-to-store-passwords-4955569e6e84) for additional details. Since this is only an onboard server, you don't need to have a ultra-master-blaster security method. Our main goal here is to show you some levels of security and prevent you from beginning your projects with a super-insecure method.

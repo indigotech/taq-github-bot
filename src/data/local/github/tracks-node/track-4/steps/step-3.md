@@ -1,18 +1,13 @@
-# Step 3/4 - The token
-### Estimated time: 2 hours
+# Step 3/4 - Input validation
+### Estimated time: 1 hour
 
-Now you're going to finish your `Login` mutation returning a proper token instead of an empty string. Take a look at an example of the token you're going to implement:
+Validating the input is an important part of the job. We have to make sure that the client is sending valid data to be stored, or we could end up having many inconsistencies on database.
 
-```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-```
+1. The system should not allow a very weak password. Follow these rules:
+  + It should have at least 7 characters
+  + It should have at least 1 letter and 1 digit.
+1. The system should not allow two or more users with the same e-mail
 
-This may look like a random string, but this token has a lot of power, because there are some information encoded on it. The server can know only with a token, for example:
+You can add some more validations if you want, like minimum and maximum birth date. But the most important are those two above, and for the onboard, it's enough.
 
-1. When it was created
-1. When it expires
-1. Which user is sending
-
-This is an example of the famous [JWT token](https://jwt.io/). You're going to build these tokens and return on your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token based authentication, jwt tokens and an example of how to implement it on code.
-
-Your task now is to implement a model of JWT tokens for your server and return them on your `Login` mutation.
+Since we're using GraphQL, any error thrown on a resolver returns a response with the `errors` field filled. We will have a step later on to discuss about proper "error handling". For now, if any validation doesn't check, you can just throw a generic error with a message.

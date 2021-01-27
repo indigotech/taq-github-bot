@@ -8,7 +8,7 @@ If you thought about performing the query/mutation on one of those applications 
 1. While you develop other features, you can keep running the tests for all the previous implemented queries/mutation to make sure they are still working.
 1. Test codes can serve as a kind of documentation as well. People who read them are able to know all the particular scenarios of a query/mutation.
 
-If you search on the Internet, you'll find out there are many ways to test a code. Depending on the project, people decide to use one, or several of them. Here, we're going to write `Integration tests`, or `E2E tests` (end-to-end). For each query/mutation of your server, you're going to setup the database for them, provide some input scenarios, and then check if the response is given as expected. Take some minutes to read about them on the Internet.
+If you search on the Internet, you'll find out there are many ways to test a code. Depending on the project, people decide to use one, or several of them. Here, we're going to write `E2E tests` (end-to-end). For each query/mutation of your server, you're going to setup the database for them, provide some input scenarios, and then check if the response is given as expected. Take some minutes to read about them on the Internet.
 
 Setting up tests on your server is not an easy task. There are a couple of things to learn and prepare first. We're going to create a step-by-step to help.
 

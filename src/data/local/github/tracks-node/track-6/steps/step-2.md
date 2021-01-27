@@ -1,13 +1,14 @@
-# Step 2/3 - Integrate with the database
-### Estimated time: 4 hours
+# Step 2/4 - Integrating with the database
 
-After checking the authentication, it's time to fully integrate your mutation with the database. If provided token is valid, the server should validate the given input, and if everything is right, create a user on database. Wait, validate what? 🧐
+### Estimated time: 3 hours
 
-1. The system should not allow two or more users with the same e-mail
-1. The system should not allow a very weak password. Follow these rules:
-    + It should have at least 7 characters
-    + It should have at least 1 letter and 1 digit.
+Now you're going to fully integrate the Login mutation with the database. Since we don't have a mutation to create users (yet), we should create one directly on the database, so we have the conditions to test it properly.
 
-You can add some validations if you want. For example, minimum and maximum birth date. But the most important are those two above.
+**NOTE:** One of the required data to create a user is the password. You should have read or heard already that storing users password as plain text in the database is a bad idea. If not, you're reading now: it **is** a bad idea 🤦‍. The minimum security we should have on this case is to use a hash algorithm to store the password. This is not a 100% secure method, but it helps already. Interested in this security matter? Check [this post](https://itnext.io/how-not-to-store-passwords-4955569e6e84) for additional details. Since this is only an onboard server, you don't need to have a ultra-master-blaster security method. Our main goal here is to show you some levels of security and prevent you from beginning your projects with an ultra-master-blaster insecure method.
 
-**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash algorithm (with [salt system](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#salting), optionally). Ask your tutor if you got stuck 👍 
+After creating an user, you should implement your mutation as follows:
+
+1. Get the input e-mail received on the mutation and try to find one on database.
+1. Check if the given password is correct. Remember that, in order to compare them properly, the input password should be submitted to the same process of transformation that the ones stored on Database, right?
+1. If the e-mail can be found on the database and the password is valid, return the user info and a token. For now, the token can be only an empty string. You're going to implement it on next step.
+
