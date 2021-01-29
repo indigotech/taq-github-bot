@@ -1,33 +1,38 @@
-In this track, you will implement a login mutation fully integrated with the database. There are many ways of implementing an [authentication](https://en.wikipedia.org/wiki/Authentication_server). The way we're doing it is: the user sends a password to prove that he is who he claims, and then the server provides a token that allows him to access some data on future requests. This token generally have an expiration, after which the user has to login again to get a new one. 
-
 # Step 1/4 - The mutation setup
 ### Estimated time: 1 hour
 
-Let's start with baby steps, by creating the mutation prototype, with no integration with the dabatase (yet).
+On this track, you're going to develop a mutation to create users on database. Let's start with baby steps, by creating the mutation prototype, with no integration to the dabatase (yet). The main purpose of this step is to exercise only how to create a mutation, a type and an input type on GraphQL Schema.
 
-Let's call the mutation `login`. It should receive an e-mail and a password as parameters and, in case of success, return the following structure on body:
+Let's call the mutation `createUser`. It will receive an object of the type `UserInput`, which you can call `data`, with the following fields:
 
 ```json
 {
   "data": {
-    "login": {
-      "user": {
-        "id": "12",
-        "name": "User Name",
-        "email": "User e-mail",
-        "birthDate": "04-25-1990",
-        "cpf": "XXXXXXXXXXX",
-      },
-      "token": "the_token"
+    "name": "User Name",
+    "email": "User e-mail",
+    "password": "user password",
+    "birthDate": "01-01-1990"
+  } 
+}
+```
+
+The response will be almost the same type as the input, with the addition of an `id` field. This will be the primary key of the User table on database. Also, we shouldn't return `password` field 🔑, but the GraphQL Schema should get it covered for us. Thanks, GraphQL!
+
+For now, you can just return the input that was given, adding an id with any number you like.
+
+```json
+{
+  "data": {
+    "createUser": {
+      "id": 1,
+      "name": "User Name",
+      "email": "User e-mail",
+      "birthDate": "01-01-1990"
     }
   } 
 }
 ```
 
-Your `User` can have other information if you want, but these fields above should be enough.
-
-**Note:** Did you notice that there is a `data` object wrapping the `Login` response? Don't worry, it's the GraphQL response format. It wraps all the successful response data inside the `data` object and all the errors in an `errors` array of objects. You can read more about it [here](https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#data).
-
-For now, you can return the above structure directly on your code populated with some mock data.
+**Note:** Did you notice that there is a `data` object wrapping the `createUser` response? Don't worry, it's the GraphQL response format. It wraps all the successful response inside the `data` object and all the errors in an `errors` array of objects. You can read more about it [here](https://github.com/graphql/graphql-spec/blob/master/spec/Section%207%20--%20Response.md#data).
 
 **Note 2:** don't forget to open Pull Requests at the end of every step that has some code to be written!

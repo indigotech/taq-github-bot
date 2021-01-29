@@ -29,7 +29,6 @@ After successfully connecting TypeORM to your database, it's time to see it work
 
 **Note 2:** too much for one step? Don't get stuck and feel free to ask anything to any Taqtiler 👍
 
-
 ## Open a Pull Request
 
 Now open a pull request for your `feature/setup-database` branch.

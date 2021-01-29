@@ -1,13 +1,11 @@
-# Step 2/3 - Integrate with the database
-### Estimated time: 4 hours
+# Step 2/5 - Integrating with the database
 
-After checking the authentication, it's time to fully integrate your mutation with the database. If provided token is valid, the server should validate the given input, and if everything is right, create a user on database. Wait, validate what? 🧐
+### Estimated time: 2 hours
 
-1. The system should not allow two or more users with the same e-mail
-1. The system should not allow a very weak password. Follow these rules:
-    + It should have at least 7 characters
-    + It should have at least 1 letter and 1 digit.
+Now you're going to fully integrate the Login mutation with the database. Create a user with the `createUser` mutation so you can test it properly.
 
-You can add some validations if you want. For example, minimum and maximum birth date. But the most important are those two above.
+1. Get the input e-mail received on the mutation and try to find one on database.
+1. Check if the given password is correct. Remember that: in order to compare them properly, the input password should be submitted to the same process of transformation that the ones stored on database, ok?
+1. If the e-mail can be found on the database and the password is valid, return the user info and a token. For now, the token can be only an empty string. You're going to implement it on next step.
 
-**NOTE:** as we discussed, remember not to save the password as plain text on database. Use at least a good hash algorithm (with [salt system](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#salting), optionally). Ask your tutor if you got stuck 👍 
+Also, you should consider our "error handling" subject and check for errors. Try to consider all relevant error cases.

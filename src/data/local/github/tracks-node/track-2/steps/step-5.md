@@ -15,7 +15,7 @@ Lint is a very powerful tool to inspect code and warn about some possible mistak
 
 We recommend you install [eslint Vscode extions](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), so the lint errors will be shown while you write your code.
 
-This is our [.eslintrc.js](https://github.com/indigotech/template-react/blob/master/.eslintrc.js) presets, in case you want to copy.
+This is our [.eslintrc.js](https://github.com/indigotech/template-node/blob/master/.eslintrc.js) presets, in case you want to copy.
 
 ## Conventions
 
