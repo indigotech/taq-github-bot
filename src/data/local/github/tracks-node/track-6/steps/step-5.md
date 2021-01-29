@@ -1,7 +1,7 @@
 # Step 5/5 - The authentication
 ### Estimated time: 2 hours
 
-Now that you have a login mutaiton, let's explore the **authentication**. We're going to change the`createUser` mutation to be authenticated. This means that only authenticated users will be able to use this mutation. To check if a user is allowed to perform this operation, as you must imagine, we should receive and validate a JWT token. If it was properly signed by the system before, then we can execute the mutation code as intended.
+Now that you have a login mutation, let's explore the **authentication**. We're going to change the `createUser` mutation to be authenticated. This means that only authenticated users will be able to use this mutation. To check if a user is allowed to perform this operation, as you must imagine, we should receive and validate a JWT token. If it was properly signed by the system before, then we can execute the mutation code as intended.
 
 Check the `Authorization` header: the client must have sent a JWT token and it should be a valid one. It's important to check if:
   + It **is** a JWT token
@@ -13,4 +13,4 @@ Check the `Authorization` header: the client must have sent a JWT token and it s
 
 If the JWT token has any problem, you should return an authentication error with a message.
 
-**TIP:** create one more test case to validate this step, with the proper error checking if no token is sent (or a wrong one).
+**TIP:** create one more test case to validate this step, with the proper error checking if no token is sent (or an invalid one).

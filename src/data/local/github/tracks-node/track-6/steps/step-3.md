@@ -7,12 +7,12 @@ Now you're going to finish your `login` mutation returning a proper token instea
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
 
-This may look like a random string, but this token has a lot of power, because there are some information encoded on it. The server can know only with a token, for example:
+This may look like a random string, but this token has a lot of power, because there are some information encoded in it. The server can know only with a token, for example:
 
 1. When it was created
 1. When it expires
 1. Which user is sending
 
-This is an example of the famous [JWT token](https://jwt.io/). You're going to build these tokens and return on your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token based authentication, jwt tokens and an example of how to implement it on code.
+This is an example of the famous [JWT token](https://jwt.io/). You're going to build this token and return it in your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token based authentication, jwt tokens and an example of how to implement it on code.
 
 Your task now is to implement a model of JWT tokens for your server and return them on your `login` mutation.

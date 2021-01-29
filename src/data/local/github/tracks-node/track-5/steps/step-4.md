@@ -15,4 +15,7 @@ Now, our step-by-step for the tests is incremented again:
 1. Start the server
 1. Run the "Hello" query test
 
-**NOTE:** remember that previous note about async tasks and Promises? Here's another example that we should use it properly, because **before** running the tests (not that joke again), you should verify the connection with the database was finished successfully, and, after that, server was successfully running and listening to port X, and then you can run the tests.
+**NOTE:** remember that previous note about async tasks and Promises? Here's another example that we should use it properly, because **before** start running the tests (not that joke again), you should verify:
+- if the connection with the database is finished successfully
+- if server is successfully running and listening to port X. 
+After it all, you can run the tests.
