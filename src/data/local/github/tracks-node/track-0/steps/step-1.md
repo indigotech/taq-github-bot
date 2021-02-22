@@ -20,7 +20,7 @@ We use [git](https://git-scm.com/)... a lot. If you don't feel confident in your
 
 If you don't have it already, we recommend you to install a VSCode extension called [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens). It's going to help you a lot with git by adding some functionalities to VSCode, including an extra view on activity bar (the icons on the left side).
 
-![GitLens](https://github.com/indigotech/taq-github-bot/blob/master/images/gitlens.jpg)
+![GitLens](https://raw.githubusercontent.com/indigotech/taq-github-bot/master/images/gitlens.jpg)
 
 With Gitlens you'll be able (among other things...) to check who modifies the file and the prevision versions (previous changes) of that file, right in VSCode.
 
@@ -28,7 +28,7 @@ Even though this extension has some tools to perform git commands, we highly enc
 
 --
 
-On the end of every task of this onboard, comment the word `Finish` on the issue to receive your next task (you can try reloading the page if it's taking too long).
+At the end of every task of this onboard, comment the word `Finish` on the issue to receive your next task (you can try reloading the page if it's taking too long).
 You can also comment the word `next`, in case you had to skip the current task.
 
 In case of any issue, you can ask your tutor for help. Go to next step!

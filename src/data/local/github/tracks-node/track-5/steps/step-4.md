@@ -13,9 +13,10 @@ Now, our step-by-step for the tests is incremented again:
 
 1. Connect to database (the test one)
 1. Start the server
-1. Run the "Hello" query test
+1. Run the "hello" query test
 
 **NOTE:** remember that previous note about async tasks and Promises? Here's another example that we should use it properly, because **before** start running the tests (not that joke again), you should verify:
 - if the connection with the database is finished successfully
 - if server is successfully running and listening to port X. 
+
 After it all, you can run the tests.
