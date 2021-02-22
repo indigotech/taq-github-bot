@@ -3,7 +3,7 @@
 
 So, let's assume we received a feture request: now our users should be able to have one or more addresses registered on their accounts. The information needed for this new feature is:
 
-- CEP (zipcode)
+- CEP (postal code)
 - Street
 - Street number
 - Complement (optional)

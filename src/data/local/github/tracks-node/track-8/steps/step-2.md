@@ -1,7 +1,7 @@
 # Step 2/2 - Pagination
 #### Estimated time: 6 hours
 
-Now, let's increment your `Users` query with a nice feature: pagination. Let's say the clients using your server want to fetch a list of users and there are lots of them on database. It's not a good practice to return too much users on a single request, because generally the client is not interested in using all of them. So, the solution is to offer separated small parts of users, according to some conditions the client sends.
+Now, let's increment your `users` query with a nice feature: pagination. Let's say the clients using your server want to fetch a list of users and there are lots of them on database. It's not a good practice to return too much users on a single request, because generally the client is not interested in using all of them. So, the solution is to offer separated small parts of users, according to some conditions the client sends.
 
 Let's consider our alphabetically ordered list of users. Your paginated query response should contain the following information:
 

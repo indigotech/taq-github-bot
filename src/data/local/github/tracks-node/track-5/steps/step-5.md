@@ -1,4 +1,4 @@
-# Step 5/6 - The Login Mutation test
+# Step 5/6 - The "createUser" Mutation test
 ### Estimated time: 3 hours
 
 Now it's time to (finally) write the tests for your recently implemented `createUser` mutation. But first, some theory: unlike our simple `Hello` query, this mutation is integrated with database. How should be these tests? Well, some general good practices every test you're going to perform: replace your current `3. run a single test` step with:
