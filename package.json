@@ -27,7 +27,7 @@
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"
   },
   "dependencies": {
-    "dotenv": "8.2.0",
+    "dotenv": "10.0.0",
     "ioredis": "4.28.2",
     "module-alias": "2.2.2",
     "probot": "11.0.1",
