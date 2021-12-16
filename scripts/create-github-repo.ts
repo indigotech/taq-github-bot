@@ -33,3 +33,8 @@ const { repoName, github, githubToken } = parseArgs();
 console.log('repoName:', repoName);
 console.log('github:', github);
 console.log('githubToken:', githubToken);
+
+// Create repository with repoName arg
+// Install taki-tiler or taki-tiler-server github bot on the repository
+// Add area-development with read access
+// Add "github" (arg) as admin of the repo
