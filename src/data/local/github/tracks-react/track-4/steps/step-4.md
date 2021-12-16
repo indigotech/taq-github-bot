@@ -6,7 +6,7 @@ We have some libs that makes our work easier. You can use any lib you want, but 
 
 ## React
 
-+ [react-router](https://www.npmjs.com/package/react-router)
++ [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
 ## React native
 
