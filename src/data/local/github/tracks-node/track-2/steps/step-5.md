@@ -11,11 +11,9 @@ This is the [.prettiertc.js](https://github.com/indigotech/template-react/blob/m
 
 ## Lint
 
-Lint is a very powerful tool to inspect code and warn about some possible mistakes. Lints use to be more language-specific. In our projects, we use [eslint](https://eslint.org/), which is a Javascript linter, but sure we have some additional support for Typescript features too. You can follow [this guide](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md) to configure eslint with Typescript. This doc already has a section to add a Prettier plugin as well \O/
+Lint is a very powerful tool to inspect code and warn about some possible mistakes. Lints use to be more language-specific. In our projects, we use [eslint](https://eslint.org/), which is a Javascript linter, but sure we have some additional support for Typescript features too. You can follow [this guide](https://github.com/typescript-eslint/typescript-eslint/tree/main/docs/linting) to configure eslint with Typescript. This doc already has a section to add a Prettier plugin as well \O/
 
 We recommend you install [eslint Vscode extions](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), so the lint errors will be shown while you write your code.
-
-This is our [.eslintrc.js](https://github.com/indigotech/template-node/blob/master/.eslintrc.js) presets, in case you want to copy.
 
 ## Conventions
 
