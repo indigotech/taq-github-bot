@@ -20,8 +20,8 @@ In case it's not that clear yet, let's take an example to help: an e-commerce ap
 In this case, the app should ask the server, in that order:
 
 1. The first 10 orders
-1. The 10 orders after skipping 10
-1. The 10 orders after skipping 20
+1. 10 more orders, skipping 20
+1. 10 more orders, skipping 10
 (...)
 
 Let's say some user has a total of 35 orders. The steps above would be repeated until the client asks for the last 10 orders (after 30th), in which the server would return the 5 last orders, and some information warning that are no more orders to be loaded.
