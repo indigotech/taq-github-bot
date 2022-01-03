@@ -18,6 +18,8 @@ Let's call the mutation `createUser`. It will receive an object of the type `Use
 
 The response will be almost the same type as the input, with the addition of an `id` field. This will be the primary key of the User table on database. Also, we shouldn't return `password` field 🔑, but the GraphQL Schema should get it covered for us. Thanks, GraphQL!
 
+**Tip:** make sure to create the resolvers, which is the code that will be executed and the schema, which is the type definition of the GraphQL queries/mutations and input/types.
+
 For now, you can just return the input that was given, adding an id with any number you like.
 
 ```json

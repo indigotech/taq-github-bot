@@ -22,3 +22,5 @@ This new mutation can be called `login`. It should receive an e-mail and a passw
 ```
 
 For now, you can return the above structure directly on your code populated with some mock data.
+
+**NOTE:** as a good practice, we recommend you create (or update) tests for this mutation after every step. This will help you create the right scenarios. Also, don't forget to open Pull Requests with the mutation and test codes.
