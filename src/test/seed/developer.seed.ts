@@ -1,17 +1,17 @@
-import * as Faker from 'faker';
-import IORedis from 'ioredis';
 import { Developer } from '@domain/developer.model';
+import * as Faker from 'faker';
+import { FirestoreClientMock } from 'test/webhook-simulations/firestore-client-mock.test';
 
 export class DeveloperSeed {
-  constructor(private readonly redisClient: IORedis.Redis) {}
+  constructor(private readonly client: FirestoreClientMock) {}
 
   async reset(): Promise<number> {
-    const keys = await this.redisClient.keys('*');
-    await Promise.all(keys.map((key) => this.redisClient.del(key)));
+    const keys = Object.keys(this.client.firestoreMock);
+    this.client.firestoreMock = {};
     return keys.length;
   }
 
-  createNewUser(id: number, issueId?: number): Promise<string> {
+  createNewUser(id: number, issueId?: number) {
     const newDeveloper: Developer = {
       developerId: id,
       issueId,
@@ -22,12 +22,8 @@ export class DeveloperSeed {
     return this.createUser(newDeveloper);
   }
 
-  createUser(developer: Partial<Developer>): Promise<string> {
+  async createUser(developer: Partial<Developer>) {
     developer.name = Faker.name.findName();
-    return this.redisClient.set(developer.developerId.toString(), JSON.stringify(developer));
-  }
-
-  getAllUsers(): Promise<string[]> {
-    return this.redisClient.keys('*');
+    await this.client.setObject(developer.developerId.toString(), developer as Developer);
   }
 }

@@ -28,11 +28,12 @@
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"
   },
   "dependencies": {
+    "@google-cloud/firestore": "6.2.0",
     "dotenv": "10.0.0",
     "ioredis": "4.28.2",
     "probot": "11.4.1",
     "reflect-metadata": "0.1.13",
-    "typedi": "0.8.0"
+    "typedi": "0.10.0"
   },
   "devDependencies": {
     "@types/chai": "4.3.3",
@@ -40,6 +41,7 @@
     "@types/ioredis": "4.28.3",
     "@types/mocha": "9.1.1",
     "@types/node": "16.11.59",
+    "@types/sinon": "10.0.13",
     "@typescript-eslint/eslint-plugin": "5.38.0",
     "@typescript-eslint/parser": "5.38.0",
     "chai": "4.3.6",

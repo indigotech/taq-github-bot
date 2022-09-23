@@ -11,7 +11,7 @@ export class IncrementDeveloperProgressUseCase {
 
   async execute(developerId: number): Promise<Developer> {
     const developer: Developer = await this.developerDataSource.get(developerId);
-
+    console.log('IncrementDeveloperProgressUseCase', developer);
     if (!developer) {
       throw new RobotError(404, `Developer ${developer.developerId} not found`);
     }

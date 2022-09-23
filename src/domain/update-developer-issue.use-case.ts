@@ -5,7 +5,7 @@ import { DeveloperDataSource } from '@data/db';
 export class UpdateDeveloperIssueUseCase {
   private readonly dataSource = Container.get(DeveloperDataSource);
 
-  execute(developerId: number, issueId: number): Promise<boolean> {
+  execute(developerId: number, issueId: number) {
     return this.dataSource.update(developerId, { issueId });
   }
 }
