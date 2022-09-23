@@ -1,7 +1,8 @@
-import { Context } from 'probot';
-import { Service } from 'typedi';
 import { InitiateUserUseCase } from '@domain';
 import { DeveloperInput } from '@domain/developer.model';
+import { Context } from 'probot';
+import { Service } from 'typedi';
+import { Payload } from './payload.body';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
 
@@ -11,7 +12,7 @@ export class InstallationReceiver extends Receiver {
     super();
   }
 
-  onReceive = async (context: Context): Promise<void> => {
+  onReceive = async (context: Context<Payload>): Promise<void> => {
     if (context.isBot) {
       return;
     }
