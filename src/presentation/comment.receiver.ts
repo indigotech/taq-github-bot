@@ -1,5 +1,3 @@
-import { Context } from 'probot';
-import { Service } from 'typedi';
 import {
   CommentInfo,
   HasFinishedUseCase,
@@ -7,6 +5,9 @@ import {
   ShouldIncrementDevProgressUseCase,
 } from '@domain';
 import { DeveloperInput } from '@domain/developer.model';
+import { Context } from 'probot';
+import { Service } from 'typedi';
+import { Payload } from './payload.body';
 import { PayloadMapper } from './payload.mapper';
 import { Receiver } from './receiver';
 
@@ -20,7 +21,7 @@ export class CommentReceiver extends Receiver {
     super();
   }
 
-  onReceive = async (context: Context) => {
+  onReceive = async (context: Context<Payload>) => {
     if (context.isBot) {
       return;
     }
@@ -48,7 +49,7 @@ export class CommentReceiver extends Receiver {
     }
   };
 
-  private async incrementProgress(context, devInput: DeveloperInput) {
+  private async incrementProgress(context: Context<Payload>, devInput: DeveloperInput) {
     const developer = await this.incrementProgressUseCase.execute(devInput.developerId);
     return this.eventsSender.openEvent(context, developer);
   }
