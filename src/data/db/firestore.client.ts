@@ -1,14 +1,20 @@
 import { RobotError } from '@core';
 import { Firestore } from '@google-cloud/firestore';
 
-const FIRESTORE_COLLECTION = 'taqGithubBot';
-
 export class FirestoreClient {
+  private readonly collection = process.env.FIRESTORE_COLLECTION;
   private readonly firestore = new Firestore();
 
+  constructor() {
+    this.collection = process.env.FIRESTORE_COLLECTION;
+
+    if (!this.collection) {
+      throw new Error('Failed to get FIRESTORE_COLLECTION from environment variables');
+    }
+  }
+
   async setObject(documentName: string, value: Record<string, any>) {
-    console.log('AAAAAAA');
-    const document = this.firestore.collection(FIRESTORE_COLLECTION).doc(documentName);
+    const document = this.firestore.collection(this.collection).doc(documentName);
 
     try {
       await document.set(value);
@@ -23,8 +29,7 @@ export class FirestoreClient {
   }
 
   async getObject<T>(documentName: string): Promise<T> {
-    console.log('BBBBBB');
-    const document = this.firestore.collection(FIRESTORE_COLLECTION).doc(documentName);
+    const document = this.firestore.collection(this.collection).doc(documentName);
 
     try {
       const snapshot = await document.get();

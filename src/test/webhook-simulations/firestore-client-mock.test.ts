@@ -8,6 +8,7 @@ export class FirestoreClientMock {
   }
 
   async getObject(documentName: string): Promise<Developer> {
-    return this.firestoreMock[documentName];
+    const object = this.firestoreMock[documentName];
+    return object && JSON.parse(JSON.stringify(object));
   }
 }

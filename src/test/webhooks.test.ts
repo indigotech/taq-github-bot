@@ -129,14 +129,12 @@ describe('Webhooks', () => {
 
     it('should do nothing if developer is already created', async () => {
       const context = { id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload };
-
       await developerSeed.createNewUser(defaultUserId);
-
       const devDbBefore = await db.getObject(defaultUserId.toString());
+
       await probot.receive(context);
       const devDbAfter = await db.getObject(defaultUserId.toString());
-
-      expect(devDbBefore).to.be.eq(devDbAfter);
+      expect(devDbBefore).to.be.deep.eq(devDbAfter);
     });
   });
 
@@ -166,14 +164,13 @@ describe('Webhooks', () => {
 
     it('should do nothing if developer is already created', async () => {
       const context = { id: defaultId, name: GithubEvents.Member.Added, payload: memberAddedPayload };
-
       await developerSeed.createNewUser(defaultUserId);
-
       const devDbBefore = await db.getObject(defaultUserId.toString());
-      await probot.receive(context);
-      const devDbAfter = await db.getObject(defaultUserId.toString());
 
-      expect(devDbBefore).to.be.eq(devDbAfter);
+      await probot.receive(context);
+
+      const devDbAfter = await db.getObject(defaultUserId.toString());
+      expect(devDbBefore).to.be.deep.eq(devDbAfter);
     });
   });
 
@@ -280,12 +277,12 @@ describe('Webhooks', () => {
         issueId: 123,
         progress: { track: 2, step: 3, completedStepsOverall: totalSteps },
       });
-
       const devDbBefore = await db.getObject(defaultUserId.toString());
-      await probot.receive({ id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload });
-      const devDbAfter = await db.getObject(defaultUserId.toString());
 
-      expect(devDbBefore).to.be.eq(devDbAfter);
+      await probot.receive({ id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload });
+
+      const devDbAfter = await db.getObject(defaultUserId.toString());
+      expect(devDbBefore).to.be.deep.eq(devDbAfter);
     });
 
     it('should do nothing if commented on a different issue', async () => {

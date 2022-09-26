@@ -30,7 +30,6 @@
   "dependencies": {
     "@google-cloud/firestore": "6.2.0",
     "dotenv": "10.0.0",
-    "ioredis": "4.28.2",
     "probot": "11.4.1",
     "reflect-metadata": "0.1.13",
     "typedi": "0.10.0"
@@ -38,7 +37,6 @@
   "devDependencies": {
     "@types/chai": "4.3.3",
     "@types/faker": "4.1.12",
-    "@types/ioredis": "4.28.3",
     "@types/mocha": "9.1.1",
     "@types/node": "16.11.59",
     "@types/sinon": "10.0.13",
@@ -54,7 +52,7 @@
     "nock": "13.2.1",
     "prettier": "2.5.1",
     "sinon": "14.0.0",
-    "smee-client": "1.0.1",
+    "smee-client": "1.2.3",
     "ts-node": "10.9.1",
     "tsc-watch": "5.0.3",
     "tsconfig-paths": "3.12.0",

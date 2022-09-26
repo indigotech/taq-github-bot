@@ -12,8 +12,6 @@ export class DeveloperDataSource {
 
   async update(devId: number, developer: Partial<Developer>) {
     const currentDev = await this.get(devId);
-    console.log('currentDev:', currentDev);
-    console.log('developer:', developer);
     return this.db.setObject(devId.toString(), { ...currentDev, ...developer });
   }
 
