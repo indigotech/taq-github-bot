@@ -40,7 +40,9 @@
   "exclude": [
     "node_modules",
     "dist",
-    "tsconfig-paths-dist.js"
+    "tsconfig-paths-dist.js",
+    "prod_node_modules",
+    "*.test.ts",
   ],
   "compileOnSave": false,
   "buildOnSave": false

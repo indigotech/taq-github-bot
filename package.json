@@ -13,19 +13,20 @@
     "probot-app"
   ],
   "scripts": {
-    "build": "npm run lint && tsc -p tsconfig.json",
+    "build": "npm run clean-dist && tsc && npm run copy-resources",
     "clean-dist": "rm -rf ./dist",
     "copy-resources": "copyup 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl,md}' 'dist/'",
     "create-github-repo": "ts-node scripts/create-github-repo.ts",
+    "prestart": "npm run lint && npm run build",
     "start": "probot run ./dist/index.js",
     "dev": "tsc-watch --onSuccess \"npm run start\" ",
     "lint": "eslint --ext .js,.ts src",
     "lint:fix": "eslint --ext .js,.ts src --fix",
-    "postinstall": "npm run clean-dist && npm run build && npm run copy-resources",
     "reinstall": "rm -rf ./node_modules || true && npm install",
     "test": "npm run build && mocha -r ts-node/register -r tsconfig-paths/register 'src/**/*.test.ts' --exit",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
-    "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js"
+    "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js",
+    "gcp-buid": "npm run build"
   },
   "dependencies": {
     "@google-cloud/firestore": "6.2.0",

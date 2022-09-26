@@ -8,7 +8,12 @@
 # Install dependencies
 npm install
 
+# Copy test.env to .env and change values according
+
 # Run the bot
+npm start
+
+# Or run the tests
 npm start
 ```
 
