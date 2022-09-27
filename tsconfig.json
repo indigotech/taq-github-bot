@@ -41,7 +41,6 @@
     "node_modules",
     "dist",
     "tsconfig-paths-dist.js",
-    "prod_node_modules",
     "*.test.ts",
   ],
   "compileOnSave": false,

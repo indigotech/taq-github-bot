@@ -17,7 +17,6 @@
     "clean-dist": "rm -rf ./dist",
     "copy-resources": "copyup 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl,md}' 'dist/'",
     "create-github-repo": "ts-node scripts/create-github-repo.ts",
-    "prestart": "npm run lint && npm run build",
     "start": "probot run ./dist/index.js",
     "dev": "tsc-watch --onSuccess \"npm run start\" ",
     "lint": "eslint --ext .js,.ts src",
