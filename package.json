@@ -15,9 +15,9 @@
   "scripts": {
     "build": "npm run clean-dist && tsc && npm run copy-resources",
     "clean-dist": "rm -rf ./dist",
-    "copy-resources": "copyup 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl,md}' 'dist/'",
+    "copy-resources": "copyup -e 'src/test/**' 'src/**/*.{html,jpg,jpeg,png,css,json,wsdl,md}' 'dist/'",
     "create-github-repo": "ts-node scripts/create-github-repo.ts",
-    "start": "probot run dist/index.js",
+    "start": "probot run ./dist/index.js",
     "dev": "tsc-watch --onSuccess \"npm run start\" ",
     "lint": "eslint --ext .js,.ts src",
     "lint:fix": "eslint --ext .js,.ts src --fix",
@@ -30,6 +30,7 @@
   "dependencies": {
     "@google-cloud/firestore": "6.2.0",
     "dotenv": "10.0.0",
+    "module-alias": "2.2.2",
     "probot": "11.4.1",
     "reflect-metadata": "0.1.13",
     "typedi": "0.10.0"
@@ -61,5 +62,11 @@
   "engines": {
     "node": "16.17.0",
     "npm": ">=8"
+  },
+  "_moduleAliases": {
+    "@core": "dist/core",
+    "@data": "dist/data",
+    "@domain": "dist/domain",
+    "@presentation": "dist/presentation"
   }
 }

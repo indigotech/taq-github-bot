@@ -33,14 +33,15 @@
       "@domain/*": ["./domain/*"],
       "@presentation": ["./presentation"],
       "@presentation/*": ["./presentation/*"],
-      "@test": ["./__tests__"],
-      "@test/*": ["./__tests__/*"]
+      "@test": ["./test"],
+      "@test/*": ["./test/*"]
     }
   },
   "exclude": [
     "node_modules",
     "dist",
-    "*.test.ts",
+    "src/test/**",
+    "src/test/seed/**"
   ],
   "compileOnSave": false,
   "buildOnSave": false
