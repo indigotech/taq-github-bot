@@ -25,7 +25,7 @@
     "test": "npm run build && mocha -r ts-node/register -r tsconfig-paths/register 'src/**/*.test.ts' --exit",
     "simulate:installation": "./node_modules/.bin/probot receive -e installation -p ./src/__test__/webhook-simulations/installation.payload.json -t any ./dist/index.js",
     "simulate:comment-finish": "./node_modules/.bin/probot receive -e issue_comment -p ./src/__test__/webhook-simulations/comment-finish.payload.json -t any ./dist/index.js",
-    "gcp-buid": "npm run build"
+    "gcp-build": "npm run build"
   },
   "dependencies": {
     "@google-cloud/firestore": "6.2.0",
