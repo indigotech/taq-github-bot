@@ -8,6 +8,6 @@ export function configureRobot() {
 }
 
 function configureTracks() {
-  Container.set(ONBOARD_STACK, process.env.ONBOARD_STACK || OnboardStack.React);
+  Container.set(ONBOARD_STACK, process.env.ONBOARD_STACK ?? OnboardStack.React);
   Container.get(TrackConfigure).configure();
 }
