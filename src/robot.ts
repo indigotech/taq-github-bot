@@ -1,5 +1,4 @@
 import { Probot } from 'probot';
-import 'reflect-metadata';
 import Container, { Service } from 'typedi';
 import { GithubEvents } from './github-events.constants';
 import { CommentReceiver, InstallationReceiver } from './presentation';

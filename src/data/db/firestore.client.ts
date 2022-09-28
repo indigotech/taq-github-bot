@@ -1,6 +1,8 @@
 import { RobotError } from '@core';
 import { Firestore } from '@google-cloud/firestore';
+import { Service } from 'typedi';
 
+@Service()
 export class FirestoreClient {
   private readonly collection = process.env.FIRESTORE_COLLECTION;
   private readonly firestore = new Firestore();

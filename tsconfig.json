@@ -33,16 +33,14 @@
       "@domain/*": ["./domain/*"],
       "@presentation": ["./presentation"],
       "@presentation/*": ["./presentation/*"],
-      "@test": ["./__tests__"],
-      "@test/*": ["./__tests__/*"]
+      "@test": ["./test"],
+      "@test/*": ["./test/*"]
     }
   },
   "exclude": [
     "node_modules",
     "dist",
-    "tsconfig-paths-dist.js",
-    "prod_node_modules",
-    "*.test.ts",
+    "src/test/**"
   ],
   "compileOnSave": false,
   "buildOnSave": false
