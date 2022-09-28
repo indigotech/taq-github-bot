@@ -1,23 +1,19 @@
-import { DBClient, REDIS } from '@data/db';
+import 'reflect-metadata';
+import { FirestoreClient } from '@data/db/firestore.client';
 import { TRACKS } from '@data/local/track.configure';
-import { Developer } from '@domain/developer.model';
 import { Track } from '@domain/track.model';
 import { GithubEventSender } from '@presentation/events-sender.service';
 import { RobotStrings } from '@presentation/robot.strings';
 import { expect } from 'chai';
-import IORedis, { Redis } from 'ioredis';
 import nock from 'nock';
 import { Probot, ProbotOctokit } from 'probot';
-import 'reflect-metadata';
 import * as sinon from 'sinon';
 import { Container } from 'typedi';
 import { GithubEvents } from '../github-events.constants';
 import { Robot } from '../robot';
 import { DeveloperSeed } from './seed';
 import { TrackSeed } from './seed/track.seed';
-
-// tslint:disable:max-line-length
-// tslint:disable:no-unused-expression
+import { FirestoreClientMock } from './webhook-simulations/firestore-client-mock.test';
 
 describe('Webhooks', () => {
   const defaultId = '2ad1ce00-75d8-11ea-8f0b-8dd55d1cefec';
@@ -28,7 +24,7 @@ describe('Webhooks', () => {
   let memberAddedPayload;
   let commentFinishPayload;
 
-  let db: Redis;
+  let db: FirestoreClientMock;
   let developerSeed: DeveloperSeed;
   let trackSeed: TrackSeed;
   let probot: Probot;
@@ -43,8 +39,8 @@ describe('Webhooks', () => {
     memberAddedPayload = require('./webhook-simulations/member-added-as-admin.payload.json');
     commentFinishPayload = require('./webhook-simulations/comment-finish.payload.json');
 
-    Container.set(REDIS, new IORedis('6380'));
-    db = (Container.get(DBClient) as any).redisClient;
+    db = new FirestoreClientMock();
+    Container.set(FirestoreClient, db);
 
     defaultUserId = installationPayload.sender.id;
 
@@ -79,7 +75,7 @@ describe('Webhooks', () => {
   });
 
   after(() => {
-    db.disconnect();
+    Container.reset();
   });
 
   describe('Installation', () => {
@@ -100,12 +96,10 @@ describe('Webhooks', () => {
         });
       await probot.receive({ id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload });
 
-      const devDb = await db.get(defaultUserId.toString());
-      const developer = JSON.parse(devDb);
-
-      expect(developer.developerId).to.be.eq(defaultUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.null;
+      const devDb = await db.getObject(defaultUserId.toString());
+      expect(devDb.developerId).to.be.eq(defaultUserId);
+      expect(devDb.issueId).to.be.undefined;
+      expect(devDb.progress).to.be.null;
     });
 
     it('should create requester user on database with no progress', async () => {
@@ -127,23 +121,20 @@ describe('Webhooks', () => {
         payload: installationWithRequesterPayload,
       });
 
-      const devDb = await db.get(requesterUserId.toString());
-      const developer = JSON.parse(devDb);
-      expect(developer.developerId).to.be.eq(requesterUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.null;
+      const devDb = await db.getObject(requesterUserId.toString());
+      expect(devDb.developerId).to.be.eq(requesterUserId);
+      expect(devDb.issueId).not.to.be.null;
+      expect(devDb.progress).to.be.null;
     });
 
     it('should do nothing if developer is already created', async () => {
       const context = { id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload };
-
       await developerSeed.createNewUser(defaultUserId);
+      const devDbBefore = await db.getObject(defaultUserId.toString());
 
-      const devDbBefore = await db.get(defaultUserId.toString());
       await probot.receive(context);
-      const devDbAfter = await db.get(defaultUserId.toString());
-
-      expect(devDbBefore).to.be.eq(devDbAfter);
+      const devDbAfter = await db.getObject(defaultUserId.toString());
+      expect(devDbBefore).to.be.deep.eq(devDbAfter);
     });
   });
 
@@ -165,24 +156,21 @@ describe('Webhooks', () => {
         });
       await probot.receive({ id: defaultId, name: GithubEvents.Member.Added, payload: memberAddedPayload });
 
-      const devDb = await db.get(defaultUserId.toString());
-      const developer = JSON.parse(devDb);
-
-      expect(developer.developerId).to.be.eq(defaultUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.null;
+      const devDb = await db.getObject(defaultUserId.toString());
+      expect(devDb.developerId).to.be.eq(defaultUserId);
+      expect(devDb.issueId).not.to.be.null;
+      expect(devDb.progress).to.be.null;
     });
 
     it('should do nothing if developer is already created', async () => {
       const context = { id: defaultId, name: GithubEvents.Member.Added, payload: memberAddedPayload };
-
       await developerSeed.createNewUser(defaultUserId);
+      const devDbBefore = await db.getObject(defaultUserId.toString());
 
-      const devDbBefore = await db.get(defaultUserId.toString());
       await probot.receive(context);
-      const devDbAfter = await db.get(defaultUserId.toString());
 
-      expect(devDbBefore).to.be.eq(devDbAfter);
+      const devDbAfter = await db.getObject(defaultUserId.toString());
+      expect(devDbBefore).to.be.deep.eq(devDbAfter);
     });
   });
 
@@ -208,12 +196,10 @@ describe('Webhooks', () => {
 
       await probot.receive({ id: defaultId, name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
-      const devDb: string = await db.get(defaultUserId.toString());
-      const developer: Developer = JSON.parse(devDb);
-
-      expect(developer.developerId).to.be.eq(defaultUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.deep.eq({ track: 0, step: 0, completedStepsOverall: 1 });
+      const devDb = await db.getObject(defaultUserId.toString());
+      expect(devDb.developerId).to.be.eq(defaultUserId);
+      expect(devDb.issueId).not.to.be.null;
+      expect(devDb.progress).to.be.deep.eq({ track: 0, step: 0, completedStepsOverall: 1 });
     });
 
     it('should increment developer intermediary step', async () => {
@@ -231,12 +217,10 @@ describe('Webhooks', () => {
 
       await probot.receive({ id: defaultId, name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
-      const devDb: string = await db.get(defaultUserId.toString());
-      const developer: Developer = JSON.parse(devDb);
-
-      expect(developer.developerId).to.be.eq(defaultUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.deep.eq({ track, step: stepBefore + 1, completedStepsOverall: 6 });
+      const devDb = await db.getObject(defaultUserId.toString());
+      expect(devDb.developerId).to.be.eq(defaultUserId);
+      expect(devDb.issueId).not.to.be.null;
+      expect(devDb.progress).to.be.deep.eq({ track, step: stepBefore + 1, completedStepsOverall: 6 });
     });
 
     it('should increment developer track', async () => {
@@ -261,11 +245,10 @@ describe('Webhooks', () => {
 
       await probot.receive({ id: defaultId, name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
-      const devDb: string = await db.get(defaultUserId.toString());
-      const developer: Developer = JSON.parse(devDb);
-      expect(developer.developerId).to.be.eq(defaultUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.deep.eq({ track: trackBefore, step: stepBefore + 1, completedStepsOverall: 7 });
+      const devDb = await db.getObject(defaultUserId.toString());
+      expect(devDb.developerId).to.be.eq(defaultUserId);
+      expect(devDb.issueId).not.to.be.null;
+      expect(devDb.progress).to.be.deep.eq({ track: trackBefore, step: stepBefore + 1, completedStepsOverall: 7 });
     });
 
     it('should increment developer and detect onboard finish', async () => {
@@ -282,11 +265,10 @@ describe('Webhooks', () => {
 
       await probot.receive({ id: defaultId, name: GithubEvents.IssueComment.Created, payload: commentFinishPayload });
 
-      const devDb: string = await db.get(defaultUserId.toString());
-      const developer: Developer = JSON.parse(devDb);
-      expect(developer.developerId).to.be.eq(defaultUserId);
-      expect(developer.issueId).not.to.be.null;
-      expect(developer.progress).to.be.deep.eq({ track, step: stepBefore + 1, completedStepsOverall: 10 });
+      const devDb = await db.getObject(defaultUserId.toString());
+      expect(devDb.developerId).to.be.eq(defaultUserId);
+      expect(devDb.issueId).not.to.be.null;
+      expect(devDb.progress).to.be.deep.eq({ track, step: stepBefore + 1, completedStepsOverall: 10 });
     });
 
     it('should do nothing if onboard was already finished by that developer', async () => {
@@ -295,12 +277,12 @@ describe('Webhooks', () => {
         issueId: 123,
         progress: { track: 2, step: 3, completedStepsOverall: totalSteps },
       });
+      const devDbBefore = await db.getObject(defaultUserId.toString());
 
-      const devDbBefore = await db.get(defaultUserId.toString());
       await probot.receive({ id: defaultId, name: GithubEvents.Installation.Created, payload: installationPayload });
-      const devDbAfter = await db.get(defaultUserId.toString());
 
-      expect(devDbBefore).to.be.eq(devDbAfter);
+      const devDbAfter = await db.getObject(defaultUserId.toString());
+      expect(devDbBefore).to.be.deep.eq(devDbAfter);
     });
 
     it('should do nothing if commented on a different issue', async () => {

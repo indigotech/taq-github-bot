@@ -1,9 +1,11 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import Container from 'typedi';
-import { DeveloperDataSource, REDIS } from '@data/db';
+import { DeveloperDataSource } from '@data/db';
 import { Developer } from './developer.model';
 import { CommentInfo, ShouldIncrementDevProgressUseCase } from './should-increment-dev-progress.use-case';
+import { FirestoreClientMock } from 'test/webhook-simulations/firestore-client-mock.test';
+import { FirestoreClient } from '@data/db/firestore.client';
 
 // tslint:disable: no-unused-expression
 
@@ -13,7 +15,7 @@ describe('ShouldIncrementDevProgressUseCase', () => {
   let issueId: number;
 
   before(() => {
-    Container.set(REDIS, {});
+    Container.set(FirestoreClient, new FirestoreClientMock());
     const datasource = Container.get(DeveloperDataSource);
     shouldIncrementUseCase = Container.get(ShouldIncrementDevProgressUseCase);
 

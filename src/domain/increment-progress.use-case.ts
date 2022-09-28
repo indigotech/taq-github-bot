@@ -8,6 +8,7 @@ export class IncrementProgressUseCase {
   private readonly trackDataSource: TrackDataSource = Container.get(TrackDataSource);
 
   execute(progress: DeveloperProgress): Promise<DeveloperProgress> {
+    progress = { ...progress };
     const tracks = this.trackDataSource.tracks;
 
     const totalStepsForCurrentTrack = tracks[progress.track].steps.length;

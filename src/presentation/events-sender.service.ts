@@ -1,8 +1,9 @@
-import { Context } from 'probot';
-import Container, { Service } from 'typedi';
 import { GetTracksUseCase, IncrementProgressUseCase, UpdateDeveloperIssueUseCase } from '@domain';
 import { Developer, DeveloperProgress } from '@domain/developer.model';
 import { Track } from '@domain/track.model';
+import { Context } from 'probot';
+import Container, { Service } from 'typedi';
+import { Payload } from './payload.body';
 import { RobotStrings } from './robot.strings';
 
 @Service()
@@ -11,7 +12,7 @@ export class GithubEventSender {
   private readonly nextProgressUseCase = Container.get(IncrementProgressUseCase);
   private readonly updateDeveloperIssue = Container.get(UpdateDeveloperIssueUseCase);
 
-  async openEvent(context: Context, developer: Developer) {
+  async openEvent(context: Context<Payload>, developer: Developer) {
     const { tracks, totalSteps } = await this.getTracksUseCase.exec();
     const progress: DeveloperProgress = developer.progress;
     let trackToSend: Track;
@@ -57,7 +58,7 @@ export class GithubEventSender {
     }
   }
 
-  private createIssue(context: any, title: string, body: string) {
+  private createIssue(context: Context<Payload>, title: string, body: string) {
     const params = context.issue({ title: title || 'Issue', body });
     return context.octokit.issues.create(params);
   }
@@ -67,7 +68,7 @@ export class GithubEventSender {
     return context.octokit.issues.createComment(issueWithComment);
   }
 
-  private createFirstIssue(context: any, title: string, body: string) {
+  private createFirstIssue(context: Context<Payload>, title: string, body: string) {
     const repository = context.payload.repository || context.payload.repositories[0];
     const fullNameSplit = repository.full_name.split('/');
     const params = { owner: fullNameSplit[0], repo: fullNameSplit[1], title, body };
