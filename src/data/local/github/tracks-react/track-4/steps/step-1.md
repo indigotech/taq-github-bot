@@ -9,7 +9,7 @@ But for now, in order to you understand what's happening under the GraphQL's hoo
 For this, we'll just make a REST request using a tool called [Postman](https://www.getpostman.com/). It should be installed in your mac already (download [here](https://www.postman.com/downloads/) if it doesn't). You will perform a Login request very similiar to the one you coding in the next steps. Here are the parameters of your request:
 
 + Method: POST
-+ Base URL: https://tq-template-server-sample.herokuapp.com
++ Base URL: https://template-onboarding-node-sjz6wnaoia-uc.a.run.app
 + Endpoint: /authenticate 
 + Body:
 
@@ -36,7 +36,7 @@ If your request succeed, you'll receive on body a JSON that looks like this:
             "name": "Taqtile Adm",
             "role": "admin"
         },
-        "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NTF9LCJpYXQiOjE1NTYxMTc2NjgsImV4cCI6MTU1NjEyMTI2OH0.Kha7cfFUCOscXffh8nwj4gdCGDZ0ohHvMtkR2st2bso"
+
     }
 }
 ```
