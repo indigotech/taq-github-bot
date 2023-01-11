@@ -9,7 +9,9 @@ Check the `Authorization` header: the client must have sent a JWT token and it s
   + It's not expired
   + Its signature is correct.
 
-**NOTE:** have in mind that anyone can create a JWT token with any payload data they want (remember [jwt.io](https://jwt.io)?), but only those who have the secret can generate the right signature. Only the server should know this secret.
+You can use a library to help you validate the token.
+
+**NOTE:** bear in mind that anyone can create a JWT token with any payload data they want (remember [jwt.io](https://jwt.io)?), but only those who have the secret can generate the right signature. Only the server should know this secret.
 
 If the JWT token has any problem, you should return an authentication error with a message.
 
