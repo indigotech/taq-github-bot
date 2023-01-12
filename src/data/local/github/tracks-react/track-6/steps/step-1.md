@@ -7,7 +7,7 @@ Add a button on your users list to navigate to your new `Add User` page. It can 
 
 Your screen should have:
 
-- A form field for each of the properties that are listed in `UserType` GraphQL type, **except for**:
+- A form field for each of the properties that are listed in `UserType` GraphQL type
 
 - An `Add user` button
 

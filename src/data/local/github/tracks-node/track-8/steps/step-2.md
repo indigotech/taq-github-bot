@@ -3,7 +3,7 @@
 
 Now, let's increment your `users` query with a nice feature: pagination. Let's say the clients using your server want to fetch a list of users and there are lots of them on database. It's not a good practice to return too much users on a single request, because generally the client is not interested in using all of them. So, the solution is to offer separated small parts of users, according to some conditions the client sends.
 
-Let's consider our alphabetically ordered list of users. Your paginated query response should contain the following information:
+Let's consider our alphabetically ordered list of users. Change the query response type to be of the type below:
 
 + The users, obviously 🤣
 + The total number of users
@@ -20,11 +20,11 @@ In case it's not that clear yet, let's take an example to help: an e-commerce ap
 In this case, the app should ask the server, in that order:
 
 1. The first 10 orders
-1. 10 more orders, skipping 20
 1. 10 more orders, skipping 10
+1. 10 more orders, skipping 20
 (...)
 
-Let's say some user has a total of 35 orders. The steps above would be repeated until the client asks for the last 10 orders (after 30th), in which the server would return the 5 last orders, and some information warning that are no more orders to be loaded.
+Let's say some user has a total of 35 orders. The steps above would be repeated until the client asks for the last 10 orders (after 30th), in which the server would return the 5 last orders, and the information that are no more orders to be loaded.
 
 If you search on the internet, you're going to find different ways of doing pagination, but in general they follow the rules listed above. You can choose anyway you want to do this, given they are followed.
 
