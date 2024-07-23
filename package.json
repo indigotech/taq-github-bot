@@ -28,7 +28,7 @@
     "gcp-build": "npm run build"
   },
   "dependencies": {
-    "@google-cloud/firestore": "6.2.0",
+    "@google-cloud/firestore": "7.9.0",
     "dotenv": "10.0.0",
     "module-alias": "2.2.2",
     "probot": "11.4.1",
@@ -50,14 +50,14 @@
     "eslint-plugin-prettier": "4.2.1",
     "faker": "5.5.3",
     "mocha": "10.0.0",
-    "nock": "13.2.1",
+    "nock": "13.5.4",
     "prettier": "2.5.1",
     "sinon": "14.0.0",
     "smee-client": "1.2.3",
     "ts-node": "10.9.1",
     "tsc-watch": "5.0.3",
     "tsconfig-paths": "3.12.0",
-    "typescript": "4.7.4"
+    "typescript": "5.5.4"
   },
   "engines": {
     "node": "20.15.1",
