@@ -19,8 +19,8 @@ As you should have guessed, the relation we will implement here is **one-to-many
   | id          | PRIMARY KEY  |
   | name        |              | 
   | email       |              |
-  | cpf         |              |
   | birthDate   |              |
+  | password    |              |
   +-------------+--------------+
 
   +--------------+--------------+
