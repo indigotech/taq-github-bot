@@ -60,8 +60,8 @@
     "typescript": "4.7.4"
   },
   "engines": {
-    "node": "16.17.0",
-    "npm": ">=8"
+    "node": "20.15.1",
+    "npm": ">=10"
   },
   "_moduleAliases": {
     "@core": "dist/core",
