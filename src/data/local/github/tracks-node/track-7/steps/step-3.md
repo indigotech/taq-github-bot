@@ -11,6 +11,6 @@ The idea is to write some code to populate your database, creating an environmen
 
 **NOTE:** don't forget that you have to connect with the database in order to run the code, right?
 
-You can check on TablePlus if your script worked. One thing that can help you with this code is [Faker](https://www.npmjs.com/package/faker): a library that has some cool features to return several kinds of randomic data you want, like names, websites, numbers, sentences, and a lot more.
+You can check on TablePlus (or DBeaver, if you are on a Linux machine) if your script worked.
 
 **NOTE 2:** this is an example of task that we use the `chore/` prefix on the name of the branch.

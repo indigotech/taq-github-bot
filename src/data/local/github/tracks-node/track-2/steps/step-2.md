@@ -14,4 +14,6 @@ To call this step done, you must have:
 
 1. A simple GraphQL node server properly setup
 1. A query called `hello` that returns a string, for example: `Hello, world!`
-1. Make sure you tested your server running and performed the `hello` query. You should be able to access the Graphql docs and perform the query on: browser, [Graphiql](https://github.com/graphql/graphiql) or [Graphql Playground](https://github.com/prisma/graphql-playground) (you can choose the one you like). Keep this query for future testing!
+1. Your should have an Express server running with GraphQL
+1. Create a scripts on `package.json` called `start`. For now, it will be `node server.js` (or the name of the file you've chosen).
+1. Make sure you tested your server running with `npm start` and performed the `hello` query. You should be able to access the Graphql docs and perform the query on: browser, [Graphiql](https://github.com/graphql/graphiql) or [Graphql Playground](https://github.com/prisma/graphql-playground) (you can choose the one you like). Keep this query for future testing!

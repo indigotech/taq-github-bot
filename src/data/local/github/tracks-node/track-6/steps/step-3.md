@@ -16,3 +16,5 @@ This may look like a random string, but this token has a lot of power, because t
 This is an example of the famous [JWT token](https://jwt.io/). You're going to build this token and return it in your mutation. [This](https://auth0.com/learn/token-based-authentication-made-easy/) link has some information about token based authentication, jwt tokens and an example of how to implement it on code.
 
 Your task now is to implement a model of JWT tokens for your server and return them on your `login` mutation.
+
+**NOTE:** generally, the payload of a JWT token only the minimum information for the server to idetify a user. So, for this case, only the user id is necessary.

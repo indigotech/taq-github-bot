@@ -19,8 +19,8 @@ As you should have guessed, the relation we will implement here is **one-to-many
   | id          | PRIMARY KEY  |
   | name        |              | 
   | email       |              |
-  | cpf         |              |
   | birthDate   |              |
+  | password    |              |
   +-------------+--------------+
 
   +--------------+--------------+
@@ -49,5 +49,5 @@ For details about how to implement this in our stack (Postgres + TypeORM), you c
 - Create the "Address" entity
 - Implement the relation between "User" and "Address"
 - After creating the entity, you should update your database. If [synchronize](https://typeorm.io/#undefined/creating-a-connection-to-the-database) is enabled, you just need to run the server again to update.
-- Make sure the relation is working by running some test code and adding a user with at least 2 addresses. Check TablePlus to see the table sctructure working as above.
+- Make sure the relation is working by running some test code and adding a user with at least 2 addresses. Check TablePlus (or DBeaver, if you are on a Linux machine) to see the table sctructure working as above.
 - Open a Pull Request
