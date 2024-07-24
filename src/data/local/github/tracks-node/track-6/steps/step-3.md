@@ -17,4 +17,4 @@ This is an example of the famous [JWT token](https://jwt.io/). You're going to b
 
 Your task now is to implement a model of JWT tokens for your server and return them on your `login` mutation.
 
-**NOTE:** generally, the payload of a JWT toke only the minimum information for the server to idetify a user. So, for this case, only the user id is necessary.
+**NOTE:** generally, the payload of a JWT token only the minimum information for the server to idetify a user. So, for this case, only the user id is necessary.
