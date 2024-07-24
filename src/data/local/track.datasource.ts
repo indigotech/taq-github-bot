@@ -5,7 +5,7 @@ import { TRACKS } from './track.configure';
 
 @Service()
 export class TrackDataSource {
-  readonly tracks: ReadonlyArray<Track> = Object.freeze(Container.get(TRACKS));
+  readonly tracks: readonly Track[] = Object.freeze(Container.get(TRACKS));
   readonly totalSteps: number;
   readonly incrementProgressStep: number;
 

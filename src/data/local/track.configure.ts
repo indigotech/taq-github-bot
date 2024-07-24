@@ -1,8 +1,8 @@
 import { Step, Track } from '@domain/track.model';
-import { Container, Inject, Service } from 'typedi';
+import { Container, Inject, Service, Token } from 'typedi';
 import { readAllFiles, readFile, readFolder } from './file.utils';
 
-export const TRACKS = 'TRACKS';
+export const TRACKS = new Token<Track[]>('TRACKS');
 export const ONBOARD_STACK = 'ONBOARD_STACK';
 
 export enum OnboardStack {
