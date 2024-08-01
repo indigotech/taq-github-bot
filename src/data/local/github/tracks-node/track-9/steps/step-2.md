@@ -44,10 +44,10 @@ As you should have guessed, the relation we will implement here is **one-to-many
 
 ----
 
-For details about how to implement this in our stack (Postgres + TypeORM), you can check [their docs about relations](https://github.com/typeorm/typeorm/blob/master/docs/relations.md). Your task now is:
+For details about how to implement this in our stack (Postgres + ORM), you can check their docs about relations. Your task now is:
 
 - Create the "Address" entity
 - Implement the relation between "User" and "Address"
-- After creating the entity, you should update your database. If [synchronize](https://typeorm.io/#undefined/creating-a-connection-to-the-database) is enabled, you just need to run the server again to update.
-- Make sure the relation is working by running some test code and adding a user with at least 2 addresses. Check TablePlus (or DBeaver, if you are on a Linux machine) to see the table sctructure working as above.
+- After creating the entity, you should update your database. If table synchronization is enabled, you just need to run the server again to update.
+- Make sure the relation is working by running some test code and adding a user with at least 2 addresses. Check the database to see the table sctructure working as above.
 - Open a Pull Request
