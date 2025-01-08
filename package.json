@@ -60,7 +60,7 @@
     "typescript": "5.5.4"
   },
   "engines": {
-    "node": "20.15.1",
+    "node": "22.13.0",
     "npm": ">=10"
   },
   "_moduleAliases": {
