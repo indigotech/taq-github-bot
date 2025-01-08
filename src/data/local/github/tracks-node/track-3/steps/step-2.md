@@ -5,7 +5,7 @@ In this step, you'll connect your code with the database and create your first t
 
 ## Connecting with the database
 
-Do we have libraries to access our database? Of course we do. We use ORMs to make our work easier by writing Typescript to perform queries to the database. We'd like you to use the same ORM that is used on the project you're going to work, , so if you don't know yet which ORM you should use, please ask your tutors. Some time ago, our main ORM was [TypeORM](https://typeorm.io/). Now we are more focused on [Prisma](https://www.prisma.io/), but we always keep an eye on the trends so it can even be a third one.
+Do we have libraries to access our database? Of course we do. We use ORMs to make our work easier by writing Typescript to perform queries to the database. We'd like you to use the same ORM that is used on the project you're going to work, , so if you don't know yet which ORM you should use, please ask your tutors. Some time ago, our main ORM was [TypeORM](https://typeorm.io/). Now we are more focused on [Prisma](https://www.prisma.io/), but we always keep an eye on the trends so it can even be a third one. Check with tour mentor which one you should use.
 
 1. Take some time to learn how the ORM works. It's super cool, but it's also a lot of abstraction.
 1. Follow their docs to add it to your project (remember that we're using postgres).
@@ -26,6 +26,7 @@ Feel free to choose one of these above, or any other app you want :D
 After successfully connecting the ORM to your database, it's time to see it working by creating your first table. Guess what? It will be called `User` (we told you so)
 
 1. Check on the ORM docs how to create an table/entity.
+1. The user entity should have the following fields: id (primary key), name, email, password and birthDate.
 1. After creating the table, try creating a row (an user 🙆‍). You can do this either coding (it's possible) or directly on Tableplus, whatever you prefer.
 
 **Note 2:** too much for one step? Don't get stuck and feel free to ask anything to any Taqtiler 👍
