@@ -12,7 +12,7 @@ For both react and react-native, there are two options that you can use: with or
 + Start with [react tutorial](https://react.dev/learn) and search for a "getting started" or "installation" to find a setup for your project
 + Regardless of the setup you use (with or without framework), make sure to use Typescript. If the docs does not result in a Typescript project by default, they should have instructions on how to add it.
 + After running the command above, clean up some code to show only a simple "Hello World"
-+ You can call it "done" after you're running it successfully on the browser. Please open a pull request.
++ You can call it "done" after you're running it successfully on the browser
 
 </details>
 
@@ -22,7 +22,7 @@ For both react and react-native, there are two options that you can use: with or
 + Start with [react-native setup tutorial](https://reactnative.dev/docs/environment-setup)
 + Regardless of the setup you use (with or without framework), make sure to use Typescript. If the docs does not result in a Typescript project by default, they should have instructions on how to add it.
 + Clean up some code to show only a simple "Hello World"
-+ You can call it "done" after you're running it successfully on Android and iOS emulator (or device, if you prefer 🤓). Please open a pull request.
++ You can call it "done" after you're running it successfully on Android and iOS emulator (or device, if you prefer 🤓)
 
 </details>
 
