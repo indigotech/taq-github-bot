@@ -1,6 +1,6 @@
 # Step 3/5 - Create a Pull Request
 
-- Open a Pull Request of your `feature/setup` branch
+- Open a Pull Request of your `feature/server-setup` branch
 
 If you don't remember how to open a Pull Request, check out the references in the previous issues. Your PR should have `develop` branch as base, to be merged into later.
 
