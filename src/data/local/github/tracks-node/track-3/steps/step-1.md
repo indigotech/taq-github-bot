@@ -17,6 +17,6 @@ First, make sure you have Docker installed on your machine. Just hit <kbd>Comman
 1. Setup the two databases in the `docker-compose.yml` file. You can use [this example](https://gist.github.com/alanraso/8341faa973918392d55e39a7b323209a) if you want, just replace the values on `environment` fields.
 1. Run `$ docker compose up -d` on terminal to mount your containers.
 
-**Note:** Before run `docker-compose` commands, make sure that the docker is running on your mac. You can use again <kbd>Command</kbd> <kbd>Space</kbd>, type `Docker` and hit <kbd>Enter</kbd>.
+**Note:** Before run `docker compose` commands, make sure that the docker is running on your mac. You can use again <kbd>Command</kbd> <kbd>Space</kbd>, type `Docker` and hit <kbd>Enter</kbd>.
 
-**Note 2:** If you want to stop your containers, you can run `$ docker-compose stop` command in your project's root folder.
+**Note 2:** If you want to stop your containers, you can run `$ docker compose stop` command in your project's root folder.

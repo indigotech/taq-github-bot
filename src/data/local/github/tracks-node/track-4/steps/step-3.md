@@ -3,7 +3,7 @@
 
 Validating the input is an important part of the job. We have to make sure that the client is sending valid data to be stored, or we could end up having many inconsistencies on database.
 
-1. The system should not allow a weak password. That being said, a valid password should have:
+1. The system should not allow a weak password. That being said, a valid password for this sample project should have:
   + At least 6 characters
   + At least 1 letter and 1 digit
 
@@ -11,4 +11,4 @@ Validating the input is an important part of the job. We have to make sure that 
 
 You can add some more validations if you want, like minimum and maximum birth date. But the most important are those two above, and for the onboard, it's enough.
 
-Since we're using GraphQL, any error thrown on a resolver returns a response with the `errors` field filled. We will have a step later on to discuss about proper "error handling". For now, if any validation doesn't check, you can just throw a generic error with a message.
+What should happen if any of these validations fail? For now, simply return a string with a clear error message. We will have a dedicated error handling step soon.
