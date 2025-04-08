@@ -1,6 +1,6 @@
 # Step 1/5 - Create a git branch
 
-- Create a branch called `feature/setup-graphql`
+- Create a branch called `feature/server-setup`
 
 If you don't remember how to create a branch, check the references in the previous issues.
 
