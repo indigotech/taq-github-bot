@@ -1,9 +1,9 @@
 # Step 2/2 - Pagination
 #### Estimated time: 6 hours
 
-Now, let's increment your `users` query with a nice feature: pagination. Let's say the clients using your server want to fetch a list of users and there are lots of them on database. It's not a good practice to return too much users on a single request, because generally the client is not interested in using all of them. So, the solution is to offer separated small parts of users, according to some conditions the client sends.
+Now, let's increment your `GET /users` with a nice feature: pagination. Let's say the clients using your server want to fetch a list of users and there are lots of them on the database. It's not a good practice to return too much users on a single request, because generally the client is not interested in using all of them. So, the solution is to offer separated small parts of users, according to some conditions the client sends.
 
-Let's consider our alphabetically ordered list of users. Change the query response type to be of the type below:
+Let's consider our alphabetically ordered list of users. Change the response type to be of the new type below:
 
 + The users, obviously 🤣
 + The total number of users
@@ -28,4 +28,4 @@ Let's say some user has a total of 35 orders. The steps above would be repeated 
 
 If you search on the internet, you're going to find different ways of doing pagination, but in general they follow the rules listed above. You can choose anyway you want to do this, given they are followed.
 
-**NOTE:** as usual, don't forget to write the tests for you query!
+**NOTE:** as usual, don't forget to write the tests!

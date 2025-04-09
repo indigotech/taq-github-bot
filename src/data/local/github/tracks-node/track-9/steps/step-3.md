@@ -1,4 +1,4 @@
-# Step 3/3 - Updating "user" and "users" queries
+# Step 3/3 - Updating "get user" and "list users" requests
 #### Estimated time: 2 hours
 
 Now that we have the database properly setup with the addresses, we're going to update the two queries: "user" and "users". Now they should also return the addresses.
