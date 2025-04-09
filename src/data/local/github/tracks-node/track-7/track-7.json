@@ -1,6 +1,6 @@
 {
   "number": 7,
-  "title": "[Track 7/9] User query",
+  "title": "[Track 7/9] Get user",
   "openStrategy": "issue",
   "openStepStrategy": "issue"
 }

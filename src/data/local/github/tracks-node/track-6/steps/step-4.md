@@ -7,5 +7,6 @@ After implementing the login, you must have noticed that one of the possible par
 
 1. Adding an aditional optional parameter on the Login mutation called `rememberMe`. It's a boolean.
 1. If `rememberMe` was sent and its value is `true`, you should increase the expiration of the returned token. 1 week is good for our context.
+1. As noted on the previous step, it's important to update the tests. Add one more test case to check if the token expiration is correct when the sent value is `true`.
 
 Now your clients will have the oportunity to use that famous "Remember me" checkbox!
