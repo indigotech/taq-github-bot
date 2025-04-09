@@ -5,12 +5,12 @@ In this step, you'll connect your code with the database and create your first t
 
 ## Connecting with the database
 
-Do we have libraries to access our database? Of course we do. We use ORMs to make our work easier by writing Typescript to perform queries to the database. We'd like you to use the same ORM that is used on the project you're going to work, , so if you don't know yet which ORM you should use, please ask your tutors. Some time ago, our main ORM was [TypeORM](https://typeorm.io/). Now we are more focused on [Prisma](https://www.prisma.io/), but we always keep an eye on the trends so it can even be a third one. Check with tour mentor which one you should use.
+Do we have libraries to access our database? Of course we do. We use ORMs to make our work easier by writing Typescript to perform queries to the database. We'd like you to use the same ORM that is used on the project you're going to work, , so if you don't know yet which ORM you should use, please ask your tutors. Some time ago, our main ORM was [TypeORM](https://typeorm.io/). Now we are more focused on [Prisma](https://www.prisma.io/), but we always keep an eye on the trends so it can even be a third one. Check with your mentor which one you should use.
 
 1. Take some time to learn how the ORM works. It's super cool, but it's also a lot of abstraction.
 1. Follow their docs to add it to your project (remember that we're using postgres).
 1. Choose an option provided by ORM to connect to your database. The credentials are the ones you set on `docker-compose.yml`.
-1. Try to connect with database before running the apollo-server `start` code. For now, you can connect only with your **local** database, leaving the test connection for later.
+1. Try to connect with the database before running server. For now, you can connect only with your **local** database, leaving the test connection for later.
 
 **Note:** don't forget to check if your docker container is running before connecting to the DB, otherwise it will fail.
 

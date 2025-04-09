@@ -10,4 +10,4 @@ This is the first GET request you're going to implement on the project. After lo
 
 Unlike the previous tracks, now you're going to write the request prototype and integrate with the database already.
 
-**NOTE:** don't forget to predict error cases. In this query, the most obvious one is passing an id that is not found on database.
+**NOTE:** don't forget to predict error cases. In this endpoint, the most obvious one is passing an id that is not found on database.
