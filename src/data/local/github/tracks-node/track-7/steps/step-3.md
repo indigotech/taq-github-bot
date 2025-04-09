@@ -1,7 +1,7 @@
 # Step 3/3 - Challenge: seed
 ### Estimated time: 3 hours
 
-**[Spoiler alert]:** your next track is about writing a query to list users. But in order to do that, you should have users on database, right? Well, you could use your recently implemented `POST /users` to add them. However, this challenge is about presenting you a more efficient method, while you can learn something new: **database seed**.
+**[Spoiler alert]:** your next track is about writing a new endpoint to list users. But in order to do that, you should have users on database, right? Well, you could use your recently implemented `POST /users` to add them. However, this challenge is about presenting you a more efficient method, while you can learn something new: **database seed**.
 
 The idea is to write some code to populate your database, creating an environment to facilitate your next request. Follow the steps:
 

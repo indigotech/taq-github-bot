@@ -2,7 +2,7 @@
 
 ### Estimated time: 1 hour
 
-On this track, you're going to develop an endpoint to create users on database. Let's start with baby steps, by creating the route prototype, with no integration to the dabatase (yet). The main purpose of this step is to exercise only how to create a mutation, a type and an input type on GraphQL Schema.
+On this track, you're going to develop an endpoint to create users on database. Let's start with baby steps, by creating the route prototype, with no integration to the dabatase (yet).
 
 The endpoint should be a `POST /users`. It will receive on the request body a object with the schema as this example below:
 

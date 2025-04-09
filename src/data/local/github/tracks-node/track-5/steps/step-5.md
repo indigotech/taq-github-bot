@@ -4,7 +4,7 @@
 Now it's time to (finally) write the tests for your recently implemented endpoint. But first, some theory: unlike our simple `GET /hello`, this endpoint is integrated with database. How should be these tests? Well, some general good practices every test you're going to perform: replace your current `3. run a single test` step with:
 
 + **Setup the database:** to check if some feature is working, most of the time we need to have a certain state on the database before running the test. In this case, we should only need the user table properly setup, something we should already have by now.
-+ **Create an input:** you should create one example of input to run your query/mutation. On this example, it should be those user input fields.
++ **Create an input:** you should create one example of input to run your request. On this example, it should be those user input fields.
 + **Run the test:** well.... Run the test 🏃.
 + **Check the response:** Given the input and the state of database previously set up, you should check if the response is returned as expected. On a successful user creation, an id should be generated and the user info should be returned. Check all fields to increase the test completeness.
 + **Check the database after the test:** we should check not only if the return is ok, but also if the user was created on database properly, and all fields are in accordance with the input. Also, don't forget to check the password, it should be hashed.
