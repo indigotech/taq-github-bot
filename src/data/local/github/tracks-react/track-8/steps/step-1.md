@@ -18,4 +18,4 @@ After you answer these questions, go to the next step to see our suggestions on 
 By the way, as we are talking about UX, here are some references if you want to know more about it:
 - [Nielsen Norman Group](https://www.nngroup.com/)
 - [Google Design](https://medium.com/google-design/tagged/ux)
-- [Facebook Design](https://medium.com/facebook-design)
+- [Facebook Design](https://medium.com/designatmeta)
