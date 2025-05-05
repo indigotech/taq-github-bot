@@ -34,4 +34,9 @@ Conventions are very important to maintain all projects code more readable for a
 - **TypeScript interfaces, classes, and exported objects**: Use `PascalCase` (similar to camelCase, but the first letter is uppercase, e.g., `MyClass`).
 - **Conditional statements**: Always use brackets `{}` with `if` statements, even for single-line conditions, to improve readability.
 
-Add these tools on your project, check the code you have until now to follow our conventions. Also, make sure that if you change something on code that generates a format or lint error, it's detected in real-time on the editor. Then, open a Pull Request.
+## Next Steps
+
+1. Add these tools to your project.
+2. Review the code you have until now to ensure it follows the conventions and formatting rules.
+3. Verify that lint and format errors are detected in real-time in your editor.
+4. Open a Pull Request.
