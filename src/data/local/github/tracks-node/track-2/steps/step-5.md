@@ -29,9 +29,9 @@ This is the configuration file we use in our projects with Prettier, in case you
 
 Conventions are very important to maintain all projects code more readable for all developers and make the process of switching between projects less painful. We're going to list some of them here, but you will be learning and practicing more of them on code-reviews:
 
-+ We name our folders and files with `kebab-case`: lowercase characters and words combined with a dash (-)
-+ We name functions and local variables with `camelCase`: first char lowercase and words combined by the first letter at uppercase
-+ We name TypeScript interfaces, classes and exported objects with `PascalCase` - it's similar to `camelCase`, but first char is uppercase
-+ We don't use `if` without brackets, even if it's a one command only condition. This can avoid some readability problems
+- **Folders and files**: Use `kebab-case` (lowercase characters with words separated by dashes, e.g., `my-folder`).
+- **Functions and local variables**: Use `camelCase` (first letter lowercase, subsequent words capitalized, e.g., `myFunction`).
+- **TypeScript interfaces, classes, and exported objects**: Use `PascalCase` (similar to camelCase, but the first letter is uppercase, e.g., `MyClass`).
+- **Conditional statements**: Always use brackets `{}` with `if` statements, even for single-line conditions, to improve readability.
 
 Add these tools on your project, check the code you have until now to follow our conventions. Also, make sure that if you change something on code that generates a format or lint error, it's detected in real-time on the editor. Then, open a Pull Request.
