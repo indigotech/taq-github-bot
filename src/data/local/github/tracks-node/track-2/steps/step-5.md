@@ -15,7 +15,7 @@ We recommend you install the corresponding VSCode extension to the linter of cho
 
 If you are using Biome as a linter, it already has built in code formatting features, without the need of any other plugins.
 
-This is the configuration file used in our projects with Biome, in case you want to use the same: [biome.json](https://github.com/indigotech/template-react-web/blob/main/biome.json)
+This is the configuration file used in our projects with Biome, in case you want to use the same: [biome.json](https://github.com/indigotech/template-node/blob/main/biome.json)
 
 ### ESLint and Prettier
 
@@ -23,7 +23,7 @@ When using eslint, [Prettier](https://prettier.io/) is the go to plugin for  cod
 
 To add prettier in your project as a eslint plugin, please follow [this guide](https://github.com/prettier/eslint-plugin-prettier).
 
-This is the configuration file we use in our projects with Prettier, in case you want to use the same: [.prettiertc.js](https://github.com/indigotech/template-react/blob/master/.prettierrc.js)
+This is the configuration file we use in our projects with Prettier, in case you want to use the same: [.prettierc.js](https://github.com/indigotech/template-react/blob/master/.prettierrc.js)
 
 ## Conventions
 
