@@ -13,7 +13,7 @@ But before moving on, let's be sure you know all the basics we use daily here.
 
 First, we use [git](https://git-scm.com/)... a lot. If you don't feel confident in your skills using git, here are some recommendations:
 
-- https://try.github.io/
+- https://docs.github.com/en/get-started/git-basics/set-up-git
 - https://www.atlassian.com/git/tutorials
 - https://learngitbranching.js.org/
 

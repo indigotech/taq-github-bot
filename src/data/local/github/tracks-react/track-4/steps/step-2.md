@@ -11,7 +11,7 @@ GraphQL can be a little scary at the first sight, but don't worry, you'll get us
 - [How to GraphQL](https://www.howtographql.com/). We recommend, for now, watch only the first 4 videos of this tutorial.
 
 ## Practice
-As we do with REST, let's make a GraphQL request using a tool called **GraphiQL** (no code yet, hang in there). You should download [Graphiql app](https://electronjs.org/apps/graphiql) because it helps a lot to set headers on requests, or another app thar does the same, like [GraphQL Playground](https://github.com/prisma-labs/graphql-playground). Once done, access https://template-onboarding-node-sjz6wnaoia-uc.a.run.app/graphql and you're good to go.
+As we do with REST, let's make a GraphQL request using a tool called **Altair** (no code yet, hang in there). You should download [Altair GraphQL](https://altairgraphql.dev/) or a similar app (like [GraphQL Playground](https://github.com/prisma-labs/graphql-playground)); they are very helpful to set headers on requests, among other features. Once done, access https://template-onboarding-node-sjz6wnaoia-uc.a.run.app/graphql and you're good to go.
 
 In GraphiQL, you'll have to make the **login mutation**. Fortunally, the GraphiQL contains the **documentation explorer** (tab on right) which shows how the queries and mutations should be used. 
 
